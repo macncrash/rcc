@@ -1,0 +1,23 @@
+(crate
+  (fn lits
+    (generics 'a 'b: 'a)
+    (params (s: &'a str))
+    (ret &'b str)
+    (block
+      (let ints = (tuple 0 123 1000000 255 255u8 511 170 255u8 7i64 3usize 7986))
+      (let big = 0xffffffffffffffffffffffffffffffffu128)
+      (let floats = (tuple 1.0 2.5e10 1e-3 3.0f32 1f64 0.5e+2 1000.0001 2.))
+      (let range = (.. 1 2))
+      (let method = (method 1 max 2))
+      (let strs = (tuple "plain" "esc \n\t\r\\\x00'\"" "A😀é" "line continued"))
+      (let raw = (tuple "C:\\path" "has \"quotes\"" "has \"# inside"))
+      (let bytes = (tuple b"bytes\xff\x00" b"raw\\bytes" b"x"))
+      (let cs = (tuple c"cstr" c"raw c"))
+      (let chars = (tuple 'a' '\n' '\'' '\\' '\x7f' '􏿿' 'é' '中'))
+      (let bs = (tuple b'a' b'\xff' b'\'' b'\n'))
+      (let lt : &'static str = "x")
+      (let match = (+ fn type))
+      (expr (loop 'label (block
+        (semi (break 'label)))))
+      (let tuple_idx = (field (field t 0) 1))
+      (expr s))))

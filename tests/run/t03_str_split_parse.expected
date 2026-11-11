@@ -1,0 +1,24 @@
+  field [1] = 1
+  field [2] = 2
+  field [3] = 3
+line 0 total 6
+  field [10] = 10
+  field [-20] = -20
+  field [+30] = 30
+line 1 total 20
+  field [5] = 5
+line 2 error bad digit
+  field [100] = 100
+line 3 total 100
+  field [4] = 4
+line 4 error empty
+line 5 error no digits
+<the><quick><brown><fox>
+key a val 1
+key b val 2
+bare c
+124 true
+5
+0 one
+1 two
+2 three

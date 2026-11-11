@@ -1,0 +1,18 @@
+ptr swap old 5 new 9
+ptr cas true
+nand f0f0 -> fff
+not true -> false
+bool nand false -> true
+update Ok(-5) Err(-10)
+min/max -10 -100 -> 3
+debug 3 true
+cyclic 77 1
+empty weak true
+unwrap_or_clone shared
+into_inner Some("shared")
+oncelock from Some(3)
+force poisoned false
+log ["main", "slept"]
+child saw ("grandchild 1", 2)
+main TL Ok(1)
+ping-pong 200

@@ -1,0 +1,45 @@
+returning early
+drop early-b
+drop early-a
+early(true) = 1
+normal path
+drop early-c
+drop early-a
+early(false) = 2
+drop parse-after
+drop parse-guard
+Ok(42)
+drop parse-guard
+Err("bad 'x'")
+drop find-found
+drop find-guard
+Some(5)
+drop find-guard
+None
+-- break
+iteration 1
+drop loop-body
+drop before-break
+drop loop-body
+-- continue
+body 0
+drop for-body
+continue at 1
+drop for-body
+body 2
+drop for-body
+-- labelled break from nested loop
+drop inner-iter
+drop inner-iter
+drop inner-iter
+drop outer-iter
+drop inner-iter
+break 'out at 1 1
+drop inner-iter
+drop outer-iter
+-- break with value
+drop value-loop
+got result
+end of main
+drop result
+drop outer

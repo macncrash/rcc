@@ -1,0 +1,34 @@
+fn main() {
+    println!("{}", 2 + 3 * 4);
+    println!("{}", (2 + 3) * 4);
+    println!("{}", 10 - 4 - 3);
+    println!("{}", 10 - (4 - 3));
+    println!("{}", 100 / 10 / 5);
+    println!("{}", 100 / (10 / 5));
+    println!("{}", 1 + 2 << 3);
+    println!("{}", 1 + (2 << 3));
+    println!("{}", 0xF0 | 0x0F & 0x3C);
+    println!("{}", (0xF0 | 0x0F) & 0x3C);
+    println!("{}", 6 ^ 3 & 5);
+    println!("{}", 6 & 3 | 5 ^ 1);
+    println!("{}", -2 * -3);
+    println!("{}", -(2 - 5));
+    println!("{}", !0u8 >> 4);
+    println!("{}", -5i32 as u32 >> 28);
+    println!("{}", 7 % 4 * 3);
+    println!("{}", 7 * 4 % 3);
+    println!("{}", 1 < 2 && 3 > 2 || false);
+    println!("{}", false && true || true);
+    println!("{}", false && (true || true));
+    println!("{}", 2 + 3 == 5 && 4 * 2 != 7);
+    println!("{}", (3 > 2) == true);
+    let a: i32 = 5;
+    let b = 3;
+    println!("{}", a * b + a / b - a % b);
+    println!("{}", a << b >> 1);
+    println!("{}", (a as i64) * 1_000_000_000_000 + b as i64);
+    println!("{}", -a.pow(2));
+    println!("{}", (-a).pow(2));
+    println!("{}", 2i32.pow(10) - 1);
+    println!("{}", 1u64 << 40 | 1);
+}

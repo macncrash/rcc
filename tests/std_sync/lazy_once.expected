@@ -1,0 +1,19 @@
+before: inits 0 cell None once false
+0 v0 configured
+1 v1 configured
+2 v4 configured
+3 v9 configured
+4 v16 configured
+5 v25 configured
+6 v36 configured
+7 v49 configured
+lazy inits 1
+cell inits 1
+once runs 1
+completed seen 8
+table len 10 plain 42
+config Some("configured") set again Err("other")
+set winners 1 value present true
+local OnceLock(<uninit>)
+local OnceLock([1, 2, 3]) into_inner Some([1, 2, 3])
+lazy local 42 force 42

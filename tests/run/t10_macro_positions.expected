@@ -1,0 +1,13 @@
+10 20
+(2, 1)
+digit big big
+x = 25
+stmt: 1
+stmt: two
+stmt: 3.5
+a=7 b=8
+hello from Foo
+hello from i32
+(-1, 1)
+31
+[('a', 'b'), ('c', 'd')]

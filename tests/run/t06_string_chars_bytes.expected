@@ -1,0 +1,21 @@
+len 14 chars 12
+char h code 104 len_utf8 1
+char é code 233 len_utf8 2
+char l code 108 len_utf8 1
+char l code 108 len_utf8 1
+char o code 111 len_utf8 1
+[104, 195, 169, 108]
+non-ascii é at 1
+non-ascii ö at 9
+dlröw ,olléh
+as_bytes[0] 104 last Some('d')
+nth Some('é')
+HéLLO, WöRLD
+4 4 2
+is_char_boundary true false
+['a', 'b', 'c'] abc
+Rust
+bad is_err true
+Hi�
+slice
+[97, 98, 99]

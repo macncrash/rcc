@@ -1,0 +1,213 @@
+file:line	hasher	classification	reason
+src/backend/arm/assembler/elf_writer.rs:182	Sip	SORTED	label names sorted by length only; ties are distinct equal-length names, which cannot be substrings of each other, so substitution result is order-independent
+src/backend/arm/assembler/elf_writer.rs:337	Sip	SORTED	same as elf_writer.rs:182 (length sort; ties benign)
+src/backend/arm/assembler/parser.rs:894	Sip	ORDER-FREE	whole-word substitution of .set constants whose values are pure integer expressions (no identifiers), so order cannot change result
+src/backend/arm/assembler/parser.rs:972	Sip	SORTED	.req aliases sorted by length; equal-length ties substitute register names, benign
+src/backend/arm/codegen/intrinsics.rs:125	Fx	ORDER-FREE	collect into FxHashMap
+src/backend/arm/codegen/intrinsics.rs:263	Fx	ORDER-FREE	retain
+src/backend/arm/codegen/intrinsics.rs:279	Fx	SORTED	sort_unstable on (bool, use count, id, size); id unique so total
+src/backend/arm/codegen/intrinsics.rs:285	Fx	ORDER-FREE	any()
+src/backend/arm/codegen/intrinsics.rs:295	Fx	ORDER-FREE	collect into map (lane_regs)
+src/backend/arm/codegen/intrinsics.rs:344	Fx	ORDER-FREE	bitwise OR fold
+src/backend/arm/codegen/intrinsics.rs:349	Fx	ORDER-FREE	collect into map
+src/backend/arm/codegen/intrinsics.rs:439	Fx	ORDER-FREE	collect into map
+src/backend/arm/codegen/intrinsics.rs:447	Fx	ORDER-FREE	map/filter/collect into map
+src/backend/arm/codegen/intrinsics.rs:1191	Fx	SORTED	uses -> ranges Vec, then ranges.sort_unstable() on (block, prod, last, id), total (MIR line points into fn; iteration at for (&id, list) in &uses)
+src/backend/arm/codegen/intrinsics.rs:1219	Fx	ORDER-FREE	lane_geps.iter chained and collected into map (lanes)
+src/backend/arm/codegen/intrinsics.rs:1220	Fx	ORDER-FREE	regs.keys chained and collected into map (lanes)
+src/backend/arm/codegen/peephole.rs:1076	Sip	ORDER-FREE	each back-edge sets align[head] independently
+src/backend/arm/codegen/peephole.rs:5728	Sip	ORDER-FREE	sum of lengths for capacity
+src/backend/arm/codegen/prologue.rs:38	Fx	ORDER-FREE	collect into FxHashMap vec_regs (chain order fixed; keys disjoint)
+src/backend/arm/codegen/prologue.rs:49	Fx	ORDER-FREE	temp_lanes Vec only chained into FxHashMap vec_lanes
+src/backend/arm/codegen/prologue.rs:52	Fx	ORDER-FREE	collect into FxHashMap vec_lanes
+src/backend/arm/codegen/prologue.rs:58	Fx	ORDER-FREE	any()
+src/backend/arm/codegen/prologue.rs:110	Fx	ORDER-FREE	collected into FxHashSet (gpr_casts arg)
+src/backend/arm/codegen/prologue.rs:135	Fx	ORDER-FREE	any()
+src/backend/arm/codegen/prologue.rs:145	Fx	ORDER-FREE	insert into reg_assigned map
+src/backend/arm/codegen/prologue.rs:153	Fx	ORDER-FREE	any()
+src/backend/arm/codegen/prologue.rs:271	Fx	ORDER-FREE	any()
+src/backend/arm/linker/emit_dynamic.rs:46	Sip	ORDER-LEAKS-OUTPUT	ARM dyn exe: copy-reloc symbols appended to dyn_sym_names in SipHash order -> .dynsym/.dynstr order (gnu-hash bucket sort is stable, ties keep hash order), rela.dyn/copy order
+src/backend/arm/linker/emit_dynamic.rs:57	Sip	SORTED	exported names sorted (total)
+src/backend/arm/linker/emit_dynamic.rs:352	Sip	ORDER-FREE	each symbol value updated independently
+src/backend/arm/linker/emit_shared.rs:30	Sip	SORTED	exported names sorted (total)
+src/backend/arm/linker/emit_shared.rs:42	Sip	ORDER-LEAKS-OUTPUT	ARM shared lib: undefined/dynamic symbols appended to dynsym in SipHash order
+src/backend/arm/linker/emit_shared.rs:228	Sip	ORDER-FREE	sets SHF_WRITE flag per section independently
+src/backend/arm/linker/emit_shared.rs:517	Sip	ORDER-FREE	each symbol value updated independently
+src/backend/arm/linker/emit_static.rs:110	Sip	ORDER-FREE	count()
+src/backend/arm/linker/emit_static.rs:248	Sip	SORTED	ifunc names sorted (total)
+src/backend/arm/linker/emit_static.rs:328	Sip	ORDER-FREE	each symbol value updated independently (only LINKER_DEBUG eprintln order varies)
+src/backend/arm/linker/emit_static.rs:495	Sip	ORDER-FREE	each GOT entry written to its own fixed slot idx (only LINKER_DEBUG eprintln order varies)
+src/backend/arm/linker/link.rs:203	Sip	ORDER-FREE	retain
+src/backend/arm/linker/link.rs:212	Sip	SORTED	unresolved names sorted before error message
+src/backend/arm/linker/link.rs:236	Sip	ORDER-FREE	any()
+src/backend/arm/linker/plt_got.rs:89	Sip	ORDER-FREE	sets copy_reloc flag on each alias independently
+src/backend/elf/symbol_table.rs:58	Sip	ORDER-FREE	inserts into HashSet
+src/backend/elf/symbol_table.rs:68	Sip	ORDER-LEAKS-OUTPUT	defined labels pushed into .o symbol list in SipHash order; write_relocatable_object keeps that order -> .symtab order and relocation symbol indices vary per run
+src/backend/elf/symbol_table.rs:99	Sip	ORDER-LEAKS-OUTPUT	.set/.equ alias symbols pushed into .o symbol list in SipHash order -> .symtab order
+src/backend/elf/symbol_table.rs:147	Sip	ORDER-FREE	inserts into HashSet
+src/backend/elf/symbol_table.rs:160	Sip	ORDER-LEAKS-OUTPUT	undefined symbols pushed into .o symbol list in SipHash order (iterating HashSet referenced) -> .symtab order
+src/backend/elf/writer_base.rs:341	Sip	ORDER-FREE	collected then re-inserted into map
+src/backend/elf_writer_common.rs:868	Sip	ORDER-FREE	shift each label offset independently
+src/backend/elf_writer_common.rs:873	Sip	ORDER-FREE	shift each numeric label offset independently
+src/backend/elf_writer_common.rs:1185	Sip	ORDER-FREE	collect into HashMap (order leak happens later in build_elf_symbol_table)
+src/backend/elf_writer_common.rs:1198	Sip	ORDER-FREE	collect into HashMap
+src/backend/elf_writer_common.rs:1211	Sip	ORDER-FREE	collect into HashMap
+src/backend/elf_writer_common.rs:1346	Sip	ORDER-FREE	build local_labels HashMap
+src/backend/elf_writer_common.rs:1399	Sip	ORDER-FREE	shift each label offset independently
+src/backend/elf_writer_common.rs:1404	Sip	ORDER-FREE	shift each numeric label offset independently
+src/backend/elf_writer_common.rs:1466	Sip	ORDER-FREE	build local_labels HashMap
+src/backend/elf_writer_common.rs:1559	Sip	ORDER-FREE	shift each label offset independently
+src/backend/elf_writer_common.rs:1564	Sip	ORDER-FREE	shift each numeric label offset independently
+src/backend/generation.rs:142	Fx	ORDER-FREE	remove each id from map
+src/backend/generation.rs:147	Fx	ORDER-FREE	retain
+src/backend/generation.rs:270	Fx	ORDER-FREE	set difference collected into FxHashSet
+src/backend/generation.rs:618	Fx	SORTED	.file entries sorted by unique id
+src/backend/i686/linker/emit.rs:40	Sip	ORDER-LEAKS-OUTPUT	i686: extra DT_NEEDED libs pushed in SipHash order of global_symbols -> DT_NEEDED/.dynstr/verneed order varies when >1 non-libc lib
+src/backend/i686/linker/emit.rs:96	Sip	SORTED	copy-reloc names sorted
+src/backend/i686/linker/emit.rs:115	Sip	SORTED	textrel names sorted
+src/backend/i686/linker/emit.rs:177	Sip	SORTED	lib names sorted; per-lib versions are BTreeSet
+src/backend/i686/linker/emit.rs:605	Sip	SORTED	copy-reloc names sorted
+src/backend/i686/linker/emit.rs:1015	Sip	SORTED	custom section names sorted
+src/backend/i686/linker/emit.rs:1154	Sip	ORDER-FREE	each symbol address updated independently
+src/backend/i686/linker/input.rs:315	Sip	ORDER-FREE	retain
+src/backend/i686/linker/link.rs:85	Sip	ORDER-FREE	sets flags per symbol independently
+src/backend/i686/linker/shared.rs:186	Sip	SORTED	keys sorted
+src/backend/i686/linker/shared.rs:516	Sip	ORDER-FREE	each symbol address updated independently
+src/backend/i686/linker/symbols.rs:282	Sip	ORDER-LEAKS-OUTPUT	i686 'undefined symbols: ...' error lists names in SipHash order (not sorted, unlike other arches)
+src/backend/i686/linker/symbols.rs:306	Sip	SORTED	plt/got lists sorted
+src/backend/i686/linker/symbols.rs:350	Sip	SORTED	ifunc list sorted
+src/backend/linker_common/check.rs:21	Sip	SORTED	sorted before truncation/message
+src/backend/linker_common/dynamic.rs:158	Sip	ORDER-FREE	any()
+src/backend/linker_common/gc_sections.rs:113	Sip	ORDER-FREE	difference collected into HashSet
+src/backend/linker_common/merge.rs:117	Sip	ORDER-FREE	drain then re-insert into map
+src/backend/linker_common/merge.rs:129	Sip	ORDER-LEAKS-OUTPUT	COMMON symbols laid out in .bss in SipHash order -> symbol addresses/.bss layout vary per run (x86/arm/riscv elf64 linkers)
+src/backend/liveness.rs:974	Fx	ORDER-FREE	remove each id from map
+src/backend/regalloc.rs:293	Fx	ORDER-LEAKS-OUTPUT	Fx order of reuse_points fixes order of each partners Vec; partner_reg takes first fitting partner -> register choice depends on hash order
+src/backend/regalloc.rs:583	Fx	ORDER-FREE	collect into FxHashSet
+src/backend/regalloc.rs:680	Fx	ORDER-FREE	collect into FxHashSet
+src/backend/regalloc.rs:807	Fx	ORDER-FREE	each member mapped to its group list (list order not from hash)
+src/backend/regalloc.rs:852	Fx	ORDER-FREE	retain
+src/backend/regalloc.rs:1062	Fx	ORDER-FREE	collect into FxHashSet
+src/backend/riscv/assembler/elf_writer.rs:1136	Sip	ORDER-FREE	exec sections compressed in hash order but each section's compression/remap is independent
+src/backend/riscv/assembler/elf_writer.rs:1186	Sip	ORDER-FREE	remap each label independently
+src/backend/riscv/assembler/elf_writer.rs:1192	Sip	ORDER-FREE	remap each numeric label independently
+src/backend/riscv/codegen/asm_emitter.rs:196	Fx	ORDER-FREE	Vec used only for contains()
+src/backend/riscv/linker/emit_exec.rs:479	Sip	ORDER-FREE	each symbol value updated independently
+src/backend/riscv/linker/emit_shared.rs:142	Sip	SORTED	exported names sorted
+src/backend/riscv/linker/emit_shared.rs:148	Sip	ORDER-LEAKS-OUTPUT	RISC-V shared lib: undefined symbols appended to dynsym in SipHash order
+src/backend/riscv/linker/emit_shared.rs:418	Sip	ORDER-FREE	each symbol value updated independently
+src/backend/riscv/linker/input.rs:254	Sip	ORDER-FREE	remove from set
+src/backend/riscv/linker/link.rs:89	Sip	ORDER-FREE	collect into HashSet
+src/backend/riscv/linker/link.rs:93	Sip	ORDER-FREE	remove from set
+src/backend/riscv/linker/link.rs:102	Sip	ORDER-FREE	insert into set
+src/backend/riscv/linker/symbols.rs:150	Sip	ORDER-LEAKS-OUTPUT	RISC-V: plt_idx assigned and plt_symbols/copy_symbols pushed in SipHash order -> PLT/GOT slot order and copy-reloc layout vary per run
+src/backend/riscv/linker/symbols.rs:249	Sip	SORTED	sorted before error
+src/backend/stack_layout/alloca_coalescing.rs:211	Fx	ORDER-FREE	builds map/set
+src/backend/stack_layout/copy_coalescing.rs:113	Fx	ORDER-FREE	retain
+src/backend/stack_layout/copy_coalescing.rs:132	Fx	ORDER-FREE	retain
+src/backend/stack_layout/mod.rs:143	Fx	ORDER-FREE	collect into set
+src/backend/stack_layout/mod.rs:247	Fx	ORDER-LEAKS-INTERNAL-ONLY	UNSURE: alias use-block propagation; consumers sort+dedup, but if copy_alias holds an unresolved chain (A->B, B->C, possible when raw aliases appear out of order) propagation depends on order
+src/backend/stack_layout/slot_assignment.rs:171	Fx	ORDER-FREE	insert into set
+src/backend/stack_layout/slot_assignment.rs:627	Fx	ORDER-FREE	per-block slot coloring independent; results keyed by dest; max fold
+src/backend/stack_layout/slot_assignment.rs:827	Fx	ORDER-LEAKS-INTERNAL-ONLY	UNSURE: copies root slot to dest; order-free when roots are fully resolved, but an unresolved alias chain (B both dest and root) would make the slot assignment order-dependent
+src/backend/stack_layout/slot_assignment.rs:875	Fx	ORDER-FREE	edges feed a monotone fixpoint
+src/backend/x86/assembler/parser.rs:2066	Sip	SORTED	length sort; ties replaced with numeric values, benign
+src/backend/x86/linker/emit_exec.rs:52	Sip	ORDER-LEAKS-OUTPUT	x86-64 dyn exe: copy-reloc symbols appended to dynsym in SipHash order (also copy/rela order)
+src/backend/x86/linker/emit_exec.rs:66	Sip	SORTED	exported names sorted
+src/backend/x86/linker/emit_exec.rs:106	Sip	SORTED	lib names sorted; versions BTreeSet
+src/backend/x86/linker/emit_exec.rs:521	Sip	ORDER-FREE	each symbol value updated independently
+src/backend/x86/linker/emit_shared.rs:152	Sip	SORTED	exported names sorted
+src/backend/x86/linker/emit_shared.rs:168	Sip	ORDER-LEAKS-OUTPUT	x86-64 shared lib: undefined/dynamic symbols appended to dynsym in SipHash order
+src/backend/x86/linker/emit_shared.rs:549	Sip	ORDER-FREE	each symbol value updated independently
+src/backend/x86/linker/link.rs:169	Sip	ORDER-FREE	retain
+src/backend/x86/linker/plt_got.rs:13	Sip	SORTED	ifunc names sorted
+src/backend/x86/linker/plt_got.rs:101	Sip	ORDER-FREE	sets copy_reloc flag per alias independently
+src/frontend/preprocessor/macro_defs.rs:168	Fx	SORTED	only consumer dump_defines (-dM) sorts lines
+src/ir/lowering/expr_types.rs:1498	Fx	ORDER-FREE	copy into new map
+src/ir/lowering/func_lowering.rs:500	Fx	SORTED	possible_targets sorted by unique block id
+src/ir/lowering/func_lowering.rs:509	Fx	SORTED	undefined label diagnostics sorted (equal names identical)
+src/ir/lowering/lower.rs:201	Fx	ORDER-FREE	insert into set
+src/ir/lowering/ref_collection.rs:104	Fx	ORDER-FREE	worklist transitive closure; resulting set order-independent
+src/ir/lowering/ref_collection.rs:107	Fx	ORDER-FREE	insert into set / closure
+src/ir/mem2reg/phi_eliminate.rs:224	Fx	ORDER-FREE	collect into set
+src/ir/mem2reg/phi_eliminate.rs:358	Fx	ORDER-LEAKS-INTERNAL-ONLY	UNSURE: phi temp Value IDs assigned in Fx order (copy emission is by phi index); IDs only rename, but later id-based tie-breaks (e.g. regalloc/vec var sorts) could change output
+src/ir/mem2reg/phi_eliminate.rs:402	Fx	ORDER-FREE	insert into set
+src/ir/mem2reg/promote.rs:397	Fx	ORDER-FREE	extend set
+src/ir/mem2reg/promote.rs:445	Fx	ORDER-FREE	IDF worklist; resulting phi location sets order-independent
+src/ir/mem2reg/promote.rs:450	Fx	ORDER-FREE	IDF over df set; result order-independent
+src/ir/mem2reg/promote.rs:471	Fx	ORDER-FREE	liveness worklist; resulting set order-independent
+src/ir/mem2reg/promote.rs:519	Fx	ORDER-LEAKS-OUTPUT	phi instructions inserted (and phi Value IDs numbered) in Fx order of alloca_set -> phi order in IR, phi-elimination copy order, emitted instruction order
+src/ir/mem2reg/promote.rs:594	Fx	ORDER-FREE	find by unique value
+src/ir/mem2reg/promote.rs:731	Fx	ORDER-FREE	find by unique value
+src/ir/mem2reg/promote.rs:760	Fx	ORDER-FREE	collect into map
+src/passes/addr_arg_promote.rs:130	Fx	ORDER-FREE	retain
+src/passes/addr_arg_promote.rs:138	Fx	ORDER-LEAKS-INTERNAL-ONLY	UNSURE: fresh slot Value IDs assigned in Fx order (alloca insertion is sorted); ID permutation only, may leak via id tie-breaks
+src/passes/addr_arg_promote.rs:211	Fx	SORTED	sorted by unique alloca id
+src/passes/bound_hoist.rs:121	Fx	ORDER-FREE	any()
+src/passes/cfg_simplify.rs:624	Fx	ORDER-FREE	all()
+src/passes/cfg_simplify.rs:1190	Fx	ORDER-FREE	per-start chain resolution into map
+src/passes/const_hoist.rs:227	Fx	ORDER-FREE	set flags
+src/passes/const_hoist.rs:256	Fx	ORDER-FREE	set flags
+src/passes/dce.rs:367	Fx	ORDER-FREE	collect into map
+src/passes/edge_addr.rs:66	Fx	ORDER-FREE	per-entry root computation into map
+src/passes/edge_addr.rs:141	Fx	SORTED	sorted by unique (pred, edge) key
+src/passes/exit_addr.rs:44	Fx	ORDER-FREE	set innermost per block (loop order from Vec)
+src/passes/exit_addr.rs:111	Fx	ORDER-LEAKS-INTERNAL-ONLY	UNSURE: fresh Value IDs for clones assigned in Fx order of first-use map; insert positions sorted, so only ID permutation
+src/passes/exit_addr.rs:135	Fx	ORDER-FREE	per-block renaming independent
+src/passes/gep_reassoc.rs:118	Fx	ORDER-FREE	collect into set
+src/passes/gep_reassoc.rs:348	Fx	ORDER-FREE	get_or_insert per block, loops in Vec order
+src/passes/global_promote.rs:69	Fx	ORDER-FREE	retain
+src/passes/global_promote.rs:76	Fx	ORDER-FREE	retain
+src/passes/global_promote.rs:116	Fx	ORDER-FREE	retain
+src/passes/global_promote.rs:153	Fx	SORTED	body sorted
+src/passes/global_promote.rs:197	Fx	ORDER-FREE	collect into set
+src/passes/gvn.rs:650	Fx	ORDER-FREE	collect into FxHashSet
+src/passes/gvn.rs:729	Fx	ORDER-FREE	per-key chain resolution into map
+src/passes/index_base.rs:62	Fx	SORTED	bases pushed in hash order but sorted before use; per-block rewrite independent
+src/passes/index_base.rs:87	Fx	SORTED	sorted by unique key
+src/passes/inline.rs:471	Sip	ORDER-FREE	collect into set
+src/passes/inline.rs:472	Sip	ORDER-FREE	retain
+src/passes/inline.rs:508	Fx	ORDER-FREE	collect into set
+src/passes/inline.rs:517	Sip	ORDER-LEAKS-OUTPUT	debug-only: [INLINE] callee-map eprintln in SipHash order when inline debug env is set
+src/passes/ipcp.rs:453	Fx	ORDER-FREE	build map
+src/passes/iv_strength_reduce.rs:367	Fx	ORDER-FREE	build def map (SSA dests unique)
+src/passes/iv_strength_reduce.rs:478	Fx	ORDER-FREE	new_entries keyed by unique dest into map
+src/passes/iv_strength_reduce.rs:523	Fx	ORDER-LEAKS-OUTPUT	derived IV exprs pushed in Fx order of loop_body; transform emits new phis/preheader insts and Value IDs in that order
+src/passes/iv_strength_reduce.rs:571	Fx	ORDER-LEAKS-OUTPUT	gep_uses pushed in Fx order of loop_body; each use gets new phi/preheader insts in that order
+src/passes/iv_strength_reduce.rs:644	Fx	ORDER-FREE	early-exit search; boolean result
+src/passes/iv_widen.rs:102	Fx	ORDER-FREE	at most one match (SSA dest == next)
+src/passes/iv_widen.rs:239	Fx	ORDER-LEAKS-INTERNAL-ONLY	UNSURE: truncation Value IDs assigned in Fx order; ID permutation only
+src/passes/iv_widen.rs:325	Fx	ORDER-LEAKS-OUTPUT	truncations sorted by Reverse(position) only; two truncs at same (block, position) get inserted in Fx order -> instruction order
+src/passes/licm.rs:202	Fx	SORTED	roots sorted_unstable on (root, block, count) (root unique)
+src/passes/licm.rs:595	Fx	ORDER-FREE	seed map
+src/passes/licm.rs:646	Fx	ORDER-FREE	collect sets/flags over loop body
+src/passes/licm.rs:730	Fx	ORDER-FREE	insert into set
+src/passes/licm.rs:846	Fx	ORDER-LEAKS-INTERNAL-ONLY	UNSURE: f64 freq sums accumulated in Fx order of loop body (non-associative); can only matter at threshold boundary
+src/passes/licm.rs:855	Fx	ORDER-FREE	collect into set
+src/passes/licm.rs:906	Fx	ORDER-FREE	retain
+src/passes/licm.rs:934	Fx	ORDER-FREE	insert into set
+src/passes/licm.rs:1010	Fx	SORTED	hoistable_insts sorted by unique (block, inst) before insertion
+src/passes/licm.rs:1133	Fx	ORDER-FREE	per-block removal independent
+src/passes/licm.rs:1215	Fx	ORDER-LEAKS-INTERNAL-ONLY	UNSURE: fresh GEP Value IDs assigned in Fx order of loop body (edits are in place per block); ID permutation only
+src/passes/local_bytes.rs:54	Fx	ORDER-FREE	collect into map
+src/passes/loop_analysis.rs:74	Fx	ORDER-LEAKS-OUTPUT	merge_loops_by_header returns Vec<NaturalLoop> in Fx order; callers iterate unsorted (iv_widen, lftr, loop_vectorize, step_to_load, bound_hoist, iv_strength_reduce, reduce_vectorize find_map) or sort by non-total body.len() (licm, gep_reassoc, index_base)
+src/passes/loop_hoist.rs:84	Fx	SORTED	blocks sorted
+src/passes/loop_hoist.rs:214	Fx	ORDER-FREE	all()
+src/passes/loop_layout.rs:66	Fx	ORDER-FREE	max()
+src/passes/loop_promote.rs:92	Fx	SORTED	blocks sorted
+src/passes/loop_unroll.rs:180	Fx	ORDER-FREE	find in 2-element body; unique result
+src/passes/mem_inline.rs:228	Fx	ORDER-FREE	retain
+src/passes/mem_inline.rs:229	Fx	ORDER-FREE	remove from set
+src/passes/remat.rs:129	Fx	ORDER-FREE	depth counters per block
+src/passes/remat.rs:168	Fx	ORDER-FREE	collect into set then len
+src/passes/remat.rs:200	Fx	ORDER-FREE	extend set (dataflow)
+src/passes/remat.rs:203	Fx	ORDER-FREE	extend set (dataflow)
+src/passes/remat.rs:267	Fx	SORTED	cands sorted (unique ids)
+src/passes/shrink_split.rs:285	Fx	SORTED	shared sorted
+src/passes/sroa.rs:81	Fx	ORDER-FREE	collect into map
+src/passes/sroa.rs:196	Fx	SORTED	order sorted
+src/passes/sroa.rs:234	Fx	ORDER-FREE	insert into set
+src/passes/vec_copies.rs:55	Fx	ORDER-FREE	collect into map
+src/passes/vec_split.rs:64	Fx	ORDER-FREE	collect into map
+src/passes/vec_split.rs:172	Fx	ORDER-FREE	collect into set
+src/passes/vec_split.rs:180	Fx	SORTED	ordered sorted

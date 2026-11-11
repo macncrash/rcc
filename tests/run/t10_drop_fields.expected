@@ -1,0 +1,35 @@
+-- struct fields drop in declaration order
+p.first p.second p.third
+drop p.first
+drop p.second
+drop p.third
+-- outer Drop runs before fields
+inner o.inner.first o.inner.second o.inner.third
+drop Outer o (fields still alive: o.a o.z)
+drop o.a
+drop o.inner.first
+drop o.inner.second
+drop o.inner.third
+drop o.z
+-- tuple
+drop t.0
+drop t.1
+drop t.2.0
+drop t.2.1
+-- array
+drop arr0
+drop arr1
+drop arr2
+-- enum payloads
+Empty
+One one
+Two two.x two.y
+drop one
+drop two.x
+drop two.y
+-- struct literal temporaries are moved, not dropped
+built m.second
+drop m.first
+drop m.second
+drop m.third
+end of main

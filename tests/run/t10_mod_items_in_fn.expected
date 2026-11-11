@@ -1,0 +1,9 @@
+compute(5) = 40
+compute(0) = 30
+Pt { x: 3, y: -4 } manhattan=7
+Pt { x: -3, y: 4 }
+north
+south
+nested = 321
+late = declared after use
+pair 1 2

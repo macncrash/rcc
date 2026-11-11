@@ -1,0 +1,21 @@
+len = 5
+a[0] = 3 a[4] = 5
+sum = 14
+d[0] = 6
+d[1] = 2
+d[2] = 8
+d[3] = 2
+d[4] = 10
+a still 4
+zeros len 16 last 0
+m 7
+m -1
+m 7
+m 107
+7
+hello
+true false true
+empty len 0
+true true
+big sum 1000
+4.5

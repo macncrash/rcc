@@ -1,0 +1,27 @@
+42
+-7
+3.5
+100000000000000000000
+c
+true
+str
+s
+21.5C
+1/2/3
+0.0C/-3.2C
+a/b
+340282366920938463463374607431768211455 39
+true
+12345
+100.0C 6
+invalid digit found in string
+invalid float literal
+provided string was not `true` or `false`
+too many characters in string
+Ok(true)
+Ok('z')
+Ok(2500.0)
+Ok(inf)
+Ok(true)
+0.1
+1

@@ -1,0 +1,19 @@
+false true true true
+[Key { prio: 0, seq: -1 }, Key { prio: 0, seq: 100 }, Key { prio: 1, seq: -3 }, Key { prio: 1, seq: 5 }, Key { prio: 2, seq: 0 }]
+Some(Key { prio: 2, seq: 0 })
+Key { prio: 2, seq: 0 }
+Low
+Mid(-7)
+Mid(3)
+High { level: 0, name: "z" }
+High { level: 1, name: "a" }
+High { level: 1, name: "b" }
+true
+true
+true
+Some(Greater)
+None
+false true
+true Wrap(Key { prio: 1, seq: 5 }, true)
+Greater
+Greater

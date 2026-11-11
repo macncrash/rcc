@@ -1,0 +1,12 @@
+status success true code Some(0)
+stdout "hello from echo\n"
+stdout bytes 16
+stderr empty true
+args echo "a b c d\n"
+echo -n "no newline"
+before child
+child writes this line
+after child, success true
+spawned output "piped\n" code Some(0)
+collected ["n=0", "n=11", "n=22", "n=33", "n=44"]
+spawn error kind NotFound

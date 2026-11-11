@@ -1,0 +1,48 @@
+Inst { op: "add", args: [1, 2], .. }
+Inst {
+    op: "add",
+    args: [
+        1,
+        2,
+    ],
+    ..
+}
+Pt(1, -2) Pt(
+    3,
+    4,
+)
+[Pt(1, 1), Pt(2, 2), "<bottom>"]
+{"x": 1, "y": -1, "extra": Pt(0, 0)}
+{
+    "x": 1,
+    "y": -1,
+    "extra": Pt(
+        0,
+        0,
+    ),
+}
+{'a', 'b'} {}
+0xff Hex(0xff)
+Empty Empty
+Outer { inst: Inst { op: "ret", args: [], .. }, stack: [Pt(9, 8), "<bottom>"], hex: 0x10, m: {1: 0x1, 2: 0x2}, e: Empty }
+Outer {
+    inst: Inst {
+        op: "ret",
+        args: [],
+        ..
+    },
+    stack: [
+        Pt(
+            9,
+            8,
+        ),
+        "<bottom>",
+    ],
+    hex: Hex(0x10),
+    m: {
+        1: Hex(0x1),
+        2: Hex(0x2),
+    },
+    e: Empty,
+}
+Pt(    1,     2)

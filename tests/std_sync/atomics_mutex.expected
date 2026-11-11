@@ -1,0 +1,18 @@
+returns [0, 2, 4, 6, 8, 10, 12, 14]
+counter 80000
+hits 399960000
+max 29
+pushed 80
+first [0, 1, 2] last [707, 708, 709]
+log [0, 1, 2, 3, 4, 5, 6, 7]
+arc counts 1 1
+spin total 5000
+u8 wrapped 4
+try_lock while held: true
+guard 5
+try_lock free: true
+into_inner 6
+Mutex { data: [1, 2], poisoned: false, .. }
+reader sums [6, 6, 6, 6]
+two readers 4 4 try_write true
+rw [1, 2, 3, 4]

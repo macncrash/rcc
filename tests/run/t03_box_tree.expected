@@ -1,0 +1,9 @@
+20 30 35 40 45 50 60 65 70 80 
+height 4
+contains 35 true
+contains 36 false
+contains 80 true
+contains 10 false
+1 5 20 30 35 40 45 50 60 65 70 80 99 
+height 5 min 1
+true

@@ -1,0 +1,36 @@
+char '\0' as u32 0 as u8 0 as u16 0 len_utf8 1
+char 'A' as u32 65 as u8 65 as u16 65 len_utf8 1
+char 'z' as u32 122 as u8 122 as u16 122 len_utf8 1
+char '~' as u32 126 as u8 126 as u16 126 len_utf8 1
+char '\u{7f}' as u32 127 as u8 127 as u16 127 len_utf8 1
+char 'é' as u32 233 as u8 233 as u16 233 len_utf8 2
+char '😀' as u32 128512 as u8 0 as u16 62976 len_utf8 4
+u8 0 as char '\0' (0)
+u8 48 as char '0' (48)
+u8 65 as char 'A' (65)
+u8 97 as char 'a' (97)
+u8 200 as char 'È' (200)
+u8 255 as char 'ÿ' (255)
+from_u32 41 = 'A'
+from_u32 d7ff = '\u{d7ff}'
+from_u32 d800 = None
+from_u32 dfff = None
+from_u32 e000 = '\u{e000}'
+from_u32 10ffff = '\u{10ffff}'
+from_u32 110000 = None
+0123456789abcdef[none]
+0 to_digit10 Some(0) to_digit16 Some(0) to_digit36 Some(0)
+7 to_digit10 Some(7) to_digit16 Some(7) to_digit36 Some(7)
+9 to_digit10 Some(9) to_digit16 Some(9) to_digit36 Some(9)
+a to_digit10 None to_digit16 Some(10) to_digit36 Some(10)
+F to_digit10 None to_digit16 Some(15) to_digit36 Some(15)
+z to_digit10 None to_digit16 None to_digit36 Some(35)
+G to_digit10 None to_digit16 None to_digit36 Some(16)
+bool: 1 0 1 1 1
+bool arith 11
+multiples of 3 below 20: 7
+ahovcjqxelszgnubipwdkryfmt
+u8 'a' + 2 = c
+upper Q lower q
+char cmp true true
+char::MAX 1114111

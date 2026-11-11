@@ -1,0 +1,20 @@
+plain str
+owned string
+1 -2 300000
+true false
+a Z é
+1.5 -0.25 100 3
+nospaces7
+{literal braces} 1 {2}
+
+tab	here
+newline
+inside
+unicode: λ 😀
+deref chain 5
+box 12
+li 5
+print without newline
+0
+-9223372036854775808
+()

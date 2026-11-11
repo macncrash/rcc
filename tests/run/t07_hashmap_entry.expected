@@ -1,0 +1,22 @@
+the 3
+fox 2
+brown 1
+dog 1
+jumps 1
+lazy 1
+over 1
+quick 1
+'a' -> Stats { count: 5, total: 25 }
+'b' -> Stats { count: 2, total: 9 }
+'c' -> Stats { count: 1, total: 4 }
+'d' -> Stats { count: 1, total: 6 }
+'r' -> Stats { count: 2, total: 11 }
+or_insert_with calls=3
+[(1, "val11!!"), (2, "val22!"), (3, "val33!!!")]
+[("a", [5, 3, 1]), ("b", [2, 6]), ("c", [4]), ("z", [42])]
+occupied key=b val=[2, 6]
+now [2, 6, 7]
+vacant key=q
+removed c [4]
+[("a", [5, 3, 1]), ("b", [2, 6, 7]), ("q", [9, 9]), ("z", [42])]
+entry key dog

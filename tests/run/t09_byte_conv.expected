@@ -1,0 +1,24 @@
+u16 le: ef be
+u16 be: be ef
+u32 le: ef be ad de
+u32 be: de ad be ef
+i64 le: fe ff ff ff ff ff ff ff
+i64 be: ff ff ff ff ff ff ff fe
+u128 le: 10 0f 0e 0d 0c 0b 0a 09 08 07 06 05 04 03 02 01
+u128 be: 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f 10
+f64 le: 00 00 00 00 00 00 f8 3f
+f32 be: be 80 00 00
+u64 from le 1122334455667788
+u64 from be 8877665544332211
+i64 from le 1234605616436508552
+u32 from le 33445566 be 66554433
+i32 from be -2
+u16 from le 4660
+f64 from le 1
+f32 from be 3.1415927
+record: 01 00 00 00 00 01 00 00 00 00 01 00 ff ff ff ff ff ed 29 79
+decoded 1
+decoded 256
+decoded 65536
+decoded 4294967295
+decoded tail -1234567

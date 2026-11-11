@@ -1,0 +1,33 @@
+u8 0: lz 8 tz 8 ones 0 zeros 8 lo 0 to 0
+u8 1: lz 7 tz 0 ones 1 zeros 7 lo 0 to 1
+u8 2: lz 6 tz 1 ones 1 zeros 7 lo 0 to 0
+u8 128: lz 0 tz 7 ones 1 zeros 7 lo 1 to 0
+u8 240: lz 0 tz 4 ones 4 zeros 4 lo 4 to 0
+u8 255: lz 0 tz 0 ones 8 zeros 0 lo 8 to 8
+u32 0: lz 32 tz 32 ones 0 zeros 32
+u32 1: lz 31 tz 0 ones 1 zeros 31
+u32 16: lz 27 tz 4 ones 1 zeros 31
+u32 2147483648: lz 0 tz 31 ones 1 zeros 31
+u32 4294901760: lz 0 tz 16 ones 16 zeros 16
+u32 4294967295: lz 0 tz 0 ones 32 zeros 0
+i64 0: lz 64 tz 64 ones 0 zeros 64 lo 0
+i64 -1: lz 0 tz 0 ones 64 zeros 0 lo 64
+i64 -9223372036854775808: lz 0 tz 63 ones 1 zeros 63 lo 1
+i64 12345: lz 50 tz 0 ones 6 zeros 58 lo 0
+i64 -12345: lz 0 tz 0 ones 59 zeros 5 lo 50
+u128 0: lz 128 tz 128 ones 0
+u128 1: lz 127 tz 0 ones 1
+u128 1267650600228229401496703205376: lz 27 tz 100 ones 1
+u128 340282366920938463463374607431768211455: lz 0 tz 0 ones 128
+u16 0: lz 16 tz 16 ones 0
+u16 256: lz 7 tz 8 ones 1
+u16 65534: lz 0 tz 1 ones 15
+1 ilog2 0 lzlog 0 is_pow2 true next_pow2 1
+2 ilog2 1 lzlog 1 is_pow2 true next_pow2 2
+3 ilog2 1 lzlog 1 is_pow2 false next_pow2 4
+4 ilog2 2 lzlog 2 is_pow2 true next_pow2 4
+1000 ilog2 9 lzlog 9 is_pow2 false next_pow2 1024
+1099511627776 ilog2 40 lzlog 40 is_pow2 true next_pow2 1099511627776
+18446744073709551615 ilog2 63 lzlog 63 is_pow2 false next_pow2 0
+ilog10 2 3 19
+BITS 8 16 32 64 128

@@ -1,0 +1,19 @@
+42 -17 255 3.5 true x
+true
+true
+None
+Ok(7)
+false
+Ok(1000.0)
+Ok(-0.25)
+Ok(255)
+Ok(-5)
+Ok(511)
+Ok(18446744073709551615)
+Ok(-9223372036854775808)
+[1, 3, -4]
+all ok false
+Ok([1, 2])
+err invalid digit found in string
+err cannot parse integer from empty string
+31

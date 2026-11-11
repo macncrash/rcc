@@ -1,0 +1,12 @@
+metadata len 6000000
+read back len 6000000 equal true checksum bfbe3c85c4632686
+lines 200000 sum 20100661087 size 2068854
+read_to_string len 2068854 last line Some("199999 651")
+copy 6000000 equal true
+at 4M [161, 93, 25, 213, 144, 76, 8, 196] expected [161, 93, 25, 213, 144, 76, 8, 196]
+end pos 6000000
+truncated len 5000000
+read_to_end 5000000 equal prefix true
+append len 140 tail "47;48;49;"
+chunked total 6000000 chunks>=92 true
+cleaned true

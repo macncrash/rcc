@@ -1,0 +1,25 @@
+[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4] len=10
+front=Some(-5) back=Some(4)
+pop_front=Some(-5) pop_back=Some(4)
+d[0]=-4 d[3]=-1 get(100)=None
+[-40, 77, -2, -1, 0, 1, 2, 1003]
+rotate_left 3: [-1, 0, 1, 2, 1003, -40, 77, -2]
+rotate_right 1: [-2, -1, 0, 1, 2, 1003, -40, 77]
+insert: [-2, -1, 555, 0, 1, 2, 1003, -40, 77]
+remove(4)=Some(1)
+retain even: [-2, 0, 2, -40]
+doubled vec: [-4, 0, 4, -80]
+iter_mut: [-3, -1, 1, -41]
+contains 200=true contains 7=false
+drained=[-1, 1] rest=[-3, -41, 100, 200, 300]
+sorted=[-41, -3, 100, 200, 300]
+slices total len=5
+truncate=[-41, -3]
+swap=[-3, -41]
+visited=27 dist to E=15
+ 0  1  2 ##  8  9 10 11
+ 1 ##  3 ##  7 ## ## 12
+ 2 ##  4  5  6 ## 14 13
+ 3 ## ## ## ## 10 ## 14
+ 4  5  6  7  8  9 ## 15
+[3, 2, 1]

@@ -1,0 +1,12 @@
+point: i32 1, i32 -2 -> 4fc112a369e829e4
+dot: isize 0 -> 0000000000000000
+circle: isize 1, u32 9 -> d2dc1dec35e576df
+line: isize 2, i32 0, i32 1, i32 2, i32 3 -> 5d100ac4532fb2ae
+mixed: u8 1, u64 77, usize 2, bytes[5, 6] -> a8752e427b4751e0
+custom: u32 4 -> 45f306dc9c882a54
+custom2: u32 4 -> 45f306dc9c882a54
+unhashed field 2
+tuple: u8 1, u32 2 -> 6a4be67ff98fabc8
+u64: u64 12345 -> 8919791e18904b2d
+equal hashes: true
+swapped differs: true

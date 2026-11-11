@@ -1,0 +1,27 @@
+-20: min3 -20 max3 3 clamp(-5,10) -5
+-5: min3 -5 max3 3 clamp(-5,10) -5
+0: min3 0 max3 3 clamp(-5,10) 0
+5: min3 3 max3 5 clamp(-5,10) 5
+10: min3 3 max3 10 clamp(-5,10) 10
+99: min3 3 max3 99 clamp(-5,10) 10
+cmp::min 4 cmp::max -4
+u64 clamp 100
+-1.5: min -1.5 max 0.5 clamp -1
+0: min 0 max 0.5 clamp 0
+0.25: min 0.25 max 0.5 clamp 0.25
+7: min 0.5 max 7 clamp 1
+10000000000: min 0.5 max 10000000000 clamp 1
+nan.min(1) 1 1.min(nan) 1 nan.max(2) 2
+nan clamp is_nan true
+f32 min -2.5 max 1.5
+after 17 lo 17 hi 17
+after -3 lo -3 hi 17
+after 44 lo -3 hi 44
+after 0 lo -3 hi 44
+after -91 lo -91 hi 44
+after 12 lo -91 hi 44
+after 8 lo -91 hi 44
+ordering Less Equal Greater
+partial Some(Less) None
+total_cmp Less Greater
+max_by_key-ish -7

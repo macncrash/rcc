@@ -1,0 +1,15 @@
+u32 7: 3a694c0211ee4a13
+u64 7: 3a694c0211ee4a13
+u8 255: 2b44f56ffae88a6b
+bytes: ea0e8987fb3225ca
+tuple: fdcb2688e0760126
+main at 0 -> id 0
+foo at 1 -> id 1
+bar at 2 -> id 2
+baz at 3 -> id 3
+foo at 4 -> id 1
+main at 5 -> id 0
+qux at 6 -> id 4
+[(0, "main"), (1, "foo"), (2, "bar"), (3, "baz"), (4, "qux")]
+set len=66 min=0 max=96
+cap get 19 = Some(361), get 20 = None

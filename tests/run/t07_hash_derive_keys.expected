@@ -1,0 +1,19 @@
+Rax used at [0, 3, 6]
+Rbx used at [2]
+R(8) used at [1, 5]
+R(9) used at [4]
+Some("origin") Some("se") None
+a::1 = 9
+a::2 = 3
+b::1 = 2.5
+probe Some(3.0)
+"ab" new=true
+"ba" new=false
+"ab" new=false
+"abc" new=true
+"" new=true
+hello -> ehlo
+help -> ehlp
+world -> dlorw
+common=['e', 'h', 'l']
+Some(0) Some(4)

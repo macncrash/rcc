@@ -1,0 +1,17 @@
+[] len 0 empty true
+[hello, world] len 12
+hello, world!?
+abcdefhe
+as_str abcdefhe
+deref 8
+>> abcdefhe
+pop Some('e') -> >> abcdefh
+remove > -> > abcdefh
+truncate > ab
+cleared [] true
+cap true
+true true true
+cmp true true true
+abababab
+keepthispartonly
+zzz

@@ -1,0 +1,24 @@
+hello, world len 12
+false
+true
+bytes 104 101 100
+starts true false
+ends true true
+contains true false
+l count 3
+sub 'hello' 'world' 'he'
+letters 10
+uni bytes 9
+h:104 é:233 l:108 l:108 o:111 →:8594 
+chars 6
+comma at 5
+not found
+[padded]
+[padded	] [  padded]
+rest [, world]
+true
+true
+first h
+a\nb 4
+tab	here
+newline "quoted" \ A

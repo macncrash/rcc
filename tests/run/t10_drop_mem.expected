@@ -1,0 +1,22 @@
+before drop(a)
+drop "a"
+after drop(a)
+replaced: old=first slot=second
+drop "first"
+taken=second slot=""
+swapped x=y y=x
+after forget
+drop "in-option"
+take -> in-option
+o is_none=true
+replace returned refilled
+drop "refilled"
+size_of D = true
+drop "v1"
+drop "v2"
+end of main
+drop "replacement"
+drop "x"
+drop "y"
+drop "second"
+drop ""

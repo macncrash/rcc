@@ -1,0 +1,18 @@
+swap a=2 b=1
+v1=[9] v2=[1, 2, 3]
+arr=[30, 20, 40, 10]
+replace prev=old s=new
+taken=[1, 2, 3] left=Buf { data: [], name: "b1" } name=b1
+whole=Buf { data: [], name: "b1" } left=Buf { data: [], name: "" }
+take=Some(5) opt=None
+replace old=Some(1) new=Some(2)
+take int=77 left=0
+YY..
+YY..
+..Y.
+...Y
+some==some true some==none false
+[Circle(1.0), Circle(2.5), Rect { w: 1.0, h: 2.0 }, Empty]
+areas [3.0, 18.75, 2.0, 0.0]
+size u8=1 u32=4 u64=8 u128=16 (u8,u32)=16
+done

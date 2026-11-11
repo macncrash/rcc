@@ -1,0 +1,33 @@
+-- move one field
+moved left tag 7
+drop left
+drop right
+-- move field into function
+drop tb
+after drop(t.b), a=ta
+drop ta
+drop tc
+-- destructuring with ..
+got dc
+drop dc
+drop da
+drop db
+-- destructuring all
+tag 1 pl pr
+drop pl
+drop pr
+-- tuple partial move
+mid t1
+drop t1
+drop t0
+drop t2
+-- ref binding does not move
+borrowed rl
+drop rl
+drop rr
+-- reassign moved field
+taken old-left now new-left tag 3
+drop old-left
+drop new-left
+drop keep-right
+end

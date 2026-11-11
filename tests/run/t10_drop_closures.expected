@@ -1,0 +1,32 @@
+-- by-ref capture
+f() = 1
+closure gone, a still alive: a
+-- move capture
+g() = 1
+dropping g
+drop b
+after g scope
+-- FnOnce consumes capture
+call_once start
+inside h with c
+drop c
+call_once end
+h result 1
+-- closure never called still drops capture
+drop e
+after drop(unused)
+-- returned closure
+drop returned-capture
+rc() = 16 16
+-- boxed closures in vec
+drop k1
+drop k2
+call k1
+call k2
+-- FnMut with captured counter and droppable
+inc 1 with g
+inc 2 with g
+count 2
+end of main
+drop g
+drop a

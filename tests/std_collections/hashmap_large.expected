@@ -1,0 +1,13 @@
+sip: len=14023 live=14023 hits=6795 mismatches=0 sums_equal=true
+sip: after retain len=7090 expected=7090
+fx: len=14023 live=14023 hits=6795 mismatches=0 sums_equal=true
+fx: after retain len=7090 expected=7090
+fx-stride: len=14023 live=14023 hits=6795 mismatches=0 sums_equal=true
+fx-stride: after retain len=0 expected=0
+id: len=14023 live=14023 hits=6795 mismatches=0 sums_equal=true
+id: after retain len=7090 expected=7090
+id-stride: len=14023 live=14023 hits=6795 mismatches=0 sums_equal=true
+id-stride: after retain len=0 expected=0
+strings: len=10000 all_found=true k5=true k6=false
+strings: emptied len=0
+fx(abc)=d4c9208d4fc8c00f

@@ -1,0 +1,55 @@
+-- statement temporaries
+make t1
+val t1
+make t2
+val t2
+drop t2
+drop t1
+n = 4
+-- temporaries as fn args
+make arg1
+val arg1
+make arg2
+val arg2
+sum2
+drop arg2
+drop arg1
+s = 8
+-- lifetime extension
+make extended
+extended alive: extended
+-- match scrutinee temporary lives through the match
+make scrut
+in arm k=5
+drop scrut
+after match
+-- if let scrutinee
+make iflet
+in if-let body 5
+drop iflet
+after if let
+-- if condition temporary is dropped before the body
+make cond
+val cond
+drop cond
+in if body
+-- while let
+make wl
+while-let body 0
+drop wl
+make wl
+while-let body 1
+drop wl
+-- tail expression
+make tail-local
+make tail-temp
+val tail-temp
+drop tail-local
+drop tail-temp
+tail = 9
+-- method chain on temp
+make chain
+drop chain
+len = 5
+end of main
+drop extended

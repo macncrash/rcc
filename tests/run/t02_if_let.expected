@@ -1,0 +1,14 @@
+slot 0 val 0
+  empty
+slot 1 val 7
+  full 7
+slot 2 val 5
+slot 3 val 100
+  full 100
+  big full 100
+total 112
+nested 9 9
+mutated 42
+digit
+a 3
+res 999

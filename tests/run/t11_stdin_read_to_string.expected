@@ -1,0 +1,11 @@
+read 101 bytes
+lines 5
+words 19 longest indented
+numbers [13, 7, -20] sum 0
+ 0: [the quick brown fox] rev [xof nworb kciuq eht]
+ 1: [jumps over 13 lazy dogs] rev [sgod yzal 31 revo spmuj]
+ 2: [] rev []
+ 3: [  indented line with 7 and -20] rev [02- dna 7 htiw enil detnedni  ]
+ 4: [last line without newline] rev [enilwen tuohtiw enil tsal]
+ends with newline false
+second read 0 bytes

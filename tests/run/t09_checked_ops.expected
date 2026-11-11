@@ -1,0 +1,422 @@
+u8 0 0
+  add = Some(0)
+  sub = Some(0)
+  mul = Some(0)
+  div = None
+  rem = None
+u8 0 1
+  add = Some(1)
+  sub = None
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+u8 0 100
+  add = Some(100)
+  sub = None
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+u8 0 200
+  add = Some(200)
+  sub = None
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+u8 0 255
+  add = Some(255)
+  sub = None
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+u8 1 0
+  add = Some(1)
+  sub = Some(1)
+  mul = Some(0)
+  div = None
+  rem = None
+u8 1 1
+  add = Some(2)
+  sub = Some(0)
+  mul = Some(1)
+  div = Some(1)
+  rem = Some(0)
+u8 1 100
+  add = Some(101)
+  sub = None
+  mul = Some(100)
+  div = Some(0)
+  rem = Some(1)
+u8 1 200
+  add = Some(201)
+  sub = None
+  mul = Some(200)
+  div = Some(0)
+  rem = Some(1)
+u8 1 255
+  add = None
+  sub = None
+  mul = Some(255)
+  div = Some(0)
+  rem = Some(1)
+u8 100 0
+  add = Some(100)
+  sub = Some(100)
+  mul = Some(0)
+  div = None
+  rem = None
+u8 100 1
+  add = Some(101)
+  sub = Some(99)
+  mul = Some(100)
+  div = Some(100)
+  rem = Some(0)
+u8 100 100
+  add = Some(200)
+  sub = Some(0)
+  mul = None
+  div = Some(1)
+  rem = Some(0)
+u8 100 200
+  add = None
+  sub = None
+  mul = None
+  div = Some(0)
+  rem = Some(100)
+u8 100 255
+  add = None
+  sub = None
+  mul = None
+  div = Some(0)
+  rem = Some(100)
+u8 200 0
+  add = Some(200)
+  sub = Some(200)
+  mul = Some(0)
+  div = None
+  rem = None
+u8 200 1
+  add = Some(201)
+  sub = Some(199)
+  mul = Some(200)
+  div = Some(200)
+  rem = Some(0)
+u8 200 100
+  add = None
+  sub = Some(100)
+  mul = None
+  div = Some(2)
+  rem = Some(0)
+u8 200 200
+  add = None
+  sub = Some(0)
+  mul = None
+  div = Some(1)
+  rem = Some(0)
+u8 200 255
+  add = None
+  sub = None
+  mul = None
+  div = Some(0)
+  rem = Some(200)
+u8 255 0
+  add = Some(255)
+  sub = Some(255)
+  mul = Some(0)
+  div = None
+  rem = None
+u8 255 1
+  add = None
+  sub = Some(254)
+  mul = Some(255)
+  div = Some(255)
+  rem = Some(0)
+u8 255 100
+  add = None
+  sub = Some(155)
+  mul = None
+  div = Some(2)
+  rem = Some(55)
+u8 255 200
+  add = None
+  sub = Some(55)
+  mul = None
+  div = Some(1)
+  rem = Some(55)
+u8 255 255
+  add = None
+  sub = Some(0)
+  mul = None
+  div = Some(1)
+  rem = Some(0)
+i32 -2147483648 -2147483648
+  add = None
+  sub = Some(0)
+  mul = None
+  div = Some(1)
+  rem = Some(0)
+i32 -2147483648 -7
+  add = None
+  sub = Some(-2147483641)
+  mul = None
+  div = Some(306783378)
+  rem = Some(-2)
+i32 -2147483648 -1
+  add = None
+  sub = Some(-2147483647)
+  mul = None
+  div = None
+  rem = None
+i32 -2147483648 0
+  add = Some(-2147483648)
+  sub = Some(-2147483648)
+  mul = Some(0)
+  div = None
+  rem = None
+i32 -2147483648 3
+  add = Some(-2147483645)
+  sub = None
+  mul = None
+  div = Some(-715827882)
+  rem = Some(-2)
+i32 -2147483648 2147483647
+  add = Some(-1)
+  sub = None
+  mul = None
+  div = Some(-1)
+  rem = Some(-1)
+  neg = None
+  abs = None
+  shl31 = Some(0)
+  shl32 = None
+  shr5 = Some(-67108864)
+  pow3 = None
+i32 -7 -2147483648
+  add = None
+  sub = Some(2147483641)
+  mul = None
+  div = Some(0)
+  rem = Some(-7)
+i32 -7 -7
+  add = Some(-14)
+  sub = Some(0)
+  mul = Some(49)
+  div = Some(1)
+  rem = Some(0)
+i32 -7 -1
+  add = Some(-8)
+  sub = Some(-6)
+  mul = Some(7)
+  div = Some(7)
+  rem = Some(0)
+i32 -7 0
+  add = Some(-7)
+  sub = Some(-7)
+  mul = Some(0)
+  div = None
+  rem = None
+i32 -7 3
+  add = Some(-4)
+  sub = Some(-10)
+  mul = Some(-21)
+  div = Some(-2)
+  rem = Some(-1)
+i32 -7 2147483647
+  add = Some(2147483640)
+  sub = None
+  mul = None
+  div = Some(0)
+  rem = Some(-7)
+  neg = Some(7)
+  abs = Some(7)
+  shl31 = Some(-2147483648)
+  shl32 = None
+  shr5 = Some(-1)
+  pow3 = Some(-343)
+i32 -1 -2147483648
+  add = None
+  sub = Some(2147483647)
+  mul = None
+  div = Some(0)
+  rem = Some(-1)
+i32 -1 -7
+  add = Some(-8)
+  sub = Some(6)
+  mul = Some(7)
+  div = Some(0)
+  rem = Some(-1)
+i32 -1 -1
+  add = Some(-2)
+  sub = Some(0)
+  mul = Some(1)
+  div = Some(1)
+  rem = Some(0)
+i32 -1 0
+  add = Some(-1)
+  sub = Some(-1)
+  mul = Some(0)
+  div = None
+  rem = None
+i32 -1 3
+  add = Some(2)
+  sub = Some(-4)
+  mul = Some(-3)
+  div = Some(0)
+  rem = Some(-1)
+i32 -1 2147483647
+  add = Some(2147483646)
+  sub = Some(-2147483648)
+  mul = Some(-2147483647)
+  div = Some(0)
+  rem = Some(-1)
+  neg = Some(1)
+  abs = Some(1)
+  shl31 = Some(-2147483648)
+  shl32 = None
+  shr5 = Some(-1)
+  pow3 = Some(-1)
+i32 0 -2147483648
+  add = Some(-2147483648)
+  sub = None
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+i32 0 -7
+  add = Some(-7)
+  sub = Some(7)
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+i32 0 -1
+  add = Some(-1)
+  sub = Some(1)
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+i32 0 0
+  add = Some(0)
+  sub = Some(0)
+  mul = Some(0)
+  div = None
+  rem = None
+i32 0 3
+  add = Some(3)
+  sub = Some(-3)
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+i32 0 2147483647
+  add = Some(2147483647)
+  sub = Some(-2147483647)
+  mul = Some(0)
+  div = Some(0)
+  rem = Some(0)
+  neg = Some(0)
+  abs = Some(0)
+  shl31 = Some(0)
+  shl32 = None
+  shr5 = Some(0)
+  pow3 = Some(0)
+i32 3 -2147483648
+  add = Some(-2147483645)
+  sub = None
+  mul = None
+  div = Some(0)
+  rem = Some(3)
+i32 3 -7
+  add = Some(-4)
+  sub = Some(10)
+  mul = Some(-21)
+  div = Some(0)
+  rem = Some(3)
+i32 3 -1
+  add = Some(2)
+  sub = Some(4)
+  mul = Some(-3)
+  div = Some(-3)
+  rem = Some(0)
+i32 3 0
+  add = Some(3)
+  sub = Some(3)
+  mul = Some(0)
+  div = None
+  rem = None
+i32 3 3
+  add = Some(6)
+  sub = Some(0)
+  mul = Some(9)
+  div = Some(1)
+  rem = Some(0)
+i32 3 2147483647
+  add = None
+  sub = Some(-2147483644)
+  mul = None
+  div = Some(0)
+  rem = Some(3)
+  neg = Some(-3)
+  abs = Some(3)
+  shl31 = Some(-2147483648)
+  shl32 = None
+  shr5 = Some(0)
+  pow3 = Some(27)
+i32 2147483647 -2147483648
+  add = Some(-1)
+  sub = None
+  mul = None
+  div = Some(0)
+  rem = Some(2147483647)
+i32 2147483647 -7
+  add = Some(2147483640)
+  sub = None
+  mul = None
+  div = Some(-306783378)
+  rem = Some(1)
+i32 2147483647 -1
+  add = Some(2147483646)
+  sub = None
+  mul = Some(-2147483647)
+  div = Some(-2147483647)
+  rem = Some(0)
+i32 2147483647 0
+  add = Some(2147483647)
+  sub = Some(2147483647)
+  mul = Some(0)
+  div = None
+  rem = None
+i32 2147483647 3
+  add = None
+  sub = Some(2147483644)
+  mul = None
+  div = Some(715827882)
+  rem = Some(1)
+i32 2147483647 2147483647
+  add = None
+  sub = Some(0)
+  mul = None
+  div = Some(1)
+  rem = Some(0)
+  neg = Some(-2147483647)
+  abs = Some(2147483647)
+  shl31 = Some(-2147483648)
+  shl32 = None
+  shr5 = Some(67108863)
+  pow3 = None
+u64 add1 = Some(1)
+u64 mul2 = Some(0)
+u64 sub1 = None
+u64 pow2 = Some(0)
+u64 next_pow2 = Some(1)
+u64 add1 = Some(2)
+u64 mul2 = Some(2)
+u64 sub1 = Some(0)
+u64 pow2 = Some(1)
+u64 next_pow2 = Some(1)
+u64 add1 = Some(9223372036854775808)
+u64 mul2 = Some(18446744073709551614)
+u64 sub1 = Some(9223372036854775806)
+u64 pow2 = None
+u64 next_pow2 = Some(9223372036854775808)
+u64 add1 = None
+u64 mul2 = None
+u64 sub1 = Some(18446744073709551614)
+u64 pow2 = None
+u64 next_pow2 = None

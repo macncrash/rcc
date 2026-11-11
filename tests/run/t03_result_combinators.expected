@@ -1,0 +1,44 @@
+Ok 4
+Ok 5
+Ok 2
+Ok 4
+unwrap_or 4
+map_err 400
+map_or 5
+is_ok_and true
+Err not square
+Err not square
+Err not square
+Ok 0
+unwrap_or -1
+map_err -10
+map_or 7
+is_ok_and false
+Err negative
+Err negative
+Err negative
+Ok 0
+unwrap_or -1
+map_err -8
+map_or 7
+is_ok_and false
+Ok 0
+Ok 1
+Ok 0
+Ok 0
+unwrap_or 0
+map_err 0
+map_or 1
+is_ok_and false
+Ok 9
+Ok 10
+Ok 3
+Ok 9
+unwrap_or 9
+map_err 900
+map_or 10
+is_ok_and true
+5
+transposed 3
+7
+0

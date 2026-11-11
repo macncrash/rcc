@@ -1,0 +1,59 @@
+union(0, 1) -> true sets=11
+union(2, 3) -> true sets=10
+union(1, 3) -> true sets=9
+union(4, 5) -> true sets=8
+union(6, 7) -> true sets=7
+union(5, 7) -> true sets=6
+union(8, 8) -> false sets=6
+union(9, 10) -> true sets=5
+union(0, 2) -> false sets=5
+union(11, 4) -> true sets=4
+groups [[0, 1, 2, 3], [4, 5, 6, 7, 11], [8], [9, 10]]
+size of 0's set 4 rank 2 finds so far 33
+same(1,2)=true same(3,4)=false
+chain root 0 non-root-parent nodes after one find: 0 (finds 1)
+copy groups:
+  copy v2 <- v1: merged into root v2
+  copy v3 <- v2: merged into root v3
+  copy v4 <- v3: rejected (sizes 1+3)
+  copy v5 <- v3: merged into root v5
+  copy v6 <- v5: rejected (sizes 1+4)
+  copy v6 <- v1: rejected (sizes 1+4)
+  copy v7 <- v6: rejected (sizes 1+1)
+  copy v5 <- v2: already grouped
+  result [[1, 2, 3, 5]]
+alias classes [["__builtin_memcpy", "__memcpy_chk", "memcpy"], ["__libc_malloc", "malloc"], ["__printf_chk", "printf"], ["puts"]]
+same memcpy/__memcpy_chk=true same printf/puts=false
+unify t0 = (t1 -> t2) : Ok(())
+unify t1 = int : Ok(())
+unify t2 = t3 : Ok(())
+unify t3 = [t4] : Ok(())
+unify t4 = (bool, t5) : Ok(())
+unify t6 = t5 : Ok(())
+unify t6 = int : Ok(())
+unify t7 = (t7 -> int) : Err(Occurs(7, "(t7 -> int)"))
+unify t8 = bool : Ok(())
+unify t8 = int : Err(Mismatch("bool", "int"))
+unify (t9 -> t9) = (int -> t1) : Ok(())
+  t0 := (int -> [(bool, int)])
+  t1 := int
+  t2 := [(bool, int)]
+  t3 := [(bool, int)]
+  t4 := (bool, int)
+  t5 := int
+  t6 := int
+  t7 := t7
+  t8 := bool
+  t9 := int
+mst take A-D w=5
+mst take C-E w=5
+mst take D-F w=6
+mst take A-B w=7
+mst take B-E w=7
+mst skip B-C w=8
+mst skip E-F w=8
+mst skip B-D w=9
+mst take E-G w=9
+mst skip F-G w=11
+mst skip D-E w=15
+mst total 39 sets=1

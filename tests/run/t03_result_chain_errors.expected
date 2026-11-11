@@ -1,0 +1,10 @@
+0[mov r1 42] mov r1 42
+1[add r1 r2] add r1 r2 -> 43
+2[jmp -8] jmp -8
+3[mov r9 1] error: bad reg byte 57
+4[add r1] error: missing operand
+5[nop] error: unknown op
+6[mov r0 x1] error: bad immediate
+7[jmp  100] jmp 100
+8[mov q1 5] error: bad reg byte 113
+9[] error: missing operand

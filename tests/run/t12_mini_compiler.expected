@@ -1,0 +1,92 @@
+tokens: 456
+fn fib(n) ast nodes: 16
+fn gcd(a, b) ast nodes: 19
+fn sieve(limit) ast nodes: 49
+fn first_square_over(x) ast nodes: 20
+fn logic(a, b) ast nodes: 47
+fn consts() ast nodes: 30
+fn main() ast nodes: 87
+symbols: [("fib", 0), ("gcd", 1), ("sieve", 2), ("first_square_over", 3), ("logic", 4), ("consts", 5), ("main", 6)]
+unoptimised: ret=29 steps=17890 output=[610, 21, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 17, 8, 1, 10, 100, 24, 66077]
+opt fib                insts  10 ->  10, blocks  5 (live  3), slots 1, regs 10 []
+opt gcd                insts  11 ->  11, blocks  5 (live  4), slots 3, regs 8 []
+opt sieve              insts  30 ->  30, blocks 12 (live  9), slots 5, regs 23 [r0:0/0/0/3]
+opt first_square_over  insts  10 ->  10, blocks  8 (live  4), slots 2, regs 8 [r0:1/0/0/3]
+opt logic              insts  37 ->  36, blocks 17 (live 16), slots 6, regs 27 [r0:1/1/1/0]
+opt consts             insts  14 ->   4, blocks  5 (live  2), slots 2, regs 12 [r0:5/5/5/0 r1:3/2/2/0 r2:2/2/2/0 r3:1/1/1/0]
+opt main               insts  46 ->  46, blocks 10 (live  9), slots 4, regs 39 []
+optimised:   ret=29 steps=17793 output=[610, 21, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 17, 8, 1, 10, 100, 24, 66077]
+same result: true fewer steps: true
+asm: 532 lines, checksum c4c6beb2
+consts:
+  push %rbp
+  mov %rsp, %rbp
+  sub $112, %rsp
+.Lconsts_0:
+  mov $22, %rax
+  mov %rax, -104(%rbp)  # k
+  mov $8369910, %rax
+  mov %rax, -112(%rbp)  # dead
+  jmp .Lconsts_1
+.Lconsts_1:
+  mov -104(%rbp), %rax  # k
+  mov %rax, -64(%rbp)
+  mov -64(%rbp), %rax
+  add $2, %rax
+  mov %rax, -96(%rbp)
+  mov -96(%rbp), %rax
+  leave
+  ret
+call fib
+call fib
+call print
+call fib
+call print
+call gcd
+call print
+call sieve
+call print
+call first_square_over
+call print
+call logic
+call print
+call logic
+call print
+call logic
+call print
+call consts
+call print
+call print
+--- int main() { return x; }
+tokens: 10
+fn main() ast nodes: 2
+error: undeclared variable 'x' in main
+--- int main() { break; }
+tokens: 9
+fn main() ast nodes: 1
+error: break outside loop
+--- int main() { int a[3]; a[5] = 1; return 0; }
+tokens: 23
+fn main() ast nodes: 8
+symbols: [("main", 0)]
+error: store index 5 out of bounds (len 3)
+--- int main() { return 1 / (2 - 2); }
+tokens: 16
+fn main() ast nodes: 6
+symbols: [("main", 0)]
+error: division by zero
+--- int main() { return foo(1); }
+tokens: 13
+fn main() ast nodes: 3
+symbols: [("main", 0)]
+error: call to undefined function foo
+--- int main() { int x = 3 $ 4; }
+error: line 1: bad char '$'
+--- int main( { }
+tokens: 6
+error: expected identifier, got P("{")
+--- int main() { while (1) { } }
+tokens: 13
+fn main() ast nodes: 3
+symbols: [("main", 0)]
+error: step limit

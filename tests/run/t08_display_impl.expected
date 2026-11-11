@@ -1,0 +1,15 @@
+[alice] [alice     ] [     alice] [  alice   ] [alice****] [ali] [      al]
+[$123.45] [     $123.45] [+$123.45]
+[-$0.05] [      -$0.05] [-$0.05]
+[$0.00] [       $0.00] [+$0.00]
+[$1.00] [       $1.00] [+$1.00]
+r7 %rax r7.4 r0
+%ax
+|   1 -20 300 |
+|   4   5   6 |
+fill=' ' align=none zero=false minus=false
+fill='_' align=center zero=false minus=false
+fill=' ' align=left zero=false minus=false
+fill=' ' align=none zero=true minus=true
+alice$2.50
+<   $0.01><  -$1.99>

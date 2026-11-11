@@ -1,0 +1,11 @@
+first=alpha len=5
+borrow_mut while Ref alive err=true
+cloned ref=alpha
+borrow_mut after drop err=false
+counter=15
+shared borrow while RefMut err=true
+split alpha beta
+still borrowed via b err=true
+State { names: ["alpha", "beta", "gamma"], counter: 30 }
+total len=14
+taken=["alpha", "beta", "gamma"] after=[]

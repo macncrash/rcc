@@ -1,0 +1,15 @@
+0 -> -12
+5 -> -32
+10 -> -50
+20 -> -50
+-30 -> 50
+984
+add called 6
+mul called 6
+clamp called 6
+add called 1
+removed mul (6)
+1050
+53
+["add", "clamp", "add"]
+19

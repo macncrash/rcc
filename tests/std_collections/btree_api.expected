@@ -1,0 +1,52 @@
+{0: "v0", 10: "v10", 20: "v20", 30: "v30", 40: "v40", 50: "v50", 60: "v60"}
+len=7 first=Some((0, "v0")) last=Some((60, "v60"))
+get 20=Some("v20") get 25=None m[&40]=v40
+insert existing -> Some("v20")
+keys=[0, 10, 20, 30, 40, 50, 60]
+values rev=["v60", "v50", "v40", "v30", "twenty", "v10", "v0"]
+range 15..45 = [(20, "twenty"), (30, "v30"), (40, "v40")]
+range ..=30 = [0, 10, 20, 30]
+range 30.. = [30, 40, 50, 60]
+range ..30 = [0, 10, 20]
+range 10..=50 rev = [50, 40, 30, 20, 10]
+range .. = 7
+range (Excluded 10, Excluded 50) = [20, 30, 40]
+range (Excluded 30, Included 30) = 0
+range (Unbounded, Included 0) = [0]
+range 1000.. = None
+mixed ends: Some(0) Some(60) Some(10)
+after range_mut: {0: "v0", 10: "v10", 20: "twenty!", 30: "v30!", 40: "v40!", 50: "v50", 60: "v60"}
+after values_mut/iter_mut: {0: "", 10: "<v10", 20: "<twenty!", 30: "<v30!", 40: "<v40!", 50: "<v50", 60: "<v60"}
+remove 40=Some("<v40!") remove 40=None
+remove_entry 0=Some((0, ""))
+pop_first=Some((10, "<v10")) pop_last=Some((60, "<v60"))
+now {20: "<twenty!", 30: "<v30!", 50: "<v50"}
+entry key=99 {5: "five", 7: "seven", 20: "<twenty!#", 30: "<v30!", 50: "<v50"}
+occupied 7 seven
+removed "seven"
+retain {20: "<twenty!#", 30: "<v30!", 50: "<v50"}
+{
+    "one": 1,
+    "three": 3,
+    "two": 2,
+}
+split lo=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+split hi=[12, 13, 14, 15, 16, 17, 18, 19]
+append len=20 hi2 empty=true eq=true
+overlapping append: Some(0) Some(1) len=21
+from_iter keeps last: {1: 'e', 2: 'd', 3: 'c'}
+cmp: Equal Less
+borrowed get=Some(1) contains=true range=[("a", 1)]
+sum=10 into_keys=["a", "b"] into_values=[2, 1]
+len=2 next=Some(("a", 1)) len=1 next_back=Some(("b", 2)) next=None
+{' ', 'd', 'e', 'h', 'l', 'o', 'r', 'w'} first=Some(' ') last=Some('w')
+union=" dehlorw"
+inter="elorw"
+diff=" dh"
+sym=" dh"
+ops {'e', 'l', 'o', 'r', 'w'} {' ', 'd', 'h'}
+subset=true disjoint=false range="ehlo"
+pop Some(' ') Some('w') take=Some('l') replace=None
+{'d', 'e', 'h', 'r', 'z'} rev="zrhed"
+big len=13619 model len=13619 mismatches=0 equal=true
+drained to 99 first=Some(true)

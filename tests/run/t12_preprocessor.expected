@@ -1,0 +1,55 @@
+--- output (17 lines)
+int version = ((2 << 8) | 7);
+const char *s = "hello \"world\" \\n";
+const char *xs = "7";
+int var42 = ((((3) * (3))) > (2147483647 / 8) ? (((3) * (3))) : (2147483647 / 8));
+int self = SELF + 1;
+do { int tmp = (x); (x) = (y); (y) = tmp; } while (0);
+printf("%d %d\n", 1, ((2) > (3) ? (2) : (3)));
+int line = 23; const char *f = "main.c";
+const char *lit = "MAX(1,2) is not expanded in strings";
+int arch = 86;
+int fast = 1;
+int ternary_ok = 1;
+int m = MAX(1, 2);
+int m2 = 99;
+int bits = 32;
+int b = 2;
+int after_comment = 1;
+--- includes
+main.c
+  config.h
+    limits.h
+  config.h
+--- diagnostics
+main.c:64: unknown directive #bogus
+main.c:65: #error stop here
+missing.h: file not found
+--- 17 macros defined, 25 expansions
+ARCH_X86 = 1
+CAT(a,b) = a ## b
+CHAR_BIT = 8
+CONFIG_H = 
+FEATURE_FAST = 
+INT_MAX = 2147483647
+LIMITS_H = 
+LOG(fmt,...) = printf(fmt, __VA_ARGS__)
+LONG_MACRO(a,b) = do {         int tmp = (a);         (a) = (b); (b) = tmp;     } while (0)
+MAX = 99
+SELF = SELF + 1
+SQUARE(x) = ((x) * (x))
+STR(x) = #x
+VERSION = ((VERSION_MAJOR << 8) | VERSION_MINOR)
+VERSION_MAJOR = 2
+VERSION_MINOR = 7
+XSTR(x) = STR(x)
+#if 1 + 2 * 3 => 7
+#if (1 + 2) * 3 => 9
+#if 10 / 3 - 10 % 3 => 2
+#if 1 << 4 | 1 => 17
+#if ~0 & 0xff => 255
+#if 5 > 3 ? 10 : 20 => 10
+#if !0 + !5 => 1
+#if 0x10 == 16 => 1
+#if 3 - -3 => 6
+#if 100 / 0 => 0

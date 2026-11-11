@@ -1,0 +1,4 @@
+check(0) = 0
+check(1) = 10
+check(2) = 20
+check(3) = 30

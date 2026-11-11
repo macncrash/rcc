@@ -1,0 +1,7 @@
+pc 1 acc 1
+pc 2 acc 2
+pc 3 acc 1
+pc 4 acc 2
+pc 5 acc 3
+halt at 6 acc 3
+pc 7 acc 4

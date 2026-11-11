@@ -1,0 +1,121 @@
+=== diamond
+   0 entry    succs=["a", "b"] preds=0 rc=2 weak=2
+   1 a        succs=["join"] preds=1 rc=3 weak=1
+   2 b        succs=["join"] preds=1 rc=3 weak=1
+   3 join     succs=["exit"] preds=2 rc=4 weak=1
+   4 exit     succs=[] preds=1 rc=3 weak=0
+  rpo: ["entry", "b", "a", "join", "exit"]
+  idom(entry) = entry
+  idom(a) = entry
+  idom(b) = entry
+  idom(join) = entry
+  idom(exit) = join
+  DF(a) = ["join"]
+  DF(b) = ["join"]
+  domtree:
+    entry
+      a
+      b
+      join
+        exit
+  phi(x) at ["join"]
+  phi(y) at []
+  a strong count 4 -> 3
+=== nested loops
+   0 entry    succs=["outer"] preds=0 rc=2 weak=1
+   1 outer    succs=["inner", "exit"] preds=2 rc=4 weak=2
+   2 inner    succs=["body", "latch"] preds=2 rc=4 weak=2
+   3 body     succs=["inner"] preds=1 rc=3 weak=1
+   4 latch    succs=["outer"] preds=1 rc=3 weak=1
+   5 exit     succs=[] preds=1 rc=3 weak=0
+  rpo: ["entry", "outer", "exit", "inner", "latch", "body"]
+  idom(entry) = entry
+  idom(outer) = entry
+  idom(inner) = outer
+  idom(body) = inner
+  idom(latch) = inner
+  idom(exit) = outer
+  DF(outer) = ["outer"]
+  DF(inner) = ["outer", "inner"]
+  DF(body) = ["inner"]
+  DF(latch) = ["outer"]
+  domtree:
+    entry
+      outer
+        inner
+          body
+          latch
+        exit
+  loop header inner body ["inner", "body"]
+  loop header outer body ["outer", "inner", "body", "latch"]
+  phi(i) at ["outer"]
+  phi(j) at ["outer", "inner"]
+  outer strong count 5 -> 3
+=== appel
+   0 entry    succs=["b1"] preds=0 rc=2 weak=1
+   1 b1       succs=["b2", "b5"] preds=2 rc=4 weak=2
+   2 b2       succs=["b3", "b4"] preds=2 rc=4 weak=2
+   3 b5       succs=["b6", "b7"] preds=1 rc=3 weak=2
+   4 b3       succs=["b2"] preds=2 rc=4 weak=1
+   5 b4       succs=["b6"] preds=1 rc=3 weak=1
+   6 b6       succs=["b8"] preds=2 rc=4 weak=1
+   7 b7       succs=["b8"] preds=1 rc=3 weak=1
+   8 b8       succs=["b1", "exit"] preds=2 rc=4 weak=2
+   9 exit     succs=[] preds=1 rc=3 weak=0
+  10 dead     succs=["b3"] preds=0 rc=2 weak=1
+  rpo: ["entry", "b1", "b5", "b7", "b2", "b4", "b6", "b8", "exit", "b3"]
+  idom(entry) = entry
+  idom(b1) = entry
+  idom(b2) = b1
+  idom(b5) = b1
+  idom(b3) = b2
+  idom(b4) = b2
+  idom(b6) = b1
+  idom(b7) = b5
+  idom(b8) = b1
+  idom(exit) = b8
+  idom(dead) = <unreachable>
+  DF(b1) = ["b1"]
+  DF(b2) = ["b2", "b6"]
+  DF(b5) = ["b6", "b8"]
+  DF(b3) = ["b2"]
+  DF(b4) = ["b6"]
+  DF(b6) = ["b8"]
+  DF(b7) = ["b8"]
+  DF(b8) = ["b1"]
+  DF(dead) = ["b3"]
+  domtree:
+    entry
+      b1
+        b2
+          b3
+          b4
+        b5
+          b7
+        b6
+        b8
+          exit
+  loop header b2 body ["b2", "b3", "dead"]
+  loop header b1 body ["b1", "b2", "b5", "b3", "b4", "b6", "b7", "b8", "dead"]
+  phi(v) at ["b1", "b2", "b6", "b8"]
+  phi(w) at ["b1", "b2", "b6", "b8"]
+  b1 strong count 5 -> 3
+=== irreducible
+   0 entry    succs=["p", "q"] preds=0 rc=2 weak=2
+   1 p        succs=["q", "exit"] preds=2 rc=4 weak=2
+   2 q        succs=["p", "exit"] preds=2 rc=4 weak=2
+   3 exit     succs=[] preds=2 rc=4 weak=0
+  rpo: ["entry", "p", "q", "exit"]
+  idom(entry) = entry
+  idom(p) = entry
+  idom(q) = entry
+  idom(exit) = entry
+  DF(p) = ["q", "exit"]
+  DF(q) = ["p", "exit"]
+  domtree:
+    entry
+      p
+      q
+      exit
+  phi(z) at ["p", "q", "exit"]
+  p strong count 5 -> 3

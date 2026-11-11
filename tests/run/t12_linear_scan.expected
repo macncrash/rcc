@@ -1,0 +1,135 @@
+== straight
+liveness converged in 1 iterations
+  bb0 in={} out={} (0 live-out)
+  calls at []
+  interval v0 = [0, 4]
+  interval v1 = [1, 2]
+  interval v2 = [2, 3]
+  interval v3 = [3, 4]
+  interval v4 = [4, 5]
+  v0  [ 0, 4] -> r8
+  v1  [ 1, 2] -> r9
+  v2  [ 2, 3] -> r10
+  expire v1 from r9 at 3
+  v3  [ 3, 4] -> r9
+  expire v2 from r10 at 4
+  v4  [ 4, 5] -> r10
+  result: v0:r8 v1:r9 v2:r10 v3:r9 v4:r10
+  spills=0 callee-saved used=[]
+  verify ok
+== pressure
+liveness converged in 1 iterations
+  bb0 in={} out={} (0 live-out)
+  calls at []
+  interval v0 = [0, 11]
+  interval v1 = [1, 8]
+  interval v2 = [2, 8]
+  interval v3 = [3, 8]
+  interval v4 = [4, 9]
+  interval v5 = [5, 9]
+  interval v6 = [6, 9]
+  interval v7 = [7, 9]
+  interval v8 = [8, 10]
+  interval v9 = [9, 10]
+  interval v10 = [10, 11]
+  v0  [ 0,11] -> r8
+  v1  [ 1, 8] -> r9
+  v2  [ 2, 8] -> r10
+  v3  [ 3, 8] -> r3
+  v4  [ 4, 9] -> r12
+  v5  [ 5, 9] steals r8 from v0 (spilled to slot 0)
+  v6  [ 6, 9] spilled to slot 1
+  v7  [ 7, 9] spilled to slot 2
+  v8  [ 8,10] spilled to slot 3
+  expire v3 from r3 at 9
+  expire v1 from r9 at 9
+  expire v2 from r10 at 9
+  v9  [ 9,10] -> r10
+  expire v5 from r8 at 10
+  expire v4 from r12 at 10
+  v10 [10,11] -> r8
+  result: v0:[sp+0] v1:r9 v2:r10 v3:r3 v4:r12 v5:r8 v6:[sp+8] v7:[sp+16] v8:[sp+24] v9:r10 v10:r8
+  spills=4 callee-saved used=[PhysReg(3), PhysReg(12)]
+  verify ok
+== loop_call
+liveness converged in 3 iterations
+  bb0 in={} out={0, 1, 2} (3 live-out)
+  bb1 in={0, 1, 2} out={0, 1, 2} (3 live-out)
+  bb2 in={1} out={} (0 live-out)
+  calls at [4]
+  interval v0 = [0, 7] crosses-call
+  interval v1 = [1, 8] crosses-call
+  interval v2 = [2, 7] crosses-call
+  interval v3 = [3, 3]
+  interval v4 = [4, 5]
+  interval v5 = [5, 6]
+  interval v6 = [8, 9]
+  v0  [ 0, 7] -> r3 (callee-saved)
+  v1  [ 1, 8] -> r12 (callee-saved)
+  v2  [ 2, 7] steals r12 from v1 (spilled to slot 0)
+  v3  [ 3, 3] -> r8
+  expire v3 from r8 at 4
+  v4  [ 4, 5] -> r8
+  v5  [ 5, 6] -> r9
+  expire v4 from r8 at 8
+  expire v5 from r9 at 8
+  expire v0 from r3 at 8
+  expire v2 from r12 at 8
+  v6  [ 8, 9] -> r9
+  result: v0:r3 v1:[sp+0] v2:r12 v3:r8 v4:r8 v5:r9 v6:r9
+  spills=1 callee-saved used=[PhysReg(3), PhysReg(12)]
+  verify ok
+== diamond
+liveness converged in 2 iterations
+  bb0 in={} out={0, 1, 2} (3 live-out)
+  bb1 in={0, 1, 2} out={0, 5} (2 live-out)
+  bb2 in={0, 1, 2} out={0, 5} (2 live-out)
+  bb3 in={0, 5} out={} (0 live-out)
+  calls at [6]
+  interval v0 = [0, 8] crosses-call
+  interval v1 = [1, 7] crosses-call
+  interval v2 = [2, 5]
+  interval v3 = [3, 4]
+  interval v5 = [4, 8] crosses-call
+  interval v4 = [5, 7] crosses-call
+  interval v6 = [8, 9]
+  v0  [ 0, 8] -> r3 (callee-saved)
+  v1  [ 1, 7] -> r12 (callee-saved)
+  v2  [ 2, 5] -> r8
+  v3  [ 3, 4] -> r9
+  v5  [ 4, 8] spilled to slot 0
+  expire v3 from r9 at 5
+  v4  [ 5, 7] steals r3 from v0 (spilled to slot 1)
+  expire v2 from r8 at 8
+  expire v4 from r3 at 8
+  expire v1 from r12 at 8
+  v6  [ 8, 9] -> r8
+  result: v0:[sp+8] v1:r12 v2:r8 v3:r9 v4:r3 v5:[sp+0] v6:r8
+  spills=2 callee-saved used=[PhysReg(3), PhysReg(12)]
+  verify ok
+== calls
+liveness converged in 1 iterations
+  bb0 in={} out={} (0 live-out)
+  calls at [5, 6, 7]
+  interval v0 = [0, 8] crosses-call
+  interval v1 = [1, 8] crosses-call
+  interval v2 = [2, 8] crosses-call
+  interval v3 = [3, 8] crosses-call
+  interval v4 = [4, 8] crosses-call
+  interval v5 = [5, 8] crosses-call
+  interval v6 = [6, 8] crosses-call
+  interval v7 = [7, 8]
+  interval v8 = [8, 9]
+  v0  [ 0, 8] -> r3 (callee-saved)
+  v1  [ 1, 8] -> r12 (callee-saved)
+  v2  [ 2, 8] spilled to slot 0
+  v3  [ 3, 8] spilled to slot 1
+  v4  [ 4, 8] spilled to slot 2
+  v5  [ 5, 8] spilled to slot 3
+  v6  [ 6, 8] spilled to slot 4
+  v7  [ 7, 8] -> r8
+  v8  [ 8, 9] -> r9
+  result: v0:r3 v1:r12 v2:[sp+0] v3:[sp+8] v4:[sp+16] v5:[sp+24] v6:[sp+32] v7:r8 v8:r9
+  spills=5 callee-saved used=[PhysReg(3), PhysReg(12)]
+  verify ok
+bitset {0, 5, 63, 65, 127, 128, 129} count=7 again=false

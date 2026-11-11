@@ -1,0 +1,11 @@
+mode release
+sep /
+family unix-like
+Settings { level: 3, name: "basic" }
+3 basic
+A -> 1
+B(5) -> 15
+unix thing
+total 1 label unix-label
+[1, 3]
+("u", 5)

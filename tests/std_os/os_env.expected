@@ -1,0 +1,21 @@
+args ["first", "second arg", "--flag", ""] len 5
+args_os ["first", "second arg", "--flag", ""]
+last arg Some("")
+from .env: Ok("from file") Some("from file")
+set: Ok("alpha")
+overwrite: Ok("beta=gamma")
+empty: Ok("")
+vars [("OS_ENV_A", "beta=gamma"), ("OS_ENV_EMPTY", ""), ("OS_ENV_FILE_VAR", "from file")]
+removed: NotPresent / environment variable not found / var_os None
+not unicode: NotUnicode("ab\xFFcd") / environment variable was not valid unicode: "ab\xFFcd"
+bad var_os bytes Some([97, 98, 255, 99, 100])
+empty key Err(NotPresent) key with = Err(NotPresent)
+cwd ends_with true relative probe true
+chdir missing: NotFound
+back true
+current_exe absolute true exists true name true
+temp_dir absolute true
+split_paths ["/bin", "/usr/bin", "", "rel"]
+join_paths Ok("/a:/b c")
+join_paths err true
+consts unix  "lib"

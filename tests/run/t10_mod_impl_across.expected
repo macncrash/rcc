@@ -1,0 +1,5 @@
+Reg { num: 0, name: "rax" } enc=0 rex=false | %rax / %RAX / byte 0
+Reg { num: 3, name: "rbx" } enc=3 rex=false | %rbx / %RBX / byte 3
+Reg { num: 9, name: "r9" } enc=1 rex=true | %r9 / %R9 / byte 1
+Reg { num: 15, name: "r15" } enc=7 rex=true | %r15 / %R15 / byte 7
+BYTE 200

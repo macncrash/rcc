@@ -1,0 +1,12 @@
+Money { cents: 350 }
+Money { cents: 300 }
+Money { cents: 900 }
+Money { cents: 225 }
+Money { cents: 226 }
+42
+Money { cents: -5 } Money { cents: 42 }
+Bits(12)
+Bits(192)
+17
+Money { cents: 31 }
+1

@@ -1,0 +1,21 @@
+ident op=false term=true eof=false
+plus op=true term=false eof=false
+number op=false term=true eof=false
+star op=true term=false eof=false
+minus op=true term=false eof=false
+eof op=false term=false eof=true
+ops 3
+0 true false
+1 false false
+2 true false
+3 false true
+4 true true
+5 false true
+6 true true
+7 false true
+8 false true
+9 false false
+10 false false
+11 false false
+true false
+true

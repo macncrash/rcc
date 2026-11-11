@@ -1,0 +1,21 @@
+ids 1 2 3
+load 4
+fetch_add 10 -> 15
+fetch_sub 15 -> -5
+swap -5 -> 100
+fetch_max 100 -> 150
+fetch_min 150 -> -3
+cas ok Ok(7)
+cas fail Err(8)
+after cas 8
+fetch_update Ok(8) -> 24
+fetch_update Err(24)
+and 12 or 4 xor 5 -> 10
+wrapped 1
+get_mut 7 into_inner 7
+flag false
+flag swap false
+flag fetch_and true
+flag now false
+threaded total 4995000
+strong count 1

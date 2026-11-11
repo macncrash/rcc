@@ -1,0 +1,26 @@
+dir [src/backend/x86] file [codegen.rs]
+stem [src/backend/x86/codegen]
+true
+seg 1 [src] len 3
+seg 2 [backend] len 7
+seg 3 [x86] len 3
+seg 4 [codegen.rs] len 10
+[#define   FOO   1]
+directive [define   FOO   1]
+  word 1 [FOO]
+  word 2 [1]
+[hi]
+[a--]
+[--a]
+2 4
+012012
+char a at byte 0 (0)
+char ñ at byte 1 (1)
+char b at byte 3 (2)
+true
+true
+pieces 4
+[key] [: value]
+true 0
+bytes ok
+true

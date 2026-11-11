@@ -1,0 +1,17 @@
+wrote 6 bytes
+first 1
+second
+third
+appended
+create_new on existing is_err true
+pos after patch 9
+end 30
+tail "appended\n"
+head "first"
+patched "first ONEecond\nthird\nappended\n"
+after truncate "truncated"
+after set_len "trun"
+chunk 3 [116, 114, 117]
+chunk 1 [110]
+open missing kind NotFound
+done

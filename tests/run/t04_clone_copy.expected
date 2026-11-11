@@ -1,0 +1,15 @@
+P { x: 1, y: 2 } P { x: 50, y: 2 }
+P { x: 1, y: 2 } P { x: 101, y: 2 }
+P { x: 1, y: 2 } P { x: 1, y: -1 }
+Bag { items: [P { x: 1, y: 2 }, P { x: 50, y: 2 }], label: "one" }
+Bag { items: [P { x: 999, y: 2 }, P { x: 50, y: 2 }, P { x: 101, y: 2 }], label: "one-copy" }
+cloning gen 0
+cloning gen 1
+7 0 1 2
+cloning gen 2
+cloning gen 2
+3 3
+hi hi!
+(P { x: 1, y: 2 }, 5, 'c') (P { x: 1, y: 2 }, 5, 'c')
+Some(P { x: 1, y: 77 }) Some(P { x: 1, y: 2 })
+P { x: 101, y: 2 }

@@ -1,0 +1,10 @@
+word len 5 upper 1
+number 42 (2 digits)
+word len 5 upper 0
+number 7 (1 digits)
+word len 3 upper 0
+word len 4 upper 4
+number 1000000 (7 digits)
+word len 1 upper 0
+done
+sum 1000049 words 5 letters 18

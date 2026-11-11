@@ -1,0 +1,11 @@
+10 20 30 40 
+11 21 31 41 
+1 4 9 16 
+0:10 1:20 2:30 3:40 
+1 2 | 3 4 | 5 6 | 
+sum 100
+40 30 20 10 
+first > 25: 30
+alpha has 5 bytes
+beta has 4 bytes
+gamma has 5 bytes

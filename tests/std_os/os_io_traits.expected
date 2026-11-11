@@ -1,0 +1,31 @@
+cursor pos 14 inner "hello 42 world"
+overwrite "hello XY world"
+past end [104, 101, 108, 108, 111, 32, 88, 89, 32, 119, 111, 114, 108, 100, 0, 0, 33]
+seek negative err true
+read back "hello XY world\0\0!"
+stream_position 17
+after rewind [104, 101]
+slice read_line "line one\n" rest 15
+slice lines ["line two", "three"]
+read_until 6 "alpha\n" buffered [] cap 4
+rest lines ["beta", "", "gamma"] reads 8
+split [[97], [98], [], [99]]
+generic sum 16
+bytes [120, 121, 122]
+chain "left-right"
+take "0123"
+copy 20000 20000
+empty->sink 0
+repeat [122, 122, 122, 122]
+bufwriter buffered 7 writes 0
+after overflow buffered 5 writes 1
+big chunk writes 3
+inner "abcdefghijkla long chunk bigger than cap" writes 3
+linewriter partial writes 0
+linewriter after newline writes 1 data "partial line\n"
+after flush "partial line\nnext"
+vec writer "   12|ab  |   c   |\n(1, \"two\")"
+cursor slice wrote 6 pos 6
+arr [49, 50, 51, 52, 53, 54]
+io::read_to_string 5 "whole"
+read_to_end [1, 2, 3]

@@ -1,0 +1,10 @@
+min = 102
+std min = 1
+Ok(4) Err("negative")
+Just(5) Nothing
+Some(3)
+my string len 4
+my drop 9
+42
+[1, 2, 3]
+8

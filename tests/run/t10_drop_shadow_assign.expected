@@ -1,0 +1,45 @@
+-- shadowing
+x is x1
+x is x2
+x is x3
+end of shadow scope
+drop x3
+drop x2
+drop x1
+-- assignment
+y is y1
+drop y1
+y is y2
+drop y2
+y is y3 end of scope
+drop y3
+-- assignment through &mut
+drop z1
+z is z2
+drop z2
+-- field assignment
+drop field1
+w.d is field2
+drop field2
+-- Option reassignment
+starts none true
+assign Some(o1)
+is_some true
+assign Some(o2)
+drop o1
+holds o2
+assign None
+drop o2
+o is_none true
+end with o3
+drop o3
+-- late initialisation
+declared
+initialised late
+drop late
+-- array element assignment
+drop a1
+arr a0 a1-new
+drop a0
+drop a1-new
+end of main

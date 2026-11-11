@@ -1,0 +1,11 @@
+health 20
+is pos: false
+pos 1.5 -2
+is pos: true
+health 6
+is pos: false
+i32 5
+string "hi"
+str lit
+unknown
+u8 77

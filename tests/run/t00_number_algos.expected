@@ -1,0 +1,26 @@
+gcd(48,18) = 6
+gcd(1071,462) = 21
+gcd(2^40,6^20) = 1048576
+lcm(21,6) = 42
+prime #5 = 11
+prime #10 = 29
+prime #15 = 47
+prime #20 = 71
+prime #25 = 97
+prime #30 = 113
+prime #35 = 149
+prime #40 = 173
+prime #45 = 197
+primes below 200: 46
+is_prime(1000003) = true
+is_prime(1000001) = false
+isqrt(99) = 9
+isqrt(100) = 10
+isqrt(10^18) = 1000000000
+isqrt(2^63) = 3037000499
+3^200 mod 1e9+7 = 136318165
+2^(p-1) mod p = 1
+perfect 6
+perfect 28
+perfect 496
+perfect 8128

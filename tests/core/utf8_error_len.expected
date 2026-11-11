@@ -1,0 +1,50 @@
+ok "hello"
+  lossy: "hello"
+ok "héllo € 😀"
+  lossy: "héllo € 😀"
+err up_to=1 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 1
+  lossy: "a�b"
+err up_to=1 len=None | incomplete utf-8 byte sequence from index 1
+  lossy: "a�"
+err up_to=1 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 1
+  lossy: "a�("
+err up_to=0 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 0
+  lossy: "��"
+err up_to=0 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 0
+  lossy: "��"
+err up_to=0 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 0
+  lossy: "���"
+err up_to=0 len=None | incomplete utf-8 byte sequence from index 0
+  lossy: "�"
+err up_to=0 len=Some(2) | invalid utf-8 sequence of 2 bytes from index 0
+  lossy: "�A"
+err up_to=0 len=None | incomplete utf-8 byte sequence from index 0
+  lossy: "�"
+err up_to=0 len=Some(2) | invalid utf-8 sequence of 2 bytes from index 0
+  lossy: "�AB"
+err up_to=0 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 0
+  lossy: "���"
+ok "\u{d7ff}"
+  lossy: "\u{d7ff}"
+err up_to=0 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 0
+  lossy: "����"
+err up_to=0 len=None | incomplete utf-8 byte sequence from index 0
+  lossy: "�"
+err up_to=0 len=None | incomplete utf-8 byte sequence from index 0
+  lossy: "�"
+err up_to=0 len=Some(3) | invalid utf-8 sequence of 3 bytes from index 0
+  lossy: "�A"
+err up_to=4 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 4
+  lossy: "😀�"
+err up_to=0 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 0
+  lossy: "����"
+ok "\u{10ffff}"
+  lossy: "\u{10ffff}"
+err up_to=0 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 0
+  lossy: "����"
+err up_to=0 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 0
+  lossy: "�"
+err up_to=1 len=Some(1) | invalid utf-8 sequence of 1 bytes from index 1
+  lossy: "x��y"
+invalid utf-8 sequence of 1 bytes from index 2 Some(1)
+[111, 107, 254]

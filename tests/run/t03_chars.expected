@@ -1,0 +1,18 @@
+2 9 3 3 2
+97 alnum=true alpha=true upper=A lower=a punct=false
+90 alnum=true alpha=true upper=Z lower=z punct=false
+57 alnum=true alpha=false upper=9 lower=9 punct=false
+32 alnum=false alpha=false upper=  lower=  punct=false
+95 alnum=false alpha=false upper=_ lower=_ punct=true
+7 15
+true
+7
+☺
+true
+2 3
+c
+B
+3 226 130 172
+true
+nopklm 657
+true

@@ -1,0 +1,3 @@
+first borrow ok: 11
+released, value=11
+holding a mutable borrow

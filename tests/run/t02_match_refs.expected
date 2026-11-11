@@ -1,0 +1,13 @@
+ref five
+deref five
+double ref 7
+auto-deref binding 1 2
+explicit 1 2
+mutated 11 40
+after 0 40
+1 a 2 a
+2 b 4 b
+3 c 6 c
+6
+opt 10
+o 1103

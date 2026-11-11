@@ -1,0 +1,30 @@
+Unit
+Tup(-1, "two", '3')
+Named { id: 7, tag: Some("t"), pt: (1.5, -0.0) }
+Named { id: 0, tag: None, pt: (10000000000.0, 2.0) }
+Bin(Lit(1), '+', Var { name: "x\"y", depth: 2 })
+Nil
+Gen { val: 'a', list: ['b', '\n'] }
+Gen { val: (), list: [(), ()] }
+Bad("oops")
+Good(Unit)
+Named {
+    id: 3,
+    tag: Some(
+        "pretty",
+    ),
+    pt: (
+        0.1,
+        0.2,
+    ),
+}
+Bin(
+    Lit(
+        1,
+    ),
+    '+',
+    Var {
+        name: "x\"y",
+        depth: 2,
+    },
+)

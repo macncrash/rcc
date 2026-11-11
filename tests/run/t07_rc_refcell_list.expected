@@ -1,0 +1,9 @@
+len=6 fwd=[1, 4, 9, 16, 25, 36]
+rev=[36, 25, 16, 9, 4, 1]
+mapped=[0, 3, 8, 15, 24, 35]
+pop=Some(0) pop=Some(3)
+len=4 fwd=[8, 15, 24, 35] rev=[35, 24, 15, 8]
+head strong=1
+tail strong=2 weak=0
+8 15 24 35 | empty=true tail_none=true
+["writer0", "writer1", "writer2"] strong=4

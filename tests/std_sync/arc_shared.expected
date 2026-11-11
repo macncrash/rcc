@@ -1,0 +1,19 @@
+results [0, 5, 10, 15, 20, 25]
+strong 1 weak 1
+upgrade Some(5)
+after drop: upgrade none true drops 1
+Sq(2) 4
+Rect(2, 3.5) 7
+shape counts [1, 1]
+str len 11 eq true ptr_eq true
+make_mut [1, 2, 3, 4] [1, 2, 3] ptr_eq false
+get_mut Some(4)
+get_mut shared true
+try_unwrap shared true
+try_unwrap unique Ok([1, 2, 3, 4])
+scoped total 36
+scoped joins 4 4
+nums [10, 20, 30, 40, 6, 7, 8, 9]
+condvar value 3
+notified
+final pair count 1

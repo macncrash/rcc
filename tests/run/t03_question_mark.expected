@@ -1,0 +1,18 @@
+  a ok 3
+  b ok 4
+  product ok 12
+ok 13
+neg -3
+  a ok 5
+zero
+  a ok 50
+  b ok 50
+too big
+  a ok 1000
+  b ok 1
+  product ok 1000
+ok 1001
+8
+-1
+10
+-1

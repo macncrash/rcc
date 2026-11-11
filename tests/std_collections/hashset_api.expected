@@ -1,0 +1,26 @@
+insert 3=false insert 10=true len=7
+contains 10=true remove 10=true remove 10=false
+union=[1, 2, 3, 4, 5, 6, 7, 8]
+intersection=[4, 5, 6]
+difference=[1, 2, 3]
+b-a=[7, 8]
+symmetric=[1, 2, 3, 7, 8]
+ops: | [1, 2, 3, 4, 5, 6, 7, 8] & [4, 5, 6] - [1, 2, 3] ^ [1, 2, 3, 7, 8]
+subset=true superset=true disjoint=true disjoint2=false
+words=["a", "is", "rose"] has rose=true get=Some("is")
+take=Some("is") take again=None
+replace=Some("a") replace new=None
+retained=["a", "b"]
+extend=[1, 2, 3, 8, 9] len=5
+drained=[1, 2, 3, 8, 9] after len=0 empty=true
+eq=true eq clone=true ne=true
+{(1, true)} {
+    (
+        1,
+        true,
+    ),
+}
+{} len=0
+sum=42 count=6
+into_iter sorted=[1, 2, 3, 4, 5, 6]
+big len=5000 ok=true

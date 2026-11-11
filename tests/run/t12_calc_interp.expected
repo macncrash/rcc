@@ -1,0 +1,54 @@
+tokens: 453
+functions: ["ack", "collatz", "fact", "fib", "gcd", "is_prime"]
+  ast: x
+  ast: ((((1 + (2 * 3)) == 7) && (!(4 < 3))) || 0)
+  ast: (((-x) * (-2)) - (-1))
+  ast: fib(20)
+  ast: fact(20)
+  ast: fact(25)
+  ast: gcd(1071, 462)
+  ast: collatz(27)
+  ast: count
+  ast: sum
+  ast: ack(2, 3)
+  ast: ((7 - 10) / 2)
+  ast: ((7 - 10) % 2)
+x: 11
+prec: 1
+neg: 23
+fib20: 6765
+fact20: 2432902008176640000
+fact25 wraps: 7034535277573963776
+gcd: 21
+collatz27: 111
+primes<100: 25
+sum: 1060
+ack: 9
+2
+-1
+-1
+globals: [("count", 25), ("i", 100), ("sum", 1060), ("x", 11)]
+calls: 22039 lines: 14
+--- let a = 1 +;
+tokens: 7
+error: line 1: unexpected token Semi
+--- print 5 / (2 - 2);
+tokens: 10
+functions: []
+  ast: (5 / (2 - 2))
+error: division by zero
+--- let q = $;
+error: line 1: unexpected character '$'
+--- foo(1);
+tokens: 6
+functions: []
+error: undefined function foo
+--- fn f(a) { return a; } print f(1, 2);
+tokens: 19
+functions: ["f"]
+  ast: f(1, 2)
+error: f expects 1 args, got 2
+--- y = 3;
+tokens: 5
+functions: []
+error: assignment to undeclared y

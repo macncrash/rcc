@@ -1,0 +1,23 @@
+1 ident [fn] 0..2
+2 ident [add] 3..6
+3 punct [(] 6..7
+4 ident [a1] 7..9
+5 punct [,] 9..10
+6 ident [b_2] 11..14
+7 punct [)] 14..15
+8 op2 [->] 16..18
+9 ident [u32] 19..22
+10 punct [{] 23..24
+11 ident [a1] 25..27
+12 op2 [==] 28..30
+  (number value 42)
+13 number [42] 31..33
+14 punct [}] 34..35
+tokens 14
+1 ident [let] 0..3
+2 ident [s] 4..5
+3 punct [=] 6..7
+4 string ["hi there"] 8..18
+5 punct [;] 18..19
+6 ident [x] 20..21
+tokens 6

@@ -1,0 +1,48 @@
+-7 -3: / 2 % -1 div_euclid 3 rem_euclid 2
+-7 -2: / 3 % -1 div_euclid 4 rem_euclid 1
+-7 2: / -3 % -1 div_euclid -4 rem_euclid 1
+-7 3: / -2 % -1 div_euclid -3 rem_euclid 2
+-6 -3: / 2 % 0 div_euclid 2 rem_euclid 0
+-6 -2: / 3 % 0 div_euclid 3 rem_euclid 0
+-6 2: / -3 % 0 div_euclid -3 rem_euclid 0
+-6 3: / -2 % 0 div_euclid -2 rem_euclid 0
+-1 -3: / 0 % -1 div_euclid 1 rem_euclid 2
+-1 -2: / 0 % -1 div_euclid 1 rem_euclid 1
+-1 2: / 0 % -1 div_euclid -1 rem_euclid 1
+-1 3: / 0 % -1 div_euclid -1 rem_euclid 2
+0 -3: / 0 % 0 div_euclid 0 rem_euclid 0
+0 -2: / 0 % 0 div_euclid 0 rem_euclid 0
+0 2: / 0 % 0 div_euclid 0 rem_euclid 0
+0 3: / 0 % 0 div_euclid 0 rem_euclid 0
+1 -3: / 0 % 1 div_euclid 0 rem_euclid 1
+1 -2: / 0 % 1 div_euclid 0 rem_euclid 1
+1 2: / 0 % 1 div_euclid 0 rem_euclid 1
+1 3: / 0 % 1 div_euclid 0 rem_euclid 1
+6 -3: / -2 % 0 div_euclid -2 rem_euclid 0
+6 -2: / -3 % 0 div_euclid -3 rem_euclid 0
+6 2: / 3 % 0 div_euclid 3 rem_euclid 0
+6 3: / 2 % 0 div_euclid 2 rem_euclid 0
+7 -3: / -2 % 1 div_euclid -2 rem_euclid 1
+7 -2: / -3 % 1 div_euclid -3 rem_euclid 1
+7 2: / 3 % 1 div_euclid 3 rem_euclid 1
+7 3: / 2 % 1 div_euclid 2 rem_euclid 1
+i64 -9223372036854775808: rem_euclid 10 2 div_euclid 10 -922337203685477581 wrapping_rem_euclid -1 0
+i64 -1: rem_euclid 10 9 div_euclid 10 -1 wrapping_rem_euclid -1 0
+i64 9223372036854775807: rem_euclid 10 7 div_euclid 10 922337203685477580 wrapping_rem_euclid -1 0
+checked_div_euclid None
+checked_rem_euclid None
+u32 div_euclid 3 rem_euclid 2
+f64 -7.5: % 2 = -1.5 rem_euclid 2 = 0.5 div_euclid 2 = -4
+f64 -1: % 2 = -1 rem_euclid 2 = 1 div_euclid 2 = -1
+f64 1: % 2 = 1 rem_euclid 2 = 1 div_euclid 2 = 0
+f64 7.5: % 2 = 1.5 rem_euclid 2 = 1.5 div_euclid 2 = 3
+3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 
+i8 -128 % 7 = -2 / 7 = -18 rem_euclid 5
+i8 -100 % 7 = -2 / 7 = -14 rem_euclid 5
+i8 -1 % 7 = -1 / 7 = 0 rem_euclid 6
+i8 1 % 7 = 1 / 7 = 0 rem_euclid 1
+i8 127 % 7 = 1 / 7 = 18 rem_euclid 1
+i16 -32768 % -10 = -8 / -10 = 3276
+i16 -3 % -10 = -3 / -10 = 0
+i16 3 % -10 = 3 / -10 = 0
+i16 32767 % -10 = 7 / -10 = -3276

@@ -1,0 +1,28 @@
+empty len=0 is_empty=true
+push 0 -> len 1 last Some(0)
+push 1 -> len 2 last Some(1)
+push 4 -> len 3 last Some(4)
+push 9 -> len 4 last Some(9)
+push 16 -> len 5 last Some(16)
+push 25 -> len 6 last Some(25)
+push 36 -> len 7 last Some(36)
+push 49 -> len 8 last Some(49)
+push 64 -> len 9 last Some(64)
+push 81 -> len 10 last Some(81)
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+popped 81
+popped 64
+popped 49
+popped 36
+popped 25
+popped 16
+stop at 9
+rest [0, 1, 4] len 3
+cap>=4 true
+["a", "b", "c3"]
+popped string c3 len 2
+pop empty None
+[255] first Some(255) last Some(255)
+[7, 7, 7, 7, 7] sum 35
+cleared [] true
+[[1, 2], [], [3]] total 3

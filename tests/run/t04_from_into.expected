@@ -1,0 +1,19 @@
+Meters(3.048)
+Meters(0.3048)
+Num(5)
+Word("hi")
+Flag(false)
+true
+7 3 200 65 abc
+true Ok(255)
+true
+Ok(-5)
+Some('A')
+Ok(Even(8))
+Err("9 is odd")
+10 -> Ok(5)
+7 -> Err(Parse("7 is odd"))
+200 -> Err(Range(200))
+0 -> Ok(0)
+boxed
+Some(5)

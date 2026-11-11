@@ -1,0 +1,28 @@
+true false
+true false false false
+true true true false
+false true
+true false false
+false true
+eval 1
+r1 = false
+eval 3
+r2 = true
+eval 5
+eval 6
+r3 = false
+eval 7
+eval 8
+r4 = true
+eval 9
+eval 10
+r5 = false
+true
+false
+true
+false
+true
+true
+true
+in_range = true
+2

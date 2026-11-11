@@ -1,0 +1,18 @@
+dedup [1, 2, 3, 4, 1, 5]
+dedup_by_key ["a", "b", "c"]
+dedup_by [1, 4, 7, 10]
+search 0 -> Err(0)
+search 1 -> Ok(0)
+search 4 -> Err(2)
+search 7 -> Ok(3)
+search 13 -> Ok(6)
+search 14 -> Err(7)
+by Err(3)
+by_key Ok(1)
+by_key Err(2)
+insert 25 at 2 -> [10, 20, 25, 30]
+insert 5 at 0 -> [5, 10, 20, 25, 30]
+insert 35 at 5 -> [5, 10, 20, 25, 30, 35]
+insert 20 at 2 -> [5, 10, 20, 20, 25, 30, 35]
+contains 25 true contains 26 false
+pp 4

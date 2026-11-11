@@ -1,0 +1,25 @@
+Unit
+Point { x: 1, y: -2 }
+Pair(-9, "nine")
+Nop
+Load { dst: 3, addr: 4096 }
+Add(1, 2, 3)
+Call("printf", [Point { x: 0, y: 0 }])
+[Nop, Load { dst: 3, addr: 4096 }, Add(1, 2, 3), Call("printf", [Point { x: 0, y: 0 }])]
+Generic { inner: 'c', list: ['a', 'b'] }
+Generic { inner: Some(1.5), list: [None, Some(-0.0)] }
+Some(3) None
+Ok(1) Err("bad")
+(1, "two", 3.0, '4', [5, 5])
+(1,)
+((), ((),))
+"string with \"quotes\""
+"owned"
+[[1, 2], [], [3]]
+[Some(Unit), None]
+Point { x: 5, y: 6 }
+Pair(0, "")
+[104, 105, 10]
+[98, 121, 116, 101, 115]
+true 'x'
+1.0 0.1 1e100

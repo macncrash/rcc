@@ -1,0 +1,18 @@
+count=2
+dropped first handle, count=1
+drop a
+after last handle
+pop one
+drop v1
+one handle left, len=2
+drop v2
+drop v3
+vec gone
+upgrade ok=true
+drop scoped
+upgrade after scope ok=false
+replaced
+drop cell
+drop cell2
+set None
+end of main

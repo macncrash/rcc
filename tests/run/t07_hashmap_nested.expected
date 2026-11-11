@@ -1,0 +1,12 @@
+arm total=12 [("add", 6), ("ldr", 6)]
+riscv total=5 [("addi", 5)]
+x86 total=15 [("add", 5), ("mov", 10)]
+arm now {"add": 6, "str": 99}
+arm/add = 6
+arm/str = 99
+riscv/addi = 5
+x86/add = 5
+x86/mov = 10
+[(3, ["one", "two"]), (4, ["five"]), (5, ["three", "seven"]), (6, ["eleven"]), (8, ["thirteen"])]
+maps equal=true
+[(1, 1), (9, 3), (25, 5), (49, 7), (81, 9)]

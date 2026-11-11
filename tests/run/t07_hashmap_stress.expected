@@ -1,0 +1,13 @@
+step 0 len 1 1
+step 4000 len 391 391
+step 8000 len 379 379
+step 12000 len 386 386
+step 16000 len 358 358
+mismatches=0
+final len 385 385
+contents equal=true
+sum=7460896
+first5=[(0, 19981), (1, 19990), (2, 19404), (3, 18272), (4, 19710)]
+strs len=1000 sym_0=Some(2000) sym_999=Some(2857) sym_1000=None
+after retain len=100
+still len=385

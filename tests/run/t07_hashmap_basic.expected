@@ -1,0 +1,26 @@
+empty len=0 is_empty=true
+insert apple -> None
+insert banana -> None
+insert cherry -> None
+insert date -> None
+insert elder -> None
+re-insert banana -> Some(10)
+len=5
+get apple=Some(0) get zzz=None
+contains cherry=true contains fig=false
+cherry after get_mut=25
+remove date -> Some(30), again -> None
+  apple = 0
+  banana = 99
+  cherry = 25
+  elder = 40
+keys=["apple", "banana", "cherry", "elder"]
+values=[0, 25, 40, 99]
+sum=164
+after values_mut: [("apple", 0), ("banana", 198), ("cherry", 50), ("elder", 80)]
+after retain: [("banana", 198), ("elder", 80)]
+after extend: [("banana", 198), ("elder", 80), ("x", 1), ("y", 2)]
+remove_entry x -> Some(("x", 1))
+after clear len=0
+buckets=37 first=(0, 13986) last=(36, 13959)
+checksum=1165500

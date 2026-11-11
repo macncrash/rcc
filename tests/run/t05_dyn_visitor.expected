@@ -1,0 +1,6 @@
+ (add 2 (mul (neg 3) (add 4 5)))
+[-25]
+8 3
+visited with print
+visited with eval
+2

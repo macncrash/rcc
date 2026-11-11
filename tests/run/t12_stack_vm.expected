@@ -1,0 +1,108 @@
+== fact
+  label loop     = 4
+  label done     = 17
+  20 ops, 62 bytes
+  roundtrip equal: true
+10
+90
+720
+5040
+30240
+151200
+604800
+1814400
+3628800
+3628800
+3628800
+  result: Ok(()) steps=139 depth=1 stack=[]
+  label loop     = 4
+  label done     = 17
+0000 push 10
+0001 store l0
+0002 push 1
+0003 store l1
+0004 load l0
+0005 jz @17
+0006 load l1
+0007 load l0
+0008 mul
+0009 store l1
+0010 load l0
+0011 push 1
+0012 sub
+0013 store l0
+0014 load l1
+0015 print
+0016 jmp @4
+0017 load l1
+0018 print
+0019 halt
+000000: 01 0a 00 00 00 00 00 00 00 31 00 01 01 00 00 00
+000010: 00 00 00 00 31 01 30 00 41 11 00 00 00
+== fib
+  label main_loop = 2
+  label end      = 15
+  label fib      = 16
+  label rec      = 22
+  34 ops, 139 bytes
+  roundtrip equal: true
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+  result: Ok(()) steps=35074 depth=15 stack=[]
+== bits
+  48 ops, 184 bytes
+  roundtrip equal: true
+15
+4095
+4080
+4611686018427387904
+-9223372036854775808
+-5
+-2
+3
+1
+0
+1
+  result: Ok(()) steps=48 depth=1 stack=[]
+== parity
+  label outer    = 4
+  label inner    = 12
+  label inner_done = 25
+  label skip     = 31
+  label fin      = 36
+  39 ops, 141 bytes
+  roundtrip equal: true
+100
+  result: Ok(()) steps=21296 depth=1 stack=[]
+== underflow
+  3 ops, 11 bytes
+  roundtrip equal: true
+  result: Err(StackUnderflow { pc: 2, op: Add }) steps=2 depth=1 stack=[]
+== divzero
+  4 ops, 20 bytes
+  roundtrip equal: true
+  result: Err(DivByZero { pc: 2 }) steps=3 depth=1 stack=[]
+== infinite
+  label x        = 0
+  1 ops, 5 bytes
+  roundtrip equal: true
+  result: Err(StepLimit(500)) steps=500 depth=1 stack=[]
+== badlabel
+  asm error: undefined label nowhere
+== duplabel
+  asm error: duplicate label a
+decode bad: None
+decode short: None

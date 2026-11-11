@@ -1,0 +1,10 @@
+t=1 seq=2 arrive
+t=3 seq=4 arrive
+t=5 seq=1 arrive
+t=5 seq=3 tick
+t=5 seq=5 depart
+t=7 seq=6 depart
+t=9 seq=7 depart
+top5=[48, 45, 44, 41, 38]
+top1=[48] top0=[]
+3a,3z,2q,1a,1b

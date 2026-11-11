@@ -1,0 +1,17 @@
+ann age 31 height 5.5
+bob age 25 height 6.1
+cy age 47 height 5.9
+di age 19 height 5.2
+oldest cy
+total age 122
+(-7, 10) manhattan 17
+(-4, 9) manhattan 13
+(-1, 6) manhattan 7
+(2, 1) manhattan 3
+(5, -6) manhattan 11
+(8, -15) manhattan 23
+999
+dist[0] = 0
+dist[1] = 4
+dist[2] = 7
+dist[3] = 8

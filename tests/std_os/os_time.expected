@@ -1,0 +1,34 @@
+0ns | 0ns | 0.0ns | 0.000ns |          0ns | 0ns       | +0ns | secs 0 ms 0 us 0 ns 0 sub 0 0 0
+1ns | 1ns | 1.0ns | 1.000ns |          1ns | 1ns       | +1ns | secs 0 ms 0 us 0 ns 1 sub 0 0 1
+999ns | 999ns | 999.0ns | 999.000ns |        999ns | 999ns     | +999ns | secs 0 ms 0 us 0 ns 999 sub 0 0 999
+1µs | 1µs | 1.0µs | 1.000µs |          1µs | 1µs       | +1µs | secs 0 ms 0 us 1 ns 1000 sub 0 1 1000
+1.5µs | 2µs | 1.5µs | 1.500µs |        1.5µs | 1.5µs     | +1.5µs | secs 0 ms 0 us 1 ns 1500 sub 0 1 1500
+999.999ms | 1000ms | 1000.0ms | 999.999ms |    999.999ms | 999.999ms | +999.999ms | secs 0 ms 999 us 999999 ns 999999000 sub 999 999999 999999000
+1ms | 1ms | 1.0ms | 1.000ms |          1ms | 1ms       | +1ms | secs 0 ms 1 us 1000 ns 1000000 sub 1 1000 1000000
+1.5s | 2s | 1.5s | 1.500s |         1.5s | 1.5s      | +1.5s | secs 1 ms 1500 us 1500000 ns 1500000000 sub 500 500000 500000000
+1.000000005s | 1s | 1.0s | 1.000s | 1.000000005s | 1.000000005s| +1.000000005s | secs 1 ms 1000 us 1000000 ns 1000000005 sub 0 0 5
+59.999999999s | 60s | 60.0s | 60.000s | 59.999999999s | 59.999999999s| +59.999999999s | secs 59 ms 59999 us 59999999 ns 59999999999 sub 999 999999 999999999
+3600s | 3600s | 3600.0s | 3600.000s |        3600s | 3600s     | +3600s | secs 3600 ms 3600000 us 3600000000 ns 3600000000000 sub 0 0 0
+6.000000123s | 6s | 6.0s | 6.000s | 6.000000123s | 6.000000123s| +6.000000123s | secs 6 ms 6000 us 6000000 ns 6000000123 sub 0 0 123
+18446744073709551615.999999999s | 18446744073709551616s | 18446744073709551616.0s | 18446744073709551616.000s | 18446744073709551615.999999999s | 18446744073709551615.999999999s| +18446744073709551615.999999999s | secs 18446744073709551615 ms 18446744073709551615999 us 18446744073709551615999999 ns 18446744073709551615999999999 sub 999 999999 999999999
+1000.00ms 10s 999.999999ms
+f64 2.5 0.000001 1250000000
+f32 0.25
+add 2.5s sub 1.1s mul 5.4s div 257.142857ms rmul 1.4s
+checked Some(1.1s) None None None
+saturating 0ns 18446744073709551615.999999999s
+assign ops 550ms
+sum 2.500000005s
+cmp true true 1.8s
+is_zero true false
+mul_f64 2.7s div_f64 450ms
+abs_diff 1.1s
+systime since epoch Ok(1000000000.000000042s)
+diff Ok(10s) reversed err Err(10s)
+err display second time provided was later than self
+checked_sub before epoch Some(true)
+now after 2020 true
+epoch debug SystemTime { tv_sec: 0, tv_nsec: 0 }
+instant diff 250ms rev sat 0ns checked None
+instant ord true true
+spun true

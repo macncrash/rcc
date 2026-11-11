@@ -1,0 +1,24 @@
+a=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+b=[5, 7, 9, 11, 13]
+union=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13]
+intersection=[5, 7, 9]
+a-b=[1, 2, 3, 4, 6, 8, 10]
+sym=[1, 2, 3, 4, 6, 8, 10, 11, 13]
+a&b=[5, 7, 9]
+a|b len=12
+i subset a=true a superset i=true a disjoint b=false
+disjoint neg=true
+insert x fresh=true
+insert y fresh=true
+insert x fresh=false
+insert z fresh=true
+insert y fresh=false
+insert w fresh=true
+len=4 contains y=true contains q=false
+remove x=true remove x=false
+take z=Some("z")
+get w=Some("w")
+["w", "y"]
+retained=[3, 10, 17, 24, 31, 38, 45]
+dedup=["a", "b", "c", "d"]
+eq=true

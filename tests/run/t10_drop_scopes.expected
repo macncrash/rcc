@@ -1,0 +1,39 @@
+make x
+make y
+make inner1
+make inner2
+end of block
+drop inner2
+drop inner1
+after block
+make wildcard
+drop wildcard
+after wildcard
+make named
+make fn-a
+make fn-b
+leaving inner_fn
+drop fn-b
+drop fn-a
+make block-tmp
+drop block-tmp
+block value 42
+make kept
+make gone
+drop gone
+got kept
+loop body 0
+drop iter0
+loop body 1
+drop iter1
+loop body 2
+drop iter2
+make while-body
+drop while-body
+make while-body
+drop while-body
+end of main
+drop kept
+drop named
+drop y
+drop x

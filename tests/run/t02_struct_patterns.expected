@@ -1,0 +1,8 @@
+0 len 4 kind0
+1 len 1 small neg
+2 len 3 small pos
+3 len 40 at start
+4 len 100 far big
+5 len 100 far
+6 len 10 other
+2 true

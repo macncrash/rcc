@@ -1,0 +1,12 @@
+10
+static string
+sum sq = 28
+bump -> 0
+bump -> 10
+bump -> 30
+bump -> 60
+bump -> 100
+now 100
+0 1 4 9 16 25 36 49 
+-77
+-76

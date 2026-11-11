@@ -1,0 +1,19 @@
+.globl main
+main:
+    movq   $1, %rax
+    addq   $-42, %rax
+    imulq  $7, %rax
+    ret
+# end
+len=94 lines=7
+chars=30 lines=3
+HELLO WORLD
+Λ [1, 2]    X
+1-2
+Ok(())
+Err(Error)
+buf="12345"
+Ok(()) buf="123450:001"
+0:005, 1:050, 2:500, 3:5000
+prefix:0xff
+Error an error occurred when formatting an argument

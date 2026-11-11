@@ -1,0 +1,73 @@
+empty finish = d1fba762150c532c
+default finish = d1fba762150c532c
+u8 0 = 68a914128e01e473
+u8 255 = 30406ea523c53def
+u16 = 73719fd21e208081
+u32 = 35335b9184fb8253
+u64 = 8662046e52264db8
+u128 = 56a3751dae548740
+usize = 9a3e638a5f0824ec
+i8 = 30406ea523c53def
+i32 = a4b764703a08147f
+i64 = ef0826fa9ec09086
+isize = 07e6968195c515b4
+bool = 44bc103b1f8540ed 68a914128e01e473
+char = 63280ee96b7cc407 ceebaef96ca4072c
+unit = d1fba762150c532c
+str "" = 30406ea523c53def String = 30406ea523c53def
+str "a" = 719b50b9a4f0e9f3 String = 719b50b9a4f0e9f3
+str "ab" = 66930d61a0cb581b String = 66930d61a0cb581b
+str "abcdefg" = 2295ef44bd078ae9 String = 2295ef44bd078ae9
+str "abcdefgh" = 5cd7657fa7f96c16 String = 5cd7657fa7f96c16
+str "abcdefghi" = c8ebc5efcb27092d String = c8ebc5efcb27092d
+str "hello world" = 7161eb5598bec7cf String = 7161eb5598bec7cf
+str "the quick brown fox jumps over the lazy dog" = f245ae83c20abea9 String = f245ae83c20abea9
+&str ref = ef09e0f4895a251d
+slice u8 = 7038a6268d64a5c1
+array u8 = 7038a6268d64a5c1
+vec u32 = b029ed8aa03ed1ca
+vec empty = bd60acb658c79e45
+vec string = dc305eaf0fed5b19
+tuple1 = 44bc103b1f8540ed
+tuple2 = 62ccf96d1b773289
+tuple3 = 0f13fb44f5d79e3a
+tuple5 = 95c1a92af24ac93f
+option = d3ca5dcf356fc193 bd60acb658c79e45
+result = c8d92d1fe77b6f16 8bf958c16cc27134
+point = fbd11dd011f1864f
+shape dot = bd60acb658c79e45
+shape circle = e0e29aefcb488d5c
+shape rect = 3187a4d29be43df3
+shape named = 5e338e01fb538f3a
+unit struct = d1fba762150c532c
+wrapper = e70dc64b11f0adc1
+box = 7b3e724b36ebdf51
+rc str = b9eaf864f8bca5a0
+nested ref = c123179807bd2fea
+btreemap = 1f160b7f77609317
+btreeset = 15ac7b8464e84e67
+vecdeque = a5bc622aa19ecccd
+write  0 = d1fba762150c532c split_equal=true
+write  1 = 26144e6cff3ac45c split_equal=true
+write  2 = 52bd41de9d38aaf7 split_equal=true
+write  3 = a4fa623f1c3d8f91 split_equal=true
+write  4 = 33bce358c2baa9b2 split_equal=true
+write  5 = 3e7c050f956de4d6 split_equal=true
+write  6 = 10b0654a400278b1 split_equal=true
+write  7 = df736fc88c20792a split_equal=true
+write  8 = 13c8df4ec019b503 split_equal=true
+write  9 = dfb5eb7cc3223b49 split_equal=true
+write 10 = 20aded9861e58ff1 split_equal=true
+write 11 = 60c42a6c0dfe371a split_equal=true
+write 12 = e15d7193b9e32b33 split_equal=true
+write 13 = 4df179531373eff2 split_equal=true
+write 14 = 10a40dec9c0adf99 split_equal=true
+write 15 = beba3cf576457485 split_equal=true
+write 16 = 610125500b21b982 split_equal=true
+write 17 = fa02bdcf2ab24ba9 split_equal=true
+mixed = 46a7b430d07a0888
+continue = 182e2c74c37b7090 9490aba4c9bd25ef
+clone equal = true
+hash_one = d2be9c699e6469d0
+hash_one tuple = 9490aba4c9bd25ef
+std::hash path = d58c7ca4a2fbd834

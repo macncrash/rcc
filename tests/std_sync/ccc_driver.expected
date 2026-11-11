@@ -1,0 +1,11 @@
+mode 0: ok 12446263339580529406
+mode 1: error: no input files
+mode 2: internal error: &str payload: literal message
+mode 3: internal error: String payload: formatted message 3 x
+mode 4: internal error: String payload: index out of bounds: the len is 4 but the index is 8
+mode 5: internal error: &str payload: attempt to divide by zero
+mode 6: internal error: &str payload: called `Option::unwrap()` on a `None` value
+mode 7: internal error: String payload: expect failed: "bad"
+panicked threads: 6
+main still runs: [1, 4, 9, 16, 25]
+ccc: internal error: internal compiler error at stage 3

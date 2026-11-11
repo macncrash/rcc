@@ -1,0 +1,17 @@
+debug_assertions: false
+test: false
+unix: true
+windows: false
+not(windows): true
+any(unix, windows): true
+all(unix, debug_assertions): false
+all(): true
+any(): false
+feature=x: false
+macos or linux: true
+nested: true
+n = 2
+OnlyDebugInRelease { v: 7 } 7
+Multi(4) true
+side effects of debug_assert: 0
+wrapped 4

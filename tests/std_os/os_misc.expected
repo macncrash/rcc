@@ -1,0 +1,10 @@
+dir mode 750
+file mode 600
+first "row 0\n" stream_position 6
+after seek "row 2\n"
+last "via &File\n"
+lines 12
+cstring "hi there" bytes 8 with nul 9
+nul error nul byte found in provided data at position: 1
+error: No such file or directory (os error 2)
+number too large to fit in target type

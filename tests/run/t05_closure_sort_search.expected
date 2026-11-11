@@ -1,0 +1,15 @@
+apple 20 10
+kiwi 20 3
+pear 30 4
+date 55 7
+fig 90 1
+["apple", "date", "fig", "kiwi", "pear"]
+[385, 200, 120, 90, 60]
+max qty apple
+cheapest apple
+3
+[9, 7, 5, 3, 1]
+Ok(3)
+Err(3)
+Some(3)
+["a", "dd", "bb", "ccc"]

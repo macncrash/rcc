@@ -1,0 +1,285 @@
+2:1 kw Typedef
+2:9 kw Unsigned
+2:18 kw Long
+2:23 ident size_t
+2:29 Semicolon
+3:1 kw Static
+3:8 kw Inline
+3:15 kw Int
+3:19 ident max
+3:22 LParen
+3:23 kw Int
+3:27 ident a
+3:28 Comma
+3:30 kw Int
+3:34 ident b
+3:35 RParen
+3:37 LBrace
+3:39 kw Return
+3:46 ident a
+3:48 Greater
+3:50 ident b
+3:52 Question
+3:54 ident a
+3:56 Colon
+3:58 ident b
+3:59 Semicolon
+3:61 RBrace
+4:1 kw Struct
+4:8 ident point
+4:14 LBrace
+4:16 kw Int
+4:20 ident x
+4:21 Comma
+4:23 ident y
+4:24 Semicolon
+4:26 RBrace
+4:27 Semicolon
+5:1 kw Int
+5:5 ident main
+5:9 LParen
+5:10 kw Void
+5:14 RParen
+5:16 LBrace
+6:5 kw Struct
+6:12 ident point
+6:18 ident p
+6:20 Assign
+6:22 LBrace
+6:24 Dot
+6:25 ident x
+6:27 Assign
+6:29 IntLiteral(1)
+6:30 Comma
+6:32 Dot
+6:33 ident y
+6:35 Assign
+6:37 Minus
+6:38 IntLiteral(2)
+6:40 RBrace
+6:41 Semicolon
+7:5 kw Struct
+7:12 ident point
+7:18 Star
+7:19 ident pp
+7:22 Assign
+7:24 Amp
+7:25 ident p
+7:26 Semicolon
+8:5 ident pp
+8:7 Arrow
+8:9 ident x
+8:11 LessLessAssign
+8:15 IntLiteral(3)
+8:16 Semicolon
+8:18 ident pp
+8:20 Arrow
+8:22 ident y
+8:24 GreaterGreaterAssign
+8:28 IntLiteral(1)
+8:29 Semicolon
+9:5 kw Unsigned
+9:14 ident u
+9:16 Assign
+9:18 UIntLiteral(4294967295)
+9:29 Semicolon
+10:5 kw Long
+10:10 ident big
+10:14 Assign
+10:16 LongLiteral(1234567890123)
+10:30 Semicolon
+11:5 kw Unsigned
+11:14 kw Long
+11:19 ident ul
+11:22 Assign
+11:24 ULongLiteral(18446744073709551615)
+11:46 Semicolon
+12:5 kw Int
+12:9 ident oct
+12:13 Assign
+12:15 IntLiteral(493)
+12:19 Comma
+12:21 ident hex
+12:25 Assign
+12:27 IntLiteral(127)
+12:31 Comma
+12:33 ident bin
+12:37 Assign
+12:39 IntLiteral(11)
+12:45 Semicolon
+13:5 kw Unsigned
+13:14 kw Int
+13:18 ident wide
+13:23 Assign
+13:25 UIntLiteral(2147483648)
+13:35 Semicolon
+14:5 kw Long
+14:10 ident dec_wide
+14:19 Assign
+14:21 LongLiteral(3000000000)
+14:31 Semicolon
+15:5 kw Double
+15:12 ident d
+15:14 Assign
+15:16 double 3.14159
+15:23 Comma
+15:25 ident e
+15:27 Assign
+15:29 double 0.001
+15:33 Comma
+15:35 ident g
+15:37 Assign
+15:39 double 0.5
+15:41 Semicolon
+16:5 kw Float
+16:11 ident f
+16:13 Assign
+16:15 float 2.5
+16:19 Semicolon
+17:5 kw Char
+17:10 ident c1
+17:13 Assign
+17:15 char 'a' (97)
+17:18 Comma
+17:20 ident c2
+17:23 Assign
+17:25 char '\n' (10)
+17:29 Comma
+17:31 ident c3
+17:34 Assign
+17:36 char 'A' (65)
+17:42 Comma
+17:44 ident c4
+17:47 Assign
+17:49 char 'A' (65)
+17:55 Comma
+17:57 ident c5
+17:60 Assign
+17:62 char '\\' (92)
+17:66 Comma
+17:68 ident c6
+17:71 Assign
+17:73 char '\'' (39)
+17:77 Semicolon
+18:5 kw Const
+18:11 kw Char
+18:16 Star
+18:17 ident s
+18:19 Assign
+18:21 string "hello, world\t!!"
+18:48 Semicolon
+19:5 kw If
+19:8 LParen
+19:9 ident u
+19:11 BangEqual
+19:14 IntLiteral(0)
+19:16 AmpAmp
+19:19 ident big
+19:23 GreaterEqual
+19:26 IntLiteral(0)
+19:28 PipePipe
+19:31 Bang
+19:32 ident oct
+19:35 RParen
+19:37 LBrace
+19:39 ident p
+19:40 Dot
+19:41 ident x
+19:42 PlusPlus
+19:44 Semicolon
+19:46 MinusMinus
+19:48 ident p
+19:49 Dot
+19:50 ident y
+19:51 Semicolon
+19:53 RBrace
+20:5 kw For
+20:9 LParen
+20:10 kw Int
+20:14 ident i
+20:16 Assign
+20:18 IntLiteral(0)
+20:19 Semicolon
+20:21 ident i
+20:23 Less
+20:25 IntLiteral(10)
+20:27 Semicolon
+20:29 ident i
+20:31 PlusAssign
+20:34 IntLiteral(2)
+20:35 RParen
+20:37 ident p
+20:38 Dot
+20:39 ident x
+20:41 StarAssign
+20:44 ident i
+20:46 Percent
+20:48 IntLiteral(3)
+20:49 Semicolon
+21:5 kw Switch
+21:12 LParen
+21:13 ident hex
+21:16 RParen
+21:18 LBrace
+21:20 kw Case
+21:25 IntLiteral(1)
+21:26 Colon
+21:28 kw Break
+21:33 Semicolon
+21:35 kw Default
+21:42 Colon
+21:44 kw Goto
+21:49 ident out
+21:52 Semicolon
+21:54 RBrace
+22:1 ident out
+22:4 Colon
+23:5 kw Return
+23:12 kw Sizeof
+23:18 LParen
+23:19 kw Struct
+23:26 ident point
+23:31 RParen
+23:33 Ellipsis
+23:37 Semicolon
+24:1 RBrace
+25:1 Hash
+25:2 ident define
+25:9 ident X
+25:10 LParen
+25:11 ident a
+25:12 RParen
+25:14 ident a
+25:16 HashHash
+25:19 ident a
+26:1 kw Int
+26:5 ident z
+26:7 Assign
+26:9 ULongLiteral(18446744073709551615)
+26:29 Semicolon
+27:1 kw Char
+27:6 ident bad
+27:10 Assign
+27:12 char 'q' (113)
+27:16 Semicolon
+29:1 Eof
+--- 265 tokens, 3 errors
+error: 26: integer literal 99999999999999999999 out of range
+error: 27: unknown escape \q
+error: 28:1: stray '@'
+stats {"eof": 1, "identifier": 66, "keyword": 41, "literal": 32, "punct": 125}
+ident a used on lines [3, 3, 3, 25, 25, 25]
+ident b used on lines [3, 3, 3]
+ident big used on lines [10, 19]
+ident hex used on lines [12, 21]
+ident i used on lines [20, 20, 20, 20]
+ident oct used on lines [12, 19]
+ident out used on lines [21, 22]
+ident p used on lines [6, 7, 19, 19, 20]
+ident point used on lines [4, 6, 7, 23]
+ident pp used on lines [7, 8, 8]
+ident u used on lines [9, 19]
+ident x used on lines [4, 6, 8, 19, 20]
+ident y used on lines [4, 6, 8, 19]
+longest token at 18:21 len 27: 18:21 string "hello, world\t!!"
+sum of integer literals 36893489391429444950

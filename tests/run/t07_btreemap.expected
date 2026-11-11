@@ -1,0 +1,26 @@
+{"alpha": 1, "bravo": 4, "charlie": 3, "delta": 0, "echo": 2, "foxtrot": 5}
+alpha => 1
+bravo => 4
+charlie => 3
+delta => 0
+echo => 2
+foxtrot => 5
+first=Some(("alpha", 1)) last=Some(("foxtrot", 5))
+get echo=Some(2) get zulu=None
+{"alpha": 102, "bravo": 4, "charlie": 3, "delta": 0, "echo": 2, "foxtrot": 5, "golf": 7}
+remove charlie=Some(3)
+keys=["alpha", "bravo", "delta", "echo", "foxtrot", "golf"]
+values=[102, 4, 0, 2, 5, 7]
+rev=["golf", "foxtrot", "echo", "delta", "bravo", "alpha"]
+range 10..30: [(10, "even"), (15, "odd"), (20, "even"), (25, "odd")]
+range ..=15: [0, 5, 10, 15]
+range 33..: [35, 40, 45]
+last below 22: Some((20, "even"))
+{0: "even", 5: "odd", 10: "even", 15: "odd", 20: "mid", 25: "mid", 30: "mid", 35: "odd", 40: "even", 45: "odd"}
+pop_first=Some((0, "even")) pop_last=Some((45, "odd"))
+low={5: "odd", 10: "even", 15: "odd", 20: "mid"}
+high={25: "mid", 30: "mid", 35: "odd", 40: "even"}
+retained={5: "odd", 15: "odd", 20: "mid"} len=3
+{0: {0: 0, 1: 9, 2: 6, 3: 3}, 1: {0: 4, 1: 1, 2: 10, 3: 7}, 2: {0: 8, 1: 5, 2: 2, 3: 11}}
+{'i': 4, 'm': 1, 'p': 2, 's': 4}
+{1: 'm', 2: 'p', 4: 's'}

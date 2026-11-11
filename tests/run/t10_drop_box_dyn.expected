@@ -1,0 +1,25 @@
+circle1
+square2
+circle3
+-- drop vec of Box<dyn>
+drop Circle 1
+drop Square 2
+drop Circle 3
+-- reassign a Box<dyn>
+cur square10
+drop Square 10
+cur circle11
+-- linked list
+visit 1
+visit 2
+visit 3
+drop Node 1
+drop Node 2
+drop Node 3
+-- Rc
+count 2
+after dropping r1, count 1
+drop Circle 20
+after dropping r2
+end of main
+drop Circle 11

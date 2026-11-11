@@ -1,0 +1,9 @@
+square(3) area=9 scaled=36
+rect(2x5.5) area=11 scaled=-22
+circle area=13 scaled=52
+int 7 area=7 scaled=28
+total 53
+biggest int 20
+biggest circle
+square(3)
+true

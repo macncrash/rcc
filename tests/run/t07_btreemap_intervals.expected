@@ -1,0 +1,24 @@
+add 0x1000+0x200 .text -> true
+add 0x1200+0x80 .rodata -> true
+add 0x1100+0x10 overlap -> false
+add 0x2000+0x100 .data -> true
+add 0x1fff+0x1 .pad -> true
+add 0x2050+0x4 inside -> false
+find 0xfff = None
+find 0x1000 = Some(".text")
+find 0x11ff = Some(".text")
+find 0x1200 = Some(".rodata")
+find 0x127f = Some(".rodata")
+find 0x1280 = None
+find 0x1fff = Some(".pad")
+find 0x2000 = Some(".data")
+find 0x20ff = Some(".data")
+find 0x2100 = None
+0x1000..0x1200 .text
+0x1200..0x1280 .rodata
+0x1fff..0x2000 .pad
+0x2000..0x2100 .data
+{0: 29, 1: 24, 2: 25, 3: 22, 4: 24, 5: 31, 6: 21, 7: 24}
+below=100 above=100 total=200
+entry key=100
+contains 100=true len=9

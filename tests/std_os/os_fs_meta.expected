@@ -1,0 +1,41 @@
+mode 755 perm mode 755 readonly false
+perm debug Permissions(FilePermissions { mode: 0o100755 (-rwxr-xr-x) })
+now readonly true mode 444
+write to readonly: PermissionDenied (Permission denied (os error 13))
+readonly cleared true
+size 18 nlink 1 is_file true ft FileType { is_file: true, is_dir: false, is_symlink: false, .. }
+modified after epoch true
+dir ft is_dir true is_file false is_symlink false
+link is_symlink true follows to file true
+read_link "script.sh"
+link is_symlink via Path true
+dangling exists false try_exists Ok(false) symlink_metadata ok true
+hard nlink 2
+entry ("dangling", false, true, 7)
+entry ("hard", false, false, 18)
+entry ("link", false, true, 9)
+entry ("script.sh", false, false, 18)
+entry ("sub", true, false, 0)
+sub paths ["os_fs_meta_tmp/sub/.hidden", "os_fs_meta_tmp/sub/a.txt", "os_fs_meta_tmp/sub/deeper"]
+empty dir entries []
+canonicalize ok true absolute true
+canonicalize missing NotFound (No such file or directory (os error 2))
+open missing: NotFound (No such file or directory (os error 2))
+create in missing dir: NotFound (No such file or directory (os error 2))
+create_dir existing: AlreadyExists (File exists (os error 17))
+create_dir missing parent: NotFound (No such file or directory (os error 2))
+remove_dir non-empty: DirectoryNotEmpty (Directory not empty (os error 66))
+remove_file on dir: Err(true)
+open dir for write: IsADirectory (Is a directory (os error 21))
+file as dir: NotADirectory (Not a directory (os error 20))
+read_dir on file: NotADirectory (Not a directory (os error 20))
+create_new existing: AlreadyExists (File exists (os error 17))
+no access mode: InvalidInput (Invalid argument (os error 22))
+truncate without write: InvalidInput (Invalid argument (os error 22))
+rename missing: NotFound (No such file or directory (os error 2))
+copy dir: InvalidInput (the source path is neither a regular file nor a symlink to a regular file)
+metadata missing is NotFound true
+exists missing Ok(false)
+nul in path: InvalidInput (file name contained an unexpected NUL byte)
+victim kept true
+root gone true

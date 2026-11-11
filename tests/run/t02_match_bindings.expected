@@ -1,0 +1,11 @@
+vertical move 9
+move 3 -2
+write hello len 5
+g 20
+color r 10 b 30
+quit
+total 54
+desc 43
+opposites 5 -5
+v 21
+rr 22

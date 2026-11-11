@@ -1,0 +1,21 @@
+sum 0..=20 = 210
+7^15 = 4747561509943
+a=1 b=0
+a=2 b=0
+a=2 b=1
+a=3 b=0
+a=3 b=1
+a=3 b=2
+a=4 b=0
+a=4 b=1
+a=4 b=2
+a=4 b=3
+countdown 10
+countdown 8
+countdown 7
+countdown 5
+countdown 4
+countdown 2
+countdown 1
+stopped at 13
+never = 0

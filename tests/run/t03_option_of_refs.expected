@@ -1,0 +1,14 @@
+mul -> 3
+  mapped 3
+add -> 1
+  mapped 1
+mod missing
+  mapped -1
+div -> 4
+  mapped 4
+nope missing
+sub now 100
+101
+true
+true
+true

@@ -1,0 +1,12 @@
+1 2 3
+recurse 15
+depth 16
+counter via get 3
+after set 100
+thread saw (1, 2, 1, 10)
+main counter still 100
+log[0] = start
+log[1] = middle
+log[2] = end
+taken 3 now 0
+try_with ok: true

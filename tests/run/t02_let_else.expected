@@ -1,0 +1,14 @@
+as_int 40
+no pair
+not an int
+as_int -1
+no pair
+not an int
+as_int -1
+pair sum 11
+not an int
+as_int -1
+no pair
+first true 3
+0 7 100
+b 2

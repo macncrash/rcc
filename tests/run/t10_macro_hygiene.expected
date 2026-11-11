@@ -1,0 +1,11 @@
+52
+x=5 y=100
+p=2 q=1 tmp=99
+1 + 2 * 3 = 7
+p * q = 2
+"text" = "text"
+[1, 2].len() = 2
+["foo", "bar", "baz"]
+a1b2.5true-3
+struct S { x: u8 }
+concat 6

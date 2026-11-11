@@ -1,0 +1,30 @@
+fn main() {
+    let v: Vec<u32> = (1..=20).collect();
+    println!("{:?}", v.iter().skip(15).collect::<Vec<_>>());
+    println!("{:?}", v.iter().take(4).collect::<Vec<_>>());
+    println!("{:?}", v.iter().skip(3).take(3).collect::<Vec<_>>());
+    println!("{:?}", v.iter().skip_while(|&&x| x < 18).collect::<Vec<_>>());
+    println!("{:?}", v.iter().take_while(|&&x| x * x < 30).collect::<Vec<_>>());
+    println!("{:?}", v.iter().step_by(4).collect::<Vec<_>>());
+    println!("{:?}", v.iter().skip(1).step_by(5).collect::<Vec<_>>());
+    println!("{:?}", (0..100).step_by(25).collect::<Vec<_>>());
+    let text = "   leading spaces";
+    let trimmed: String = text.chars().skip_while(|c| c.is_whitespace()).collect();
+    println!("[{}]", trimmed);
+    let ident: String = "foo_bar9(baz)".chars().take_while(|c| c.is_alphanumeric() || *c == '_').collect();
+    println!("{}", ident);
+    let mixed = [1, 2, 10, 3, 20, 4];
+    println!("{:?}", mixed.iter().take_while(|&&x| x < 5).collect::<Vec<_>>());
+    println!("{:?}", mixed.iter().skip_while(|&&x| x < 5).collect::<Vec<_>>());
+    println!("{:?}", v.iter().take(100).count());
+    println!("{:?}", v.iter().skip(100).next());
+    let inf: Vec<u64> = (1..).map(|x: u64| x * x).take(6).collect();
+    println!("{:?}", inf);
+    let r: Vec<u32> = std::iter::repeat(7).take(3).collect();
+    println!("{:?}", r);
+    let succ: Vec<u32> = std::iter::successors(Some(1u32), |&x| if x < 200 { Some(x * 3) } else { None }).collect();
+    println!("{:?}", succ);
+    let mut c = 0;
+    let ff: Vec<i32> = std::iter::from_fn(|| { c += 1; if c <= 4 { Some(c * 11) } else { None } }).collect();
+    println!("{:?}", ff);
+}

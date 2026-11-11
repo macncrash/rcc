@@ -1,0 +1,10 @@
+circle sides=0 area=12
+rect sides=4 area=13.5
+tri sides=3 area=6
+25.5
+12
+13.5
+tri
+3
+35
+7

@@ -1,0 +1,17 @@
+found 6 7
+00 10 11 20 21 22 30 31 32 33 
+inner n=1
+after b n=3
+inner n=5
+inner n=7
+after b n=9
+final n=11
+completed i=1
+completed i=2
+completed i=3
+completed i=4
+completed i=5
+completed i=6
+i=11
+v=102
+blk=2

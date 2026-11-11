@@ -1,0 +1,19 @@
+first line
+
+tab	separated	values
+quote " and backslash \
+braces { and } escaped
+unicode: café λ
+multi
+line literal
+continued line
+raw \n string
+raw with "quotes"
+0
+1
+-1
+1 22 333
+a7b8c
+str arg
+
+end

@@ -1,0 +1,23 @@
+argc 9
+has argv0 true
+arg 1 = [hello] len 5
+arg 2 = [42] len 2
+arg 3 = [--verbose] len 9
+arg 4 = [two words] len 9
+arg 5 = [-17] len 3
+arg 6 = [] len 0
+arg 7 = [--out=file.txt] len 14
+arg 8 = [üñí] len 6
+first hello
+rest ["42", "--verbose", "two words", "-17", "", "--out=file.txt", "üñí"]
+numeric sum 25
+flags ["verbose", "out=file.txt"]
+args_os count 8
+os Some("hello")
+os Some("42")
+os Some("--verbose")
+os Some("two words")
+os Some("-17")
+os Some("")
+os Some("--out=file.txt")
+os Some("üñí")

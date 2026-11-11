@@ -1,0 +1,25 @@
+consume a
+drop a
+after consume
+pass b
+after pass_through b
+holder created
+moved out held
+consume cond-true
+drop cond-true
+moved in branch
+end of conditional(true)
+not moved
+end of conditional(false)
+drop cond-false
+vec moved, len 2
+took opt
+drop opt
+opt is_none true
+unboxed boxed
+drop b
+end of main
+drop boxed
+drop v0
+drop v1
+drop held

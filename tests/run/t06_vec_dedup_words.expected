@@ -1,0 +1,9 @@
+12 words
+["and", "and", "bat", "cat", "hat", "mat", "on", "sat", "the", "the", "the", "the"]
+["and", "bat", "cat", "hat", "mat", "on", "sat", "the"]
+[("the", 4), ("and", 2), ("bat", 1), ("cat", 1), ("hat", 1), ("mat", 1), ("on", 1), ("sat", 1)]
+[3, 3, 3, 3, 3, 2, 3, 3]
+["bat", "cat", "hat", "mat", "sat"]
+the
+abchmost
+Ok(3) Err(3)

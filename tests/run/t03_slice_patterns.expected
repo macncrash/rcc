@@ -1,0 +1,17 @@
+empty
+one 5
+two 2 3
+same ends 4
+first 1 last 6 middle len 4
+total 24
+sum 55
+elf
+script
+nul-terminated
+unknown
+10 20 30 40
+10 40
+rest 3 20
+p 20 q 30
+3 2 1
+first word a

@@ -1,0 +1,12 @@
+exit 0 -> success true code Some(0)
+exit 1 -> success false code Some(1)
+exit 3 -> success false code Some(3)
+exit 42 -> success false code Some(42)
+exit 255 -> success false code Some(255)
+stdout "out\n" stderr "err\n" code Some(3)
+env "set-by-parent\n"
+env_remove "[]\n"
+current_dir "sub\n"
+tr "SHOUT THIS\nAND THIS\n" success true
+wait code Some(7)
+binary stdout [97, 0, 98]

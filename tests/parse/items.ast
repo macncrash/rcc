@@ -1,0 +1,174 @@
+(crate
+  #[allow(dead_code)] 
+  #[cfg_attr(test, allow(unused))] 
+  (extern-crate std as mystd)
+  (mod external <file>)
+  #![allow(unused)]
+  (mod pub(crate) inline
+    (fn pub(super) f
+      (params)
+      (block))
+    (unit-struct pub(in crate::inline) Hidden)
+    (const pub(self) C: u8 = 1))
+  (use std::{self, fmt::{self, Display as Disp}, io::*})
+  (use super::*)
+  (use crate::a::b as _)
+  (use ::core::mem)
+  (use pub self::inline::f)
+  (use {a, b::c})
+  #[derive(Debug, Clone, PartialEq)]
+  #[repr(C)]
+  (struct pub Named
+    (generics 'a (T))
+    (where (T: 'a))
+    (field pub a: &'a T)
+    (field pub(crate) b: u32)
+    (field c: [u8; 4]))
+  (tuple-struct Tuple
+    (field pub 0: u8)
+    #[allow(x)] (field 1: String))
+  (unit-struct Unit)
+  (tuple-struct Gen
+    (generics (T))
+    (where (T: Copy))
+    (field 0: T))
+  (union U
+    (field i: u32)
+    (field f: f32))
+  (enum E
+    (generics (T))
+    (variant A)
+    (tuple-variant B
+      (field 0: T)
+      (field 1: u8))
+    (struct-variant C
+      (field x: i32)
+      (field y: Box::<E::<T>>))
+    (variant D = 5)
+    #[cfg(test)] (variant Ee))
+  #[repr(u8)]
+  (enum Disc
+    (variant X = 1)
+    (variant Y = (<< 1 2))
+    (variant Z = (neg 1)))
+  (trait pub Tr
+    (generics (T))
+    (where (T: Default))
+    (supertraits Clone + Send + 'static)
+    (type Assoc: Iterator::<Item = T> + ?Sized)
+    (type WithDefault = u8)
+    (const N: usize)
+    (const M: usize = 3)
+    (fn req
+      (params (&self) (x: T))
+      (ret Self::Assoc))
+    (fn provided
+      (params (&mut self))
+      (ret usize)
+      (block
+        (expr Self::N)))
+    (fn generic
+      (generics (U: Into::<T>))
+      (where (U: Clone))
+      (params (self) (u: U)))
+    (fn by_box
+      (params (self: Box::<Self>)))
+    (fn with_lt
+      (generics 'a)
+      (params (&'a self))
+      (ret &'a str))
+    (fn mut_lt
+      (generics 'a)
+      (params (&'a mut self)))
+    (fn mut_val
+      (params (mut self))
+      (block))
+    (fn no_self
+      (where (Self: Sized))
+      (params)
+      (ret Self))
+    (fn unsafe uns
+      (params (&self))))
+  (trait unsafe UnsafeTr)
+  (impl Named::<'_, T>
+    (generics (T))
+    (fn pub new
+      (params)
+      (ret Self)
+      (block
+        (expr (mac todo! ())))))
+  (impl Tr::<T> for Named::<'a, T>
+    (generics 'a (T: Clone))
+    (where (T: Default))
+    (type Assoc = std::vec::IntoIter::<T>)
+    (const N: usize = 1)
+    (fn req
+      (params (&self) (x: T))
+      (ret Self::Assoc)
+      (block
+        (expr (method (mac vec! [x]) into_iter)))))
+  (impl unsafe Send for U)
+  (impl fmt::Display for Unit
+    (fn fmt
+      (params (&self) (f: &mut fmt::Formatter::<'_>))
+      (ret fmt::Result)
+      (block
+        (expr (mac write! (f, "unit"))))))
+  (impl Tr2 for Box::<T>
+    (generics (T: ?Sized)))
+  (impl (dyn Tr::<u8>))
+  (impl Arr::<N>
+    (generics (const N: usize)))
+  (type Alias = Result::<T, Box::<(dyn std::error::Error + Send + Sync)>>
+    (generics (T)))
+  (const pub MAX: u32 = u32::MAX)
+  (const _: () = (tuple))
+  (static GREETING: &str = "hi")
+  (static mut COUNTER: usize = 0)
+  (fn pub const cf
+    (params (x: u32))
+    (ret u32)
+    (block
+      (expr x)))
+  (fn pub unsafe uf
+    (params)
+    (block))
+  (fn pub extern "C" ef
+    (params (x: i32))
+    (ret i32)
+    (block
+      (expr x)))
+  (fn pub unsafe extern "C" uef
+    (params)
+    (block))
+  (extern "C"
+    (fn printf
+      (params (fmt: *const i8) ...)
+      (ret i32))
+    (static errno: i32)
+    (fn pub malloc
+      (params (n: usize))
+      (ret *mut u8)))
+  (extern "C"
+    (fn old
+      (params)))
+  (fn impl_trait
+    (params (x: (impl Fn(u8) -> u8)) (y: &mut (impl Iterator::<Item = u32>)))
+    (ret (impl Iterator::<Item = u8> + '_))
+    (block
+      (expr x)))
+  (fn never
+    (params)
+    (ret !)
+    (block
+      (expr (loop (block)))))
+  (macro_rules square {($x:expr) => { $x * $x }; ($($t:tt)*) => {};})
+  (mac thread_local! {static TL: u32 = 0;})
+  (mac square! (3))
+  #[cfg(test)]
+  (mod tests
+    #[test]
+    (fn t
+      (params)
+      (block
+        (semi (mac assert_eq! (1, 1)))))))

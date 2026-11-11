@@ -1,0 +1,22 @@
+fact(0) = 1
+fact(4) = 24
+fact(8) = 40320
+fact(12) = 479001600
+fact(16) = 20922789888000
+fact(20) = 2432902008176640000
+fib(0) = 0
+fib(5) = 5
+fib(10) = 55
+fib(15) = 610
+fib(20) = 6765
+fib(25) = 75025
+ack(2,3) = 9
+ack(3,3) = 61
+even(10) = true odd(10) = false
+even(7) = false odd(7) = true
+3^13 = 1594323
+-2^31 = -2147483648
+move disk 3 from 1 to 2
+move disk 4 from 1 to 3
+move disk 3 from 2 to 3
+hanoi moves = 15

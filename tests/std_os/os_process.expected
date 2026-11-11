@@ -1,0 +1,32 @@
+big: stdout 1500000 all o true stderr 1500000 all e true code Some(5) success false
+direct read 2000000 zeros true exit status: 0
+exit 0: exit status: 0 | ExitStatus(unix_wait_status(0)) | code Some(0) signal None
+exit 1: exit status: 1 | ExitStatus(unix_wait_status(256)) | code Some(1) signal None
+exit 2: exit status: 2 | ExitStatus(unix_wait_status(512)) | code Some(2) signal None
+exit 127: exit status: 127 | ExitStatus(unix_wait_status(32512)) | code Some(127) signal None
+exit 255: exit status: 255 | ExitStatus(unix_wait_status(65280)) | code Some(255) signal None
+kill -9: signal: 9 (SIGKILL) code None signal Some(9) success false
+kill -TERM: signal: 15 (SIGTERM) signal Some(15)
+from_raw core: signal: 6 (SIGABRT) (core dumped) core_dumped true
+try_wait running None
+killed: signal: 9 (SIGKILL) signal Some(9)
+wait again same true
+kill after exit ok true
+wc -c "1048576"
+cat with null stdin: [] exit status: 0
+env "[3][two words][]\n"
+env_clear "ONLY=me\n"
+inherited "yes\n"
+removed "[]\n"
+path lookup "found via PATH\n"
+cwd / "/\n"
+missing: No such file or directory (os error 2) | NotFound
+missing in PATH: NotFound
+bad cwd: NotFound
+not executable: PermissionDenied
+cd "/tmp" && A="x y" Z="1" "ls" "-l" "a b"
+env -u HOME "prog"
+get_program "ls" args ["-l", "a b"]
+Output { status: ExitStatus(unix_wait_status(0)), stdout: "dbg\n", stderr: "" }
+ExitCode(unix_exit_status(0)) ExitCode(unix_exit_status(9))
+id nonzero true

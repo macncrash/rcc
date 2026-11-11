@@ -1,0 +1,7 @@
+depth 100000 acc [2083358334, 2083216668, 2083408333, 2083366665] name Some("deep")
+ackermann(2, 3000) = 6003
+thread 0 sum 0
+thread 1 sum 500500
+thread 2 sum 2001000
+thread 3 sum 4501500
+scoped (6, 3)

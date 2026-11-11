@@ -1,0 +1,13 @@
+3
+4
+10
+[1, 2, 3, 4, 10]
+reads 4
+5
+DEREF
+5
+true
+5
+5
+xyz 3
+reads 2

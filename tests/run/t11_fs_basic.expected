@@ -1,0 +1,16 @@
+read_to_string "line one\nline two\n"
+lines 2
+read 18 bytes, first 108 last 10
+metadata len 18 is_file true is_dir false
+dir is_dir true is_file false
+binary roundtrip true len 256
+binary sum 32640
+after overwrite "short" len 5
+copied 5 bytes
+copy exists false renamed exists true
+renamed content short
+after remove exists false
+missing kind NotFound
+remove missing is_err true
+bad utf8 read_to_string kind InvalidData
+cleaned true

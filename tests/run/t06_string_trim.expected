@@ -1,0 +1,22 @@
+[hello world]
+[hello world 
+ ]
+[  	 hello world]
+[abc]
+[abcxx]
+[xxabc]
+[abc]
+[a--]
+Some("body")
+None
+Some("file")
+None
+true false
+true false
+short O2
+short c
+long verbose
+positional file.c
+include /usr
+[padded] 6
+[nbsp]

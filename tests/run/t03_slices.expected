@@ -1,0 +1,18 @@
+[4, -2, 9, 0, 7, 3, 8, -5] len 8
+[9, 0, 7] len 3
+[4, -2, 9] len 3
+[3, 8, -5] len 3
+[4, -2, 9, 0, 7, 3, 8, -5] len 8
+[] len 0
+[-2, 9] len 2
+sum 24 13
+max 9
+empty max true
+first 4 last -5
+get 9 true
+[4, -2, 9] len 3
+[0, 7, 3, 8, -5] len 5
+contains true false
+[0, 7] len 2
+head 4 tail len 7
+0

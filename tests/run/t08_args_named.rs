@@ -1,0 +1,32 @@
+fn main() {
+    println!("{0} {1} {0} {1}", "a", "b");
+    println!("{1} {} {0} {}", 'x', 'y');
+    println!("{name} is {age} years", name = "Ann", age = 31);
+    println!("{name} {0} {name}", 5, name = "n");
+    let x = 10;
+    let label = "val";
+    let f = 2.5;
+    println!("{label}={x} {x:?} {x:>5} {x:#x} {f:.3} {label:^9}|");
+    let width = 8;
+    let prec = 2;
+    println!("[{f:width$.prec$}] [{x:0width$}] [{label:>width$}]");
+    println!("[{:1$}] [{:>1$}]", "a", 4);
+    println!("[{:>2$}{:<2$}]", "l", "r", 3);
+    println!("[{:w$}] [{:>w$}]", 1, 2, w = 4);
+    let v = vec![1, 2];
+    println!("{v:?} {v:#?}");
+    println!("{{}} {{{x}}} {{x}}");
+    println!("{:?}{:?}{:?}", 1, "2", '3');
+    println!("{}", format!("{}-{}", "nested", format!("{x}")));
+    let s = format!("{a}{b}{a}", a = "<", b = "|");
+    println!("{s} len={}", s.len());
+    println!("{0:?} {0} {0:>4}", 7);
+    println!("trailing commas {}, {},", 1, 2,);
+    let name = String::from("captured");
+    let r = &name;
+    println!("{r} {name}");
+    println!("{}", format_args!("{} {}", "via", "format_args"));
+    let items = ["p", "q"];
+    println!("{} {}", items[0], items[1]);
+    println!("{:?}", format!("{:>4}", "\"q\""));
+}

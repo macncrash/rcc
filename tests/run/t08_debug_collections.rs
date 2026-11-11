@@ -1,0 +1,40 @@
+use std::cell::{Cell, RefCell};
+use std::collections::{BTreeMap, BTreeSet, VecDeque};
+use std::rc::Rc;
+
+fn main() {
+    let m: BTreeMap<&str, Vec<u8>> = [("b", vec![2]), ("a", vec![1, 1])].into_iter().collect();
+    println!("{:?}", m);
+    println!("{:#?}", m);
+    let s: BTreeSet<(i8, char)> = [(1, 'x'), (-1, 'y')].into_iter().collect();
+    println!("{:?}", s);
+    let d: VecDeque<&str> = ["front", "back"].into_iter().collect();
+    println!("{:?}", d);
+    println!("{:?}", Rc::new(5));
+    println!("{:?}", RefCell::new(vec![1]));
+    println!("{:?}", Cell::new(3));
+    println!("{:?}", Box::new([1u16, 2]));
+    let arr2: [[i32; 2]; 3] = [[1, 2], [3, 4], [5, 6]];
+    println!("{:?}", arr2);
+    let sl: &[i32] = &arr2[1];
+    println!("{:?}", sl);
+    let empty: Vec<String> = vec![];
+    println!("{:?} {:#?}", empty, empty);
+    let em: BTreeMap<i32, i32> = BTreeMap::new();
+    println!("{:?} {:#?}", em, em);
+    println!("{:?}", (0..3));
+    println!("{:?}", (..5));
+    println!("{:?}", (2..));
+    println!("{:?}", "abc".chars().collect::<Vec<_>>());
+    println!("{:?}", vec![Some("a"), None]);
+    let nested: Vec<(u8, Vec<Option<bool>>)> = vec![(1, vec![Some(true)]), (2, vec![None, Some(false)])];
+    println!("{:?}", nested);
+    println!("{:#?}", nested);
+    let r: Result<Vec<i32>, String> = Ok(vec![]);
+    println!("{:?}", r);
+    println!("{:?}", std::cmp::Ordering::Less);
+    println!("{:?}", "a b".split(' ').collect::<Vec<_>>());
+    println!("{:?}", String::from("x").as_str());
+    println!("{:?}", [(); 3]);
+    println!("{:?}", std::num::Wrapping(5u8));
+}

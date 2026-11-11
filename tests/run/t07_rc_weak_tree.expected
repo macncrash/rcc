@@ -1,0 +1,13 @@
+leaf parent = None
+leaf strong=1 weak=0
+leaf parent = Some(5)
+branch strong=1 weak=1
+leaf strong=2 weak=0
+path deep=[11, 7, 1] path leaf=[3, 5, 1]
+sum root=27 sum branch=8
+root weak=2 strong=1
+after scope leaf parent = None
+leaf strong=1 weak=0
+upgrade=Some(99) strong=2 weak=2
+after drop upgrade=None strong=0
+empty upgrade is_none=true

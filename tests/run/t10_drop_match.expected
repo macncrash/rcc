@@ -1,0 +1,35 @@
+handle start
+quit
+handle end
+handle start
+text t
+drop t
+handle end
+handle start
+pair first p.a
+drop p.a
+handle end
+drop p.b
+-- inspect by reference
+inspect -> r.b
+-- wildcard does not move
+matched wildcard
+n still owned here
+drop w
+-- binding @
+bound at at
+-- result chains
+drop good
+drop closure-guard
+Ok(4)
+drop bad
+drop closure-guard
+Err("bad")
+-- if let moves the binding
+got iflet-moved
+drop iflet-moved
+after if let
+end of main
+drop at
+drop r.a
+drop r.b

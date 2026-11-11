@@ -1,0 +1,17 @@
+create_dir existing is_err true
+a/
+  b/
+    c/
+      deep.txt (13 bytes)
+    y.rs (10 bytes)
+  x.rs (7 bytes)
+b.txt (4 bytes)
+m.txt (1 bytes)
+z/
+  last (16 bytes)
+top level ["a", "b.txt", "m.txt", "z"]
+a/ entries [("b", true), ("x.rs", false)]
+remove non-empty dir is_err true
+c exists false
+after removing a: ["b.txt (4 bytes)", "m.txt (1 bytes)", "z/", "  last (16 bytes)"]
+root exists false

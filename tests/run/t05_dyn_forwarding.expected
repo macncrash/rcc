@@ -1,0 +1,14 @@
+x86 size 6
+  push fp
+  mov fp, sp
+  mov rax, 1
+  add rax, rdi
+  pop fp
+  ret
+x86 size 5
+arm size 16
+1
+arm 4
+last   int3
+hello
+bonjour

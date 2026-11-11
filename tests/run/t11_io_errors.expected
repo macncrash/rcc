@@ -1,0 +1,12 @@
+  t11_io_errors_tmp/a -> 40
+  t11_io_errors_tmp/b -> 2
+sum a+b Some(42)
+  t11_io_errors_tmp/a -> 40
+error kind InvalidData msg bad number "two": invalid digit found in string
+  t11_io_errors_tmp/a -> 40
+missing kind NotFound is NotFound true
+custom Other custom failure
+from kind UnexpectedEof
+create_dir existing AlreadyExists
+read_exact short UnexpectedEof
+done

@@ -1,0 +1,13 @@
+5
+digit 0 = 7
+digit 1 = 1
+digit 2 = 8
+digit 3 = 0
+digit 4 = 9
+digit 5 none
+Some(7) Some(9)
+Some('h') Some('e') Some('o')
+None
+false
+true
+false

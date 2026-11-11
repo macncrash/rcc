@@ -1,0 +1,31 @@
+src/main.rs: file_name Some("main.rs") stem Some("main") ext Some("rs") parent Some("src") rel true components 2
+a/b/c.tar.gz: file_name Some("c.tar.gz") stem Some("c.tar") ext Some("gz") parent Some("a/b") rel true components 3
+noext: file_name Some("noext") stem Some("noext") ext None parent Some("") rel true components 1
+.hidden: file_name Some(".hidden") stem Some(".hidden") ext None parent Some("") rel true components 1
+dir/: file_name Some("dir") stem Some("dir") ext None parent Some("") rel true components 1
+x/../y.txt: file_name Some("y.txt") stem Some("y") ext Some("txt") parent Some("x/..") rel true components 3
+/abs/path.o: file_name Some("path.o") stem Some("path") ext Some("o") parent Some("/abs") rel false components 3
+: file_name None stem None ext None parent None rel true components 0
+a.b/c: file_name Some("c") stem Some("c") ext None parent Some("a.b") rel true components 2
+pushed build/obj/file.c
+set_extension build/obj/file.o
+set_file_name build/obj/other.s
+pop true -> build/obj
+join include/sys/types.h
+join absolute replaces /etc/x
+with_extension include/sys/types.hpp
+with_extension empty a/b
+with_file_name include/sys/stdio.h
+starts_with true false
+ends_with true
+strip_prefix Ok("sys/types.h")
+components ["a", "b", "..", "c"]
+ancestors ["x/y/z", "x/y", "x", ""]
+to_str Some("q.rs") to_string_lossy q.rs
+collected tests/run/t11.rs
+expected file tests/run/t11.expected
+exists (relative, nonexistent) false
+probe exists true is_file true is_dir false
+probe exists after remove false
+eq true
+as_os_str len 7

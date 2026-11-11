@@ -1,0 +1,41 @@
+'a' | a | a | \u{61} | 97
+' ' |   |   | \u{20} | 32
+'\n' | \n | \n | \u{a} | 10
+'\t' | \t | \t | \u{9} | 9
+'\r' | \r | \r | \u{d} | 13
+'\'' | \' | \' | \u{27} | 39
+'"' | \" | \" | \u{22} | 34
+'\\' | \\ | \\ | \u{5c} | 92
+'\0' | \0 | \u{0} | \u{0} | 0
+'\u{7f}' | \u{7f} | \u{7f} | \u{7f} | 127
+'\u{1b}' | \u{1b} | \u{1b} | \u{1b} | 27
+'é' | é | \u{e9} | \u{e9} | 233
+'λ' | λ | \u{3bb} | \u{3bb} | 955
+'\u{200b}' | \u{200b} | \u{200b} | \u{200b} | 8203
+'\u{feff}' | \u{feff} | \u{feff} | \u{feff} | 65279
+'😀' | 😀 | \u{1f600} | \u{1f600} | 128512
+'\u{10ffff}' | \u{10ffff} | \u{10ffff} | \u{10ffff} | 1114111
+'\u{301}' | \u{301} | \u{301} | \u{301} | 769
+'\u{a0}' | \u{a0} | \u{a0} | \u{a0} | 160
+"plain" | plain | plain
+"with \"quotes\"" | with \"quotes\" | with \"quotes\"
+"it's" | it\'s | it\'s
+"back\\slash" | back\\slash | back\\slash
+"tab\tnl\ncr\r" | tab\tnl\ncr\r | tab\tnl\ncr\r
+"nul\0" | nul\0 | nul\u{0}
+"\u{7f}del" | \u{7f}del | \u{7f}del
+"café" | café | caf\u{e9}
+"zero\u{200b}width" | zero\u{200b}width | zero\u{200b}width
+"e\u{301}" | é | e\u{301}
+"emoji 😀" | emoji 😀 | emoji \u{1f600}
+"" |  | 
+["a\"b", "c'd"]
+('\'', "'", '"', "\"")
+Some("x\ny")
+"\u{1}\u{1f}"
+[0, 127, 255, 10]
+'a'..='e'
+"raw \\n str"
+"raw \"hash\""
+['q']
+["q"]

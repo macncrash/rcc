@@ -1,0 +1,14 @@
+greeting = hello from env
+unset: not present
+number = 21 doubled 42
+empty is_ok true value []
+var_os some true
+var_os unset none true
+list[0] = a
+list[1] = bb
+list[2] = ccc
+vars: RCC_TEST_EMPTY=
+vars: RCC_TEST_GREETING=hello from env
+vars: RCC_TEST_LIST=a:bb:ccc
+vars: RCC_TEST_NUMBER=21
+default via unwrap_or fallback

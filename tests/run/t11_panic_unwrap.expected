@@ -1,0 +1,7 @@
+parsed 1
+parsed 22
+parsed -3
+ok [1, 22, -3]
+first even 22
+none is_none true
+parsed 7

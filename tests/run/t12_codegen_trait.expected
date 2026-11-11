@@ -1,0 +1,240 @@
+##### x86_64 (102 instructions)
+    .globl sum3
+    .type sum3, @function
+sum3:
+    pushq %rbp
+    movq %rsp, %rbp
+    subq $64, %rsp
+    movq %rdi, %rax
+    movq %rax, -8(%rbp)
+    movq %rsi, %rax
+    movq %rax, -16(%rbp)
+    movq %rdx, %rax
+    movq %rax, -24(%rbp)
+.Lsum3_0:
+    movq -8(%rbp), %rax
+    movq %rax, %rcx
+    movq -16(%rbp), %rax
+    addq %rcx, %rax
+    movq %rax, -32(%rbp)
+    movq -32(%rbp), %rax
+    movq %rax, %rcx
+    movq -24(%rbp), %rax
+    addq %rcx, %rax
+    movq %rax, -40(%rbp)
+    movq -40(%rbp), %rax
+    movq %rax, %rcx
+    movq $3, %rax
+    xchgq %rax, %rcx
+    shlq %cl, %rax
+    movq %rax, -48(%rbp)
+    movq -48(%rbp), %rax
+    movq %rax, %rcx
+    movq $3, %rax
+    imulq %rcx, %rax
+    movq %rax, -56(%rbp)
+    movq -56(%rbp), %rax
+    movq %rbp, %rsp
+    popq %rbp
+    ret
+    .size sum3, .-sum3
+    .globl store_load
+    .type store_load, @function
+store_load:
+    pushq %rbp
+    movq %rsp, %rbp
+    subq $96, %rsp
+    movq %rdi, %rax
+    movq %rax, -8(%rbp)
+.Lstore_load_0:
+    leaq -16(%rbp), %rax
+    movq %rax, -24(%rbp)
+    movq -8(%rbp), %rax
+    movl %eax, -16(%rbp)
+    movslq -16(%rbp), %rax
+    movq %rax, -32(%rbp)
+    movq -32(%rbp), %rax
+    movq %rax, %rcx
+    xorl %eax, %eax
+    cmpq %rax, %rcx
+    setl %al
+    movzbq %al, %rax
+    movq %rax, -40(%rbp)
+    movq -40(%rbp), %rax
+    testq %rax, %rax
+    je .Lstore_load_2
+    jmp .Lstore_load_1
+.Lstore_load_1:
+    leaq counter(%rip), %rax
+    movq %rax, -48(%rbp)
+    movq -48(%rbp), %rax
+    movq %rax, %rcx
+    movq $-1, %rax
+    movb %al, (%rcx)
+    movq -32(%rbp), %rax
+    movq %rax, %rdi
+    call abs@PLT
+    movq %rax, -56(%rbp)
+    movq -56(%rbp), %rax
+    movq %rax, -64(%rbp)
+    jmp .Lstore_load_2
+.Lstore_load_2:
+    movslq -16(%rbp), %rax
+    movq %rax, -72(%rbp)
+    movabsq $20015998343868, %rax
+    movq %rax, -80(%rbp)
+    movq -80(%rbp), %rax
+    movq %rax, %rcx
+    movq -72(%rbp), %rax
+    subq %rax, %rcx
+    movq %rcx, %rax
+    movq %rax, -88(%rbp)
+    movq -88(%rbp), %rax
+    movq %rax, %rcx
+    movq $255, %rax
+    andq %rcx, %rax
+    movq %rax, -96(%rbp)
+    ; warning: 9 args exceed 6 register args
+    xorl %eax, %eax
+    movq %rax, %rdi
+    movq $1, %rax
+    movq %rax, %rsi
+    movq $2, %rax
+    movq %rax, %rdx
+    movq $3, %rax
+    movq %rax, %rcx
+    movq $4, %rax
+    movq %rax, %r8
+    movq $5, %rax
+    movq %rax, %r9
+    call many@PLT
+    movq -96(%rbp), %rax
+    movq %rbp, %rsp
+    popq %rbp
+    ret
+    .size store_load, .-store_load
+fn_table:
+    .quad sum3
+    .quad store_load
+##### last frame size 96 slots [(0, -8), (1, -24), (2, -32), (3, -40), (4, -48), (5, -56), (6, -64), (7, -72), (8, -80), (9, -88), (10, -96), (10001, -16)]
+##### aarch64 (101 instructions)
+    .globl sum3
+    .type sum3, @function
+sum3:
+    stp x29, x30, [sp, #-80]!
+    mov x29, sp
+    str x0, [x29, #72]
+    mov x0, x1
+    str x0, [x29, #64]
+    mov x0, x2
+    str x0, [x29, #56]
+.LBB_sum3_0:
+    ldr x0, [x29, #72]
+    mov x1, x0
+    ldr x0, [x29, #64]
+    add x0, x1, x0
+    str x0, [x29, #48]
+    ldr x0, [x29, #48]
+    mov x1, x0
+    ldr x0, [x29, #56]
+    add x0, x1, x0
+    str x0, [x29, #40]
+    ldr x0, [x29, #40]
+    mov x1, x0
+    mov x0, #3
+    lsl x0, x1, x0
+    str x0, [x29, #32]
+    ldr x0, [x29, #32]
+    mov x1, x0
+    mov x0, #3
+    mul x0, x1, x0
+    str x0, [x29, #24]
+    ldr x0, [x29, #24]
+    ldp x29, x30, [sp], #80
+    ret
+    .size sum3, .-sum3
+    .globl store_load
+    .type store_load, @function
+store_load:
+    stp x29, x30, [sp, #-112]!
+    mov x29, sp
+    str x0, [x29, #104]
+.LBB_store_load_0:
+    add x0, x29, #96
+    str x0, [x29, #88]
+    ldr x0, [x29, #104]
+    str w0, [x29, #96]
+    ldrsw x0, [x29, #96]
+    str x0, [x29, #80]
+    ldr x0, [x29, #80]
+    mov x1, x0
+    mov x0, #0
+    cmp x1, x0
+    cset x0, lt
+    str x0, [x29, #72]
+    ldr x0, [x29, #72]
+    cbz x0, .LBB_store_load_2
+    b .LBB_store_load_1
+.LBB_store_load_1:
+    adrp x0, counter
+    add x0, x0, :lo12:counter
+    str x0, [x29, #64]
+    ldr x0, [x29, #64]
+    mov x1, x0
+    movz x0, #65535
+    movk x0, #65535, lsl #16
+    movk x0, #65535, lsl #32
+    movk x0, #65535, lsl #48
+    strb w0, [x1]
+    ldr x0, [x29, #80]
+    bl abs
+    str x0, [x29, #56]
+    ldr x0, [x29, #56]
+    str x0, [x29, #48]
+    b .LBB_store_load_2
+.LBB_store_load_2:
+    ldrsw x0, [x29, #96]
+    str x0, [x29, #40]
+    movz x0, #39612
+    movk x0, #22136, lsl #16
+    movk x0, #4660, lsl #32
+    str x0, [x29, #32]
+    ldr x0, [x29, #32]
+    mov x1, x0
+    ldr x0, [x29, #40]
+    sub x0, x1, x0
+    str x0, [x29, #24]
+    ldr x0, [x29, #24]
+    mov x1, x0
+    mov x0, #255
+    and x0, x1, x0
+    str x0, [x29, #16]
+    mov x0, #8
+    mov x8, x0
+    mov x0, #7
+    mov x7, x0
+    mov x0, #6
+    mov x6, x0
+    mov x0, #5
+    mov x5, x0
+    mov x0, #4
+    mov x4, x0
+    mov x0, #3
+    mov x3, x0
+    mov x0, #2
+    mov x2, x0
+    mov x0, #1
+    mov x1, x0
+    mov x0, #0
+    bl many
+    ldr x0, [x29, #16]
+    ldp x29, x30, [sp], #112
+    ret
+    .size store_load, .-store_load
+fn_table:
+    .xword sum3
+    .xword store_load
+##### last frame size 96 slots [(0, -8), (1, -24), (2, -32), (3, -40), (4, -48), (5, -56), (6, -64), (7, -72), (8, -80), (9, -88), (10, -96), (10001, -16)]
+arm literal pool: [-1, 20015998343868]
+generic x86 sum3: 39 lines, frame 64, out now empty: true
+generic arm store_load: frame 96, branches ["    cbz x0, .LBB_store_load_2", "    b .LBB_store_load_1", "    bl abs", "    b .LBB_store_load_2", "    bl many"]

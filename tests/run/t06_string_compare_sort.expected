@@ -1,0 +1,12 @@
+["doc12", "doc3", "file1", "file10", "file2", "file20"]
+["doc3", "doc12", "file1", "file2", "file10", "file20"]
+Less
+Greater
+Less
+Less
+["Alpha", "Bravo", "charlie", "delta"]
+["Alpha", "Bravo", "charlie", "delta"]
+["charlie", "Alpha", "Bravo", "delta"]
+Some("delta")
+Some("Alpha")
+true Some(Equal) true

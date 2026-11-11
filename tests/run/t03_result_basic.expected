@@ -1,0 +1,12 @@
+'123' -> 123
+'' -> empty
+'12a4' -> bad char 97 at 2
+'4294967295' -> 4294967295
+'4294967296' -> overflow
+'0007' -> 7
+true false false true
+3 -1
+bad
+ok() 3
+err() bad
+okerr 4

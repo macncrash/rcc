@@ -1,0 +1,33 @@
+fx(0u64)      = 0x0000000000000000
+fx(1u64)      = 0x517cc1b727220a95
+fx(42u32)     = 0x5e77c80c6b95bc72
+fx(7u8)       = 0x3a694c0211ee4a13
+fx(usize::MAX)= 0xae833e48d8ddf56b
+fx((1u32,2u32))= 0x6a4be67ff98fabc8
+raw write 13 bytes = 0x4f52903a81df4011
+raw write 0 bytes = 0x0000000000000000
+two-step 0xf025aa32e313d157 manual 0xf025aa32e313d157 equal true
+build_hasher fresh finish = 0
+word counts: [("the", 4), ("dog", 2), ("fox", 2), ("and", 1), ("barks", 1), ("brown", 1), ("jumps", 1), ("lazy", 1), ("over", 1), ("quick", 1), ("runs", 1)]
+len=11 get(fox)=Some(2) get(cat)=None
+set len 61 first [0, 1, 2, 3, 4] last [58, 59, 60]
+removed [true, true, false] len now 59
+big len 5000 sum 12497500 key xor 0x1f218f11624f6cd0
+after retain len 1667
+declare x : int
+declare buf : char[64]
+push -> depth 1
+use x -> int (depth Some(0), align None)
+declare x : long*
+use x -> long* (depth Some(1), align None)
+push -> depth 2
+declare y : int*[]
+use y -> int*[] (depth Some(2), align None)
+use buf -> char[64] (depth Some(0), align Some(16))
+use x -> long* (depth Some(1), align None)
+pop -> depth 1
+use y -> undeclared
+pop -> depth 0
+use x -> int (depth Some(0), align None)
+use nope -> undeclared
+file scope: ["buf", "x"]

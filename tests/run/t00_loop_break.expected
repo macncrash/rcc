@@ -1,0 +1,12 @@
+odd 1
+odd 3
+odd 5
+odd 7
+odd 9
+odd 11
+collatz 27 steps = 111
+count 1 inner 1
+count 2 inner 2
+count 3 inner 3
+count 4 inner 4
+first square over 500: 23

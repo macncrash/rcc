@@ -1,0 +1,14 @@
+{"apple", "date", "fig", "kiwi", "pear"}
+hs len=5
+{"apple": 5, "date": 4, "fig": 3, "kiwi": 4, "pear": 4}
+[0, 4, 5, 6]
+[4, 3, 5, 3, 4, 4, 4]
+["apple", "date", "fig", "fig", "kiwi", "pear", "pear"]
+{1: 'a', 2: 'b', 3: 'c'}
+[("k1", 1), ("k2", 2)]
+{1, 3, 5}
+{"a": ["apple"], "d": ["date"], "f": ["fig", "fig"], "k": ["kiwi"], "p": ["pear", "pear"]}
+{'a', 'd', 'e', 'f', 'g', 'i', 'k', 'l', 'p', 'r', 't', 'w'}
+Ok({"a": 1, "b": 2})
+true
+({1, 2}, ['x', 'y', 'z'])

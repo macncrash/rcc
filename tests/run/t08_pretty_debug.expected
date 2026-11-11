@@ -1,0 +1,90 @@
+Struct {
+    name: "node",
+    fields: [
+        Field {
+            name: "next",
+            ty: Ptr(
+                Void,
+            ),
+        },
+        Field {
+            name: "data",
+            ty: Array(
+                Int {
+                    bits: 32,
+                    signed: true,
+                },
+                4,
+            ),
+        },
+        Field {
+            name: "n",
+            ty: Int {
+                bits: 32,
+                signed: true,
+            },
+        },
+    ],
+    attrs: {
+        "align": Some(
+            8,
+        ),
+        "packed": None,
+    },
+    empty: [],
+    tags: {
+        'a',
+        'x',
+    },
+    unit: (),
+    tuple: (
+        -1,
+        "t",
+    ),
+}
+Empty
+Wrapper(
+    [
+        Empty,
+        Empty,
+    ],
+)
+(
+    1,
+    "a",
+)
+Some(
+    Some(
+        3,
+    ),
+)
+[
+    1,
+    2,
+]
+Err(
+    Void,
+)
+[
+    [
+        1,
+        1,
+    ],
+    [
+        1,
+        1,
+    ],
+]
+"str\twith\ttabs"
+{
+    (
+        0,
+        1,
+    ): [
+        "a",
+    ],
+    (
+        2,
+        3,
+    ): [],
+}

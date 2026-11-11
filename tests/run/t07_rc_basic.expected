@@ -1,0 +1,16 @@
+strong=1 weak=0
+after 2 clones strong=3
+ptr_eq a,b=true name via c=a val=10
+in scope strong=5 total=25
+ptr_eq a,z=false z strong=1
+after scope strong=3
+after drops strong=1
+unwrapped Node { name: "a", val: 10 }
+shared=[1, 2, 3, 4] other=[1, 2, 3] ptr_eq=false
+shared=[1, 2, 3, 4, 5] strong=1
+try_unwrap failed, strong=2
+r2 strong=1
+get_mut while shared is_none=true
+uniq=42 u2=42 sum=84
+hello rc str len=12 strong=2
+[9, 8, 7] 24

@@ -1,0 +1,14 @@
+work result 333332833333500000
+monotonic true
+elapsed nonnegative true
+elapsed() >= duration_since true
+checked_duration_since reversed is_none_or_zero true
+saturating reversed zero true
+later - start = 5ms
+secs 3 millis 3250 micros 3250000 nanos 3250000007 subsec_nanos 250000007
+as_secs_f64 1.5
+debug 1.5s 42µs 3ns
+mul 900ms div 250ms
+checked_sub None
+cmp true
+slept at least 2ms true

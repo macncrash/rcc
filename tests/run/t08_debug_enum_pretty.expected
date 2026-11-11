@@ -1,0 +1,53 @@
+Bin { op: '+', lhs: Num(2), rhs: Bin { op: '*', lhs: Var("abc"), rhs: Neg(Num(4)) } }
+Bin {
+    op: '+',
+    lhs: Num(
+        2,
+    ),
+    rhs: Bin {
+        op: '*',
+        lhs: Var(
+            "abc",
+        ),
+        rhs: Neg(
+            Num(
+                4,
+            ),
+        ),
+    },
+}
+eval=-10
+Call("f", [Bin { op: '+', lhs: Num(2), rhs: Bin { op: '*', lhs: Var("abc"), rhs: Neg(Num(4)) } }, Unit, Num(-1)])
+eval=-11 eq=true
+Block([Let("x", Some(Num(1))), Let("y", None), Block([]), Return(Err("no value")), Return(Ok(Var("x")))])
+Block(
+    [
+        Let(
+            "x",
+            Some(
+                Num(
+                    1,
+                ),
+            ),
+        ),
+        Let(
+            "y",
+            None,
+        ),
+        Block(
+            [],
+        ),
+        Return(
+            Err(
+                "no value",
+            ),
+        ),
+        Return(
+            Ok(
+                Var(
+                    "x",
+                ),
+            ),
+        ),
+    ],
+)

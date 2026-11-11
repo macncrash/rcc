@@ -1,0 +1,15 @@
+rax = 0
+rcx = 1
+rdx = 2
+rbx = 3
+Some(Reg { name: "rdx", num: 2 })
+None
+if keyword? true
+foo keyword? false
+return keyword? true
+hello 5
+MASK = 4095 BITS = 12
+calls 6 history [50, 60, 30, 40]
+3 ["lo", "mid", "hi"] hi
+100 200 101 202
+arr len 6

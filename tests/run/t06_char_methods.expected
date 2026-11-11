@@ -1,0 +1,28 @@
+'a': alpha true num false alnum true ws false up false low true ascii true digit16 Some(10)
+'Z': alpha true num false alnum true ws false up true low false ascii true digit16 None
+'5': alpha false num true alnum true ws false up false low false ascii true digit16 Some(5)
+' ': alpha false num false alnum false ws true up false low false ascii true digit16 None
+'\n': alpha false num false alnum false ws true up false low false ascii true digit16 None
+'_': alpha false num false alnum false ws false up false low false ascii true digit16 None
+'é': alpha true num false alnum true ws false up false low true ascii false digit16 None
+'9': alpha false num true alnum true ws false up false low false ascii true digit16 Some(9)
+'f': alpha true num false alnum true ws false up false low true ascii true digit16 Some(15)
+Some('7') Some('b')
+Some('A') None
+B
+c
+Q
+q
+SS
+false
+true
+2
+3
+€ [226, 130, 172]
+abcde
+['x', 'y', 'z']
+true
+937
+true
+true
+true

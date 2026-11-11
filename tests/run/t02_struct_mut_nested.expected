@@ -1,0 +1,16 @@
+  r0 = 0 dirty=false
+  r1 = 0 dirty=false
+  r2 = 0 dirty=false
+  r3 = 0 dirty=false
+  pc 0 writes 0 z=false n=false
+  r0 = 0 dirty=false
+  r1 = 5 dirty=true
+  r2 = 0 dirty=false
+  r3 = 2147483648 dirty=true
+  pc 4 writes 2 z=false n=true
+  r0 = 0 dirty=true
+  r1 = 15 dirty=true
+  r2 = 99 dirty=false
+  r3 = 2147483648 dirty=true
+  pc 8 writes 3 z=true n=false
+99 3 8

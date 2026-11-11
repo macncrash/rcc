@@ -1,0 +1,14 @@
+orc
+orc hp=30
+Orc { hp: 30 }
+name: orc
+elf lin
+[12] lin
+Elf { name: "lin", hp: 12 }
+name: elf lin
+orc
+orc hp=-1
+Orc { hp: -1 }
+name: orc
+alive 2
+Elf { name: "lin", hp: 12 } 12

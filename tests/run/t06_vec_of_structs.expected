@@ -1,0 +1,12 @@
+Rec { name: "alice", score: 90, tags: ["x", "y"] }
+Rec { name: "bob", score: 72, tags: ["z"] }
+Rec { name: "carol", score: 90, tags: [] }
+Rec { name: "dave", score: 55, tags: ["x"] }
+["alice", "carol", "bob", "dave"]
+["alice", "dave"]
+avg 76.75
+Rec { name: "bob", score: 82, tags: ["z", "bumped"] }
+removed dave left 3
+["x", "y", "z", "bumped"]
+eq true
+best carol

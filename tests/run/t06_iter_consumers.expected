@@ -1,0 +1,28 @@
+sum 22
+product 22680
+count 7
+min Some(-5) max Some(9)
+min_by_key Some(0)
+max_by_key Some((6, 9))
+max_by Some(7)
+min_by Some(9)
+any neg true all < 10 true
+find Some(9)
+find_map Some(-200)
+position Some(2)
+rposition Some(6)
+position none None
+fold 363
+fold str 4-2907-59
+reduce Some(9)
+last Some(9)
+nth(2) Some(9) nth(50) None
+partition [4, 9, 0, 7, 9] [-2, -5]
+empty sum 0 max None all true any false
+fsum 3.5
+fmax 2.5
+try_fold None
+eq true lt true
+for_each 22
+max picks last Some((1, 'b'))
+min picks first Some((1, 'a'))

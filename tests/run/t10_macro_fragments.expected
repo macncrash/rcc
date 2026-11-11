@@ -1,0 +1,16 @@
+7 3.25
+true false
+true
+<hi>
+<42>
+before block
+after block
+block result 42
+stmts result 15
+path 100
+path -10
+Point { x: 1, y: 2 } 1 2
+item fragment
+abc
+99
+tts 7

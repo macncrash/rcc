@@ -1,0 +1,15 @@
+"hello" -> "hello" (borrowed) len=5
+"Hello World" -> "hello_world" (owned) len=11
+"snake_case" -> "snake_case" (borrowed) len=10
+"a b c" -> "a_b_c" (owned) len=5
+[1, 2, 3] borrowed
+[1, 2, 3, 4] owned
+into_owned [1, 2, 3, 4] orig [1, -2, 3, -4]
+base borrowed
+base+more owned
+base+more!
+own owned lit borrowed
+plain ascii borrowed
+bad � byte owned
+eq=true
+total=6

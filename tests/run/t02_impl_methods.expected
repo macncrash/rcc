@@ -1,0 +1,12 @@
+start 10
+tick 13
+tick 16
+tick 19
+tick 22
+reset 10
+after twice twice 22
+bigger true false
+via ref 25
+ufcs 25
+total 28
+const 10

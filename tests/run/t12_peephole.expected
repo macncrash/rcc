@@ -1,0 +1,45 @@
+add x9, x11, x1.0, x9
+true
+false
+Some("    add x1, x7, x2")
+None
+None
+["x0", "[sp, #16]", "lsl #2"]
+Instr { mnemonic: "ldp", ops: ["x29", "x30", "[sp]", "#32"] }
+Label(".L3")
+lines: 34
+round 1 store_load_forward   +2
+round 1 redundant_moves      +3
+round 1 copy_propagate       +4
+round 1 branch_to_next       +1
+round 1 dead_labels          +3
+fixpoint at round 2
+stats: {"add_zero": 2, "branch_to_next": 1, "copy_prop": 3, "copy_prop_cmp": 1, "dead_label": 3, "self_move": 1, "store_load_mov": 1, "store_load_same": 1}
+    .text
+    .globl main
+main:
+    stp x29, x30, [sp, #-32]!
+    mov x29, sp
+    mov x0, #5
+    str x0, [sp, #16]
+    mov x1, x0
+    add x2, x0, x0
+    str x2, [sp, #24]
+    mov x3, x2
+    cmp x0, x2
+    b.ge .L1
+    mov x5, x3
+    mul x6, x3, x3
+    mov x5, #1
+    add x7, x5, x6
+    b .L3
+.L1:
+    mov x7, #0
+.L3:
+    mov x0, x7
+    ldp x29, x30, [sp], #32
+    ret
+    // comment line
+    .size main, .-main
+34 -> 26 lines, 5 replacements
+2 "a" "b" | 1 ""

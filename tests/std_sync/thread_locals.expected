@@ -1,0 +1,16 @@
+inits before 0
+main id 100 again 100
+inits after main 1
+main work (3, ["m0", "m1", "m2"])
+thread (0, 0, 1, 0, true)
+thread (1, 1, 2, 10, true)
+thread (2, 3, 3, 30, true)
+thread (3, 6, 4, 60, true)
+inits after threads 5
+main depth unchanged 3
+main names ["m0", "m1", "m2"]
+main names after take 0
+replace 42 -> 7
+dropping Noisy(9)
+noisy thread returned Some(9)
+main noisy true

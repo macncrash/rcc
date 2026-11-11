@@ -1,0 +1,15 @@
+first read_line 9 "0;0;even\n"
+second "1;1;odd\n"
+odd line "no-newline-at-end"
+sum of squares 2469 evens 9
+read_until "0;"
+read_until "0;"
+read_until "even\n1;"
+read_until "1;"
+segments 41
+split "alpha"
+split "beta"
+split ""
+split "gamma"
+cursor read "one\ntwo\r\nthree" pos 14
+lines strip crlf ["x", "y", "z"]

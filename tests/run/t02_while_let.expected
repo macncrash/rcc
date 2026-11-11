@@ -1,0 +1,24 @@
+popped 1 depth 6
+popped 2 depth 5
+popped 4 depth 4
+popped 8 depth 3
+popped 16 depth 2
+popped 32 depth 1
+popped 64 depth 0
+step 10 n 214
+step 20 n 274
+step 30 n 350
+step 40 n 445
+step 50 n 566
+step 60 n 719
+step 70 n 911
+step 80 n 1154
+step 90 n 244
+step 100 n 53
+step 110 n 2
+collatz steps 111
+0 10
+2 9
+4 8
+6 7
+cnt 3

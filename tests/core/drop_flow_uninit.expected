@@ -1,0 +1,18 @@
+Err("undefined function nope")
+Err("f expects 1 args, got 3")
+Ok(2)
+Ok(101)
+Err("undefined function nope")
+Err("f expects 1 args, got 3")
+Ok(2)
+Ok(101)
+Err("undefined function nope")
+Err("f expects 1 args, got 3")
+Ok(2)
+Ok(101)
+0 []
+1 ["drop a"]
+2 ["drop c2", "drop b", "drop a"]
+3 ["drop t", "drop a", "drop c", "drop b"]
+4 ["drop t", "drop c", "drop b", "drop a"]
+["drop z", "drop x0", "drop x2", "drop x3"]

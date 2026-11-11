@@ -1,0 +1,19 @@
+3 8 max=8
+8 3 max=8
+max=2.5
+max=m
+5 true
+5 10.5
+c true
+42
+43
+3
+pop 16
+pop 9
+pop 4
+pop 1
+pop 0
+2
+false
+true
+true

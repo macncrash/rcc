@@ -1,0 +1,23 @@
+a b a b
+y x x y
+Ann is 31 years
+n 5 n
+val=10 10    10 0xa 2.500    val   |
+[    2.50] [00000010] [     val]
+[a   ] [   4]
+[  lr  ]
+[   1] [   2]
+[1, 2] [
+    1,
+    2,
+]
+{} {10} {x}
+1"2"'3'
+nested-10
+<|< len=3
+7 7    7
+trailing commas 1, 2,
+captured captured
+via format_args
+p q
+" \"q\""

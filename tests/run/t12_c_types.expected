@@ -1,0 +1,76 @@
+_Bool                size= 1 align= 1 unsigned=true promoted=int rank=0
+char                 size= 1 align= 1 unsigned=false promoted=int rank=1
+unsigned char        size= 1 align= 1 unsigned=true promoted=int rank=1
+short                size= 2 align= 2 unsigned=false promoted=int rank=2
+unsigned short       size= 2 align= 2 unsigned=true promoted=int rank=2
+int                  size= 4 align= 4 unsigned=false promoted=int rank=3
+unsigned int         size= 4 align= 4 unsigned=true promoted=unsigned int rank=3
+long                 size= 8 align= 8 unsigned=false promoted=long rank=4
+unsigned long        size= 8 align= 8 unsigned=true promoted=unsigned long rank=4
+long long            size= 8 align= 8 unsigned=false promoted=long long rank=5
+unsigned long long   size= 8 align= 8 unsigned=true promoted=unsigned long long rank=5
+__int128             size=16 align=16 unsigned=false promoted=__int128 rank=6
+unsigned __int128    size=16 align=16 unsigned=true promoted=unsigned __int128 rank=6
+float                size= 4 align= 4 unsigned=false promoted=float rank=3
+double               size= 8 align= 8 unsigned=false promoted=double rank=3
+--- usual arithmetic conversions
+                    c     us      i      u      l     ul     ll      f      d
+          char      i      i      i      u      l     ul     ll      f      d
+unsigned short      i      i      i      u      l     ul     ll      f      d
+           int      i      i      i      u      l     ul     ll      f      d
+  unsigned int      u      u      u      u      l     ul     ll      f      d
+          long      l      l      l      l      l     ul     ll      f      d
+ unsigned long     ul     ul     ul     ul     ul     ul    ull      f      d
+     long long     ll     ll     ll     ll     ll    ull     ll      f      d
+         float      f      f      f      f      f      f      f      f      d
+        double      d      d      d      d      d      d      d      d      d
+--- struct layouts
+struct point: size=8 align=4
+    x      offset= 0
+    y      offset= 4
+struct node: size=32 align=8
+    tag    offset= 0
+    value  offset= 8
+    next   offset=16
+    small  offset=24
+struct flags: size=12 align=4
+    a      offset= 0 bits 0..3
+    b      offset= 0 bits 3..8
+    c      offset= 4 bits 0..30
+    ch     offset= 8
+    d      offset= 9 bits 0..4
+    e      offset=10 bits 0..2
+union value: size=16 align=8
+    i      offset= 0
+    d      offset= 0
+    bytes  offset= 0
+struct outer: size=80 align=16
+    kind   offset= 0
+    v      offset= 8
+    pts    offset=24
+    big    offset=48
+    tail   offset=64
+struct packed: size=13 align=1
+    c      offset= 0
+    i      offset= 1
+    l      offset= 5
+rc count for struct.point key: 4
+--- derived types
+char * *                           size=  8 align= 8 integer=false float=false
+int [4] [3]                        size= 48 align= 4 integer=false float=false
+struct node * [2]                  size= 16 align= 8 integer=false float=false
+int (*)(char *, long, ...)         size=  8 align= 8 integer=false float=false
+double []                          size=  0 align= 8 integer=false float=false
+enum color                         size=  4 align= 4 integer=true float=false
+unsigned long                      size=  8 align= 8 integer=true float=false
+int (*)(char *, long, ...)         size=  8 align= 8 integer=false float=false
+struct outer                       size= 80 align=16 integer=false float=false
+enum color has 3 variants, max 4 -> unsigned int
+align_up(0, 8) = 0
+align_up(1, 8) = 8
+align_up(8, 8) = 8
+align_up(13, 4) = 16
+align_up(13, 0) = 13
+align_up(18446744073709551613, 8) = 18446744073709551613
+align_up(100, 64) = 128
+cached layouts: ["struct.flags", "struct.node", "struct.outer", "struct.packed", "struct.point", "union.value"]

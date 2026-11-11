@@ -1,0 +1,15 @@
+main name Some("main")
+same id true
+handle name Some("worker-1")
+worker (Some("worker-1"), true, None)
+finished early false
+finished later true
+value 7
+0 ok 0
+1 String worker 1 failed
+2 ok 22
+3 ok 33
+4 String worker 4 failed
+5 &str Some("static failure")
+detached thread ran
+scoped (true, 5)

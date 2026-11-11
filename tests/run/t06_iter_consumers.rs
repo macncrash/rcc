@@ -1,0 +1,37 @@
+fn main() {
+    let v = vec![4, -2, 9, 0, 7, -5, 9];
+    println!("sum {}", v.iter().sum::<i32>());
+    println!("product {}", v.iter().filter(|&&x| x != 0).product::<i32>());
+    println!("count {}", v.iter().count());
+    println!("min {:?} max {:?}", v.iter().min(), v.iter().max());
+    println!("min_by_key {:?}", v.iter().min_by_key(|x| x.abs()));
+    println!("max_by_key {:?}", v.iter().enumerate().max_by_key(|(_, &x)| x));
+    println!("max_by {:?}", v.iter().max_by(|a, b| (*a % 4).cmp(&(*b % 4))));
+    println!("min_by {:?}", v.iter().min_by(|a, b| b.cmp(a)));
+    println!("any neg {} all < 10 {}", v.iter().any(|&x| x < 0), v.iter().all(|&x| x < 10));
+    println!("find {:?}", v.iter().find(|&&x| x > 5));
+    println!("find_map {:?}", v.iter().find_map(|&x| if x < 0 { Some(x * 100) } else { None }));
+    println!("position {:?}", v.iter().position(|&x| x == 9));
+    println!("rposition {:?}", v.iter().rposition(|&x| x == 9));
+    println!("position none {:?}", v.iter().position(|&x| x == 99));
+    println!("fold {}", v.iter().fold(0, |acc, x| acc * 2 + x));
+    println!("fold str {}", v.iter().fold(String::new(), |acc, x| acc + &x.to_string()));
+    println!("reduce {:?}", v.iter().copied().reduce(|a, b| a.max(b)));
+    println!("last {:?}", v.iter().last());
+    println!("nth(2) {:?} nth(50) {:?}", v.iter().nth(2), v.iter().nth(50));
+    let (pos, neg): (Vec<i32>, Vec<i32>) = v.iter().partition(|&&x| x >= 0);
+    println!("partition {:?} {:?}", pos, neg);
+    let e: Vec<i32> = Vec::new();
+    println!("empty sum {} max {:?} all {} any {}", e.iter().sum::<i32>(), e.iter().max(), e.iter().all(|_| false), e.iter().any(|_| true));
+    let fs = [1.5f64, 2.5, -0.5];
+    println!("fsum {}", fs.iter().sum::<f64>());
+    println!("fmax {:?}", fs.iter().cloned().fold(f64::MIN, f64::max));
+    let mut it = v.iter();
+    println!("try_fold {:?}", it.try_fold(0i32, |acc, &x| if x == 0 { None } else { Some(acc + x) }));
+    println!("eq {} lt {}", [1, 2].iter().eq([1, 2].iter()), [1, 2].iter().lt([1, 3].iter()));
+    let mut n = 0;
+    v.iter().for_each(|x| n += x);
+    println!("for_each {}", n);
+    println!("max picks last {:?}", [(1, 'a'), (1, 'b')].iter().max_by_key(|p| p.0));
+    println!("min picks first {:?}", [(1, 'a'), (1, 'b')].iter().min_by_key(|p| p.0));
+}

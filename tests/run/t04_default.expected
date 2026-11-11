@@ -1,0 +1,12 @@
+Config { verbose: false, level: 0, name: "", ratio: 0.0, tag: None, counts: [0, 0, 0] }
+Config { verbose: false, level: 3, name: "x", ratio: 0.0, tag: None, counts: [0, 0, 0] }
+Outer { limits: Limits { lo: -10, hi: 10 }, id: 0, pair: (0, false) }
+9 -10 10
+Normal
+true
+Fast Slow
+0 "" false (0, '\0', 0.0)
+5
+0
+Normal
+0

@@ -1,0 +1,13 @@
+fn { a if { b c } d }
+fn {
+  a
+  if {
+    b
+    c
+  }
+  d
+}
+0 last line: fn { a if { b c } d } extra
+1 last line: extra
+start x
+    y

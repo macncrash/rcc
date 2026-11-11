@@ -1,0 +1,48 @@
+display: No such file or directory (os error 2)
+debug: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+kind: NotFound / entity not found raw Some(2)
+to_string: No such file or directory (os error 2)
+custom: custom failure | Custom { kind: InvalidData, error: "custom failure" } | kind InvalidData raw None
+custom get_ref: Some("custom failure")
+into_inner: custom failure
+other: other 5 | Custom { kind: Other, error: "other 5" }
+simple: broken pipe | Kind(BrokenPipe)
+os 1: kind PermissionDenied
+os 2: kind NotFound
+os 13: kind PermissionDenied
+os 17: kind AlreadyExists
+os 20: kind NotADirectory
+os 21: kind IsADirectory
+os 22: kind InvalidInput
+os 28: kind StorageFull
+os 66: kind DirectoryNotEmpty
+nested: No such file or directory (os error 2)
+read_exact: failed to fill whole buffer | Error { kind: UnexpectedEof, message: "failed to fill whole buffer" }
+write_all: failed to write whole buffer | Error { kind: WriteZero, message: "failed to write whole buffer" } small [97, 98, 99]
+bad utf8: stream did not contain valid UTF-8 | kind InvalidData | buffer kept "keep"
+NotFound: entity not found
+PermissionDenied: permission denied
+AlreadyExists: entity already exists
+WouldBlock: operation would block
+InvalidInput: invalid input parameter
+InvalidData: invalid data
+TimedOut: timed out
+WriteZero: write zero
+Interrupted: operation interrupted
+Unsupported: unsupported
+UnexpectedEof: unexpected end of file
+OutOfMemory: out of memory
+Other: other error
+IsADirectory: is a directory
+NotADirectory: not a directory
+DirectoryNotEmpty: directory not empty
+parse "12" -> 12
+parse " 7 " -> 7
+parse "-3" -> error negative / "negative"
+parse "5000" -> error too big: 5000 / "too big: 5000"
+parse "x1" -> error invalid digit found in string / "invalid digit found in string"
+boxed io: No such file or directory (os error 2) | Os { code: 2, kind: NotFound, message: "No such file or directory" }
+chain: NotFound
+box dyn: Permission denied (os error 13) source none true
+Err("plain")
+fmt error: an error occurred when formatting an argument

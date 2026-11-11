@@ -1,0 +1,49 @@
+u32 rotl 0 = 12345678 rotr = 12345678
+u32 rotl 1 = 2468acf0 rotr = 91a2b3c
+u32 rotl 4 = 23456781 rotr = 81234567
+u32 rotl 8 = 34567812 rotr = 78123456
+u32 rotl 16 = 56781234 rotr = 56781234
+u32 rotl 31 = 91a2b3c rotr = 2468acf0
+u32 rotl 32 = 12345678 rotr = 12345678
+u32 rotl 36 = 23456781 rotr = 81234567
+u8 rotl 0 = 131 rotr = 131
+u8 rotl 1 = 7 rotr = 193
+u8 rotl 2 = 14 rotr = 224
+u8 rotl 3 = 28 rotr = 112
+u8 rotl 4 = 56 rotr = 56
+u8 rotl 5 = 112 rotr = 28
+u8 rotl 6 = 224 rotr = 14
+u8 rotl 7 = 193 rotr = 7
+u8 rotl 8 = 131 rotr = 131
+i16 rotl3 -9 rotr3 -8193
+u64 swap efcdab8967452301 rev f7b3d591e6a2c480
+u64 rotl 12 3456789abcdef012 rotr 12 def0123456789abc
+u32 swap 78563412 rev 1e6a2c48
+u16 swap cdab rev 8000
+i32 swap -16777217 rev -2147483648
+u8 swap 18 rev 128
+u128 swap ffeeddccbbaa99887766554433221100
+u128 rotl 4 112233445566778899aabbccddeeff0 rotr 68 78899aabbccddeeff001122334455667
+u128 rev ff77bb33dd559911ee66aa22cc448800
+be round trip true
+le round trip true
+mix 0 0
+mix 1 517cc1b727220a95
+mix 2 6a4be67ff98fabc8
+mix 3 fdcb2688e0760126
+mix 4 70097c97595c0177
+mix 5 b41eb5bc5ba67cc7
+mix 6 c568ae29f8ad63b0
+mix 7 ef683a9fc31bf60b
+mix 8 a5d2996660df2b19
+mix 9 fcdba013ab7d2481
+mix 10 b83ff56ca27400d9
+mix 11 1ed67770739831ec
+mix 12 3f51295527076a3b
+mix 13 51433eead0f8b4b2
+mix 14 412c9b2b4b0c1d94
+mix 15 55ba8d562d8e2e93
+mix 16 74ba4c8ebc904502
+mix 17 c57b46a91ae70d4b
+mix 18 1912ac38609beb2
+mix 19 dc4cd492bfe4fc4f

@@ -1,0 +1,10 @@
+drained [3, 4, 5] left [1, 2, 6, 7, 8, 9, 10]
+drained [1, 2] left [6, 7, 8, 9, 10]
+drained [9, 10] left [6, 7, 8]
+sum 21 left [] empty true
+drain item y
+["x", "z"]
+drained 'hello ' left 'world'
+first Some(2)
+back Some(4)
+after partial drain [1, 5]

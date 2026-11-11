@@ -1,0 +1,97 @@
+(crate
+  (fn cond
+    (params)
+    (block
+      (expr (if (== x y) (block
+        (expr a)) else (block
+        (expr b))))
+      (semi (if (let (tstruct Some v) (method map get (& k))) (block
+        (expr v)) else (if z (block
+        (expr 1)) else (block
+        (expr 2)))))
+      (expr (while (let (tstruct Some top) (method stack pop)) (block
+        (semi (call process top)))))
+      (expr (match s
+        (arm (struct S a ..) => a)
+        (arm _ => 0)))
+      (expr (for i in (.. 0 n) (block
+        (semi (+= sum i)))))
+      (expr (for (tuple i x) in (method (method v iter) enumerate) (block)))
+      (expr (if (== (field (struct Foo (a: 1)) a) 1) (block)))
+      (expr (if (== x (struct Point (x: 1) (y: 2))) (block)))
+      (let p = (struct Point (x) (y: 2) (.. (call Default::default))))
+      (let q = (struct Tuple (0: a) (1: b)))
+      (let s = (struct S))
+      (expr (if (method (method a iter) any (closure (x) (== (deref x) (field (struct T (v: 1)) v)))) (block)))
+      (expr (match x
+        (arm _ if (> (field (struct S (a: 1)) a) 0) => (block))
+        (arm _ => (block))))))
+  (fn closures
+    (params)
+    (block
+      (let f = (closure (x) (+ x 1)))
+      (let g = (closure (x: i32 y: &mut Vec::<u8>) -> i32 (block
+        (expr x))))
+      (let h = (closure move () (block
+        (expr 42))))
+      (let k = (closure () (tuple)))
+      (let m = (closure ((& (tuple a b)): &(u8, u8)) (+ a b)))
+      (let n = (closure (_) (block)))
+      (let r = (method (method (method (method v iter) map (closure (x) (* x 2))) filter (closure ((& x)) (> x 3))) collect::<Vec::<_>>))
+      (let c = (closure (a b) (|| a b)))
+      (let d = (closure () (closure () 1)))
+      (let e = (closure (x) (match x
+        (arm 1 => 2)
+        (arm _ => 3))))
+      (semi (method s sort_by (closure (a b) (method b cmp a))))
+      (let o = (|| a b))))
+  (fn stmts
+    (params)
+    (ret i32)
+    (block
+      (let x)
+      (let y : u8)
+      (let (tstruct Some z) = opt else (block
+        (semi (return 0))))
+      (let (tstruct Ok w) = res else (block
+        (expr (mac panic! ("bad")))))
+      (expr (if a (block
+        (expr (call b))) else (block
+        (expr (call c)))))
+      (expr (match q
+        (arm _ => (block))))
+      (expr (block
+        (semi (call inner))))
+      (semi (unsafe-block
+        (expr (method ptr read))))
+      (expr (loop (block
+        (semi (break)))))
+      (let v = (loop (block
+        (semi (break 5)))))
+      (expr (for 'outer i in (.. 0 10) (block
+        (expr (while 'inner true (block
+          (expr (if (== i 3) (block
+            (semi (continue 'outer)))))
+          (semi (break 'inner))))))))
+      (let lb = (labeled 'blk (block
+        (expr (if c (block
+          (semi (break 'blk 1)))))
+        (expr 2))))
+      (semi (method (if c (block
+        (expr 1)) else (block
+        (expr 2))) to_string))
+      (semi (method (match m
+        (arm _ => 1)) max 2))
+      (semi (method (mac vec! [1, 2]) len))
+      (semi (mac println! ("{}", x)))
+      (expr (mac my_macro! {a b c}))
+      (semi (mac thread_local! (static X: u8 = 0)))
+      (semi (= (deref (method x borrow_mut)) 5))
+      (semi (= (tuple a b) (tuple b a)))
+      (semi (= _ (call f)))
+      (semi (= (array x y) arr))
+      (semi (= (struct S (a) ..) s))
+      (let t = (method 1 max 2))
+      (let neg = (neg (method 1i32 pow 2)))
+      (semi (return (? x)))
+      (expr x))))

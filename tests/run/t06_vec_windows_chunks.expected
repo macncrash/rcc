@@ -1,0 +1,20 @@
+window [1, 2, 3] sum 6
+window [2, 3, 4] sum 9
+window [3, 4, 5] sum 12
+window [4, 5, 6] sum 15
+window [5, 6, 7] sum 18
+chunk [1, 2, 3]
+chunk [4, 5, 6]
+chunk [7]
+exact [1, 2]
+exact [3, 4]
+exact [5, 6]
+remainder [7]
+rchunk [5, 6, 7]
+rchunk [2, 3, 4]
+rchunk [1]
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3]
+diffs [3, 5, 7, 9]
+[1684234849, 1751606885]
+count windows 0
+split [[1, 2], [4, 5], [7]]

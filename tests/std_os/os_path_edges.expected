@@ -1,0 +1,82 @@
+"": name None stem None ext None prefix None parent None abs false comps [] rev [] iter []
+"/": name None stem None ext None prefix None parent None abs true comps ["/"] rev ["/"] iter ["/"]
+"//": name None stem None ext None prefix None parent None abs true comps ["/"] rev ["/"] iter ["/"]
+"///a//b//": name Some("b") stem Some("b") ext None prefix Some(Some("b")) parent Some("///a") abs true comps ["/", "N(a)", "N(b)"] rev ["b", "a", "/"] iter ["/", "a", "b"]
+".": name None stem None ext None prefix None parent Some("") abs false comps ["."] rev ["."] iter ["."]
+"..": name None stem None ext None prefix None parent Some("") abs false comps [".."] rev [".."] iter [".."]
+"./": name None stem None ext None prefix None parent Some("") abs false comps ["."] rev ["."] iter ["."]
+"../": name None stem None ext None prefix None parent Some("") abs false comps [".."] rev [".."] iter [".."]
+"./a": name Some("a") stem Some("a") ext None prefix Some(Some("a")) parent Some(".") abs false comps [".", "N(a)"] rev ["a", "."] iter [".", "a"]
+"a/.": name Some("a") stem Some("a") ext None prefix Some(Some("a")) parent Some("") abs false comps ["N(a)"] rev ["a"] iter ["a"]
+"a/./b": name Some("b") stem Some("b") ext None prefix Some(Some("b")) parent Some("a") abs false comps ["N(a)", "N(b)"] rev ["b", "a"] iter ["a", "b"]
+"a/..": name None stem None ext None prefix None parent Some("a") abs false comps ["N(a)", ".."] rev ["..", "a"] iter ["a", ".."]
+"/..": name None stem None ext None prefix None parent Some("/") abs true comps ["/", ".."] rev ["..", "/"] iter ["/", ".."]
+"/.": name None stem None ext None prefix None parent None abs true comps ["/"] rev ["/"] iter ["/"]
+"foo/": name Some("foo") stem Some("foo") ext None prefix Some(Some("foo")) parent Some("") abs false comps ["N(foo)"] rev ["foo"] iter ["foo"]
+"foo//": name Some("foo") stem Some("foo") ext None prefix Some(Some("foo")) parent Some("") abs false comps ["N(foo)"] rev ["foo"] iter ["foo"]
+".bashrc": name Some(".bashrc") stem Some(".bashrc") ext None prefix Some(Some(".bashrc")) parent Some("") abs false comps ["N(.bashrc)"] rev [".bashrc"] iter [".bashrc"]
+"dir/.bashrc": name Some(".bashrc") stem Some(".bashrc") ext None prefix Some(Some(".bashrc")) parent Some("dir") abs false comps ["N(dir)", "N(.bashrc)"] rev [".bashrc", "dir"] iter ["dir", ".bashrc"]
+".bashrc.bak": name Some(".bashrc.bak") stem Some(".bashrc") ext Some("bak") prefix Some(Some(".bashrc")) parent Some("") abs false comps ["N(.bashrc.bak)"] rev [".bashrc.bak"] iter [".bashrc.bak"]
+"file.": name Some("file.") stem Some("file") ext Some("") prefix Some(Some("file")) parent Some("") abs false comps ["N(file.)"] rev ["file."] iter ["file."]
+"a.b.c": name Some("a.b.c") stem Some("a.b") ext Some("c") prefix Some(Some("a.b")) parent Some("") abs false comps ["N(a.b.c)"] rev ["a.b.c"] iter ["a.b.c"]
+"..x": name Some("..x") stem Some(".") ext Some("x") prefix Some(Some(".")) parent Some("") abs false comps ["N(..x)"] rev ["..x"] iter ["..x"]
+"x..": name Some("x..") stem Some("x.") ext Some("") prefix Some(Some("x.")) parent Some("") abs false comps ["N(x..)"] rev ["x.."] iter ["x.."]
+"foo..bar": name Some("foo..bar") stem Some("foo.") ext Some("bar") prefix Some(Some("foo.")) parent Some("") abs false comps ["N(foo..bar)"] rev ["foo..bar"] iter ["foo..bar"]
+"/etc/hosts": name Some("hosts") stem Some("hosts") ext None prefix Some(Some("hosts")) parent Some("/etc") abs true comps ["/", "N(etc)", "N(hosts)"] rev ["hosts", "etc", "/"] iter ["/", "etc", "hosts"]
+"noext": name Some("noext") stem Some("noext") ext None prefix Some(Some("noext")) parent Some("") abs false comps ["N(noext)"] rev ["noext"] iter ["noext"]
+"a/b/../c/./d/": name Some("d") stem Some("d") ext None prefix Some(Some("d")) parent Some("a/b/../c") abs false comps ["N(a)", "N(b)", "..", "N(c)", "N(d)"] rev ["d", "c", "..", "b", "a"] iter ["a", "b", "..", "c", "d"]
+"./../a": name Some("a") stem Some("a") ext None prefix Some(Some("a")) parent Some("./..") abs false comps [".", "..", "N(a)"] rev ["a", "..", "."] iter [".", "..", "a"]
+"tests/std_os/x.rs": name Some("x.rs") stem Some("x") ext Some("rs") prefix Some(Some("x")) parent Some("tests/std_os") abs false comps ["N(tests)", "N(std_os)", "N(x.rs)"] rev ["x.rs", "std_os", "tests"] iter ["tests", "std_os", "x.rs"]
+ancestors "/a/b/c" -> ["/a/b/c", "/a/b", "/a", "/"]
+ancestors "a/b/c" -> ["a/b/c", "a/b", "a", ""]
+ancestors "./a" -> ["./a", ".", ""]
+ancestors "/" -> ["/"]
+ancestors "a" -> ["a", ""]
+a
+a/b
+a/
+/b
+/etc
+pushed "x/y/z"
+push empty "x/y/z/"
+pop -> "x/y"
+pop -> "x"
+pop -> ""
+pop root false "/"
+pop /usr true "/"
+set_extension("a.txt") -> true "a.o" | with_extension("") "a" | with_file_name "n"
+set_extension(".bashrc") -> true ".bashrc.o" | with_extension("") ".bashrc" | with_file_name "n"
+set_extension("dir/") -> true "dir.o" | with_extension("") "dir" | with_file_name "n"
+set_extension("a.tar.gz") -> true "a.tar.o" | with_extension("") "a.tar" | with_file_name "n"
+set_extension("noext") -> true "noext.o" | with_extension("") "noext" | with_file_name "n"
+set_extension("..") -> false ".." | with_extension("") ".." | with_file_name "../n"
+set_extension("") -> false "" | with_extension("") "" | with_file_name "n"
+set_extension("a/b.c/") -> true "a/b.o" | with_extension("") "a/b" | with_file_name "a/n"
+starts_with "/" true strip Some("usr/lib/libc.so")
+starts_with "/usr" true strip Some("lib/libc.so")
+starts_with "/usr/" true strip Some("lib/libc.so")
+starts_with "/usr/li" false strip None
+starts_with "usr" false strip None
+starts_with "/usr/lib/libc.so" true strip Some("")
+starts_with "/usr//lib" true strip Some("libc.so")
+ends_with "libc.so" true
+ends_with "lib/libc.so" true
+ends_with "c.so" false
+ends_with "/usr/lib/libc.so" true
+ends_with "" true
+eq true true false false
+sorted ["/z", "A", "a", "a/", "a/b", "a/b/c", "a-b", "a.b", "b"]
+set len 1 contains true
+cross eq true true true
+into_os_string "q/r" into_string Ok("q/r")
+"from/os" "from/string" "from/path"
+to_str Some("é/b") lossy é/b display padded [      ab] [cd      ]
+debug escapes "tab\there\"q\""
+collected "/c/d"
+osstr "abc" len 3 eq str true true lossy abc owned "abc"
+osstring push "xyz" 3
+cow cow
+into "with/str" as_os_str "with/str" ext of comps "with/str"
+components as_path middle "a/b"
+components debug Components([RootDir, Normal("x"), Normal("y"), ParentDir])
+has_root true false

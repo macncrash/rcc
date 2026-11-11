@@ -1,0 +1,12 @@
+STACK PROGRAM v1
+push 1 2 3
+add
+# comment
+
+mul
+dup
+push -4
+mul
+frobnicate
+push 10
+add
